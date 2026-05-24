@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 128" width="520" height="128">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Montserrat:wght@300&amp;display=swap');
+    </style>
+
+    <linearGradient id="goldBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#D4A520"/>
+      <stop offset="45%"  stop-color="#B8860B"/>
+      <stop offset="100%" stop-color="#7A5800"/>
+    </linearGradient>
+
+  </defs>
+
+  <!-- White background -->
+  <rect width="520" height="128" fill="#FFFFFF"/>
+
+  <!-- Gold rectangle behind "PRO" -->
+  <rect x="186" y="14" width="122" height="62" fill="url(#goldBg)"/>
+
+  <!-- "VISUAL" — Bebas Neue, bold black -->
+  <text x="60" y="66"
+        font-family="'Bebas Neue', Impact, 'Arial Narrow', sans-serif"
+        font-size="58"
+        fill="#111111">VISUAL</text>
+
+  <!-- "PRO" — Bebas Neue, on gold -->
+  <text x="190" y="66"
+        font-family="'Bebas Neue', Impact, 'Arial Narrow', sans-serif"
+        font-size="58"
+        fill="#0D0D0D">PRO</text>
+
+  <!-- Thin rule line -->
+  <line x1="130" y1="84" x2="320" y2="84"
+        stroke="#BBBBBB" stroke-width="0.5"/>
+
+  <!-- "MEDIA" — Montserrat Light, wide tracked, centered -->
+  <text x="225" y="108"
+        font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif"
+        font-size="13" font-weight="300"
+        letter-spacing="14"
+        text-anchor="middle"
+        fill="#555555">MEDIA</text>
+
+</svg>

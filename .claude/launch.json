@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "GymPro Web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "/Users/palashrajak/Desktop/GymPro", "run", "web", "--", "--port", "8082"],
+      "port": 8082
+    },
+    {
+      "name": "NirmanSetu",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "/Users/palashrajak/Desktop/NirmanSetu/frontend", "run", "dev", "--", "--port", "5175"],
+      "port": 5175
+    }
+  ]
+}

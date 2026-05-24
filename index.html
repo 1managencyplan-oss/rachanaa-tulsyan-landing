@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Build Your Dream App in 30 Min – No Coding Needed</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    :root{
+      --org:#ff5c00;
+      --org2:#ff8c00;
+      --gold:#f5a623;
+      --navy:#08122b;
+      --navy2:#0d1f45;
+      --blue:#1a3a6b;
+      --white:#fff;
+      --gray:#f7f8fc;
+      --text:#1a1a2e;
+      --muted:#6b7280;
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;}
+
+    /* ─── TOP BAR ─── */
+    .topbar{
+      background:linear-gradient(90deg,#ff3d00,#ff6d00,#ff3d00);
+      background-size:200% 100%;
+      animation:barshift 4s linear infinite;
+      text-align:center;padding:11px 16px;
+      font-size:13px;font-weight:700;color:#fff;letter-spacing:.4px;
+    }
+    @keyframes barshift{0%{background-position:0%}100%{background-position:200%}}
+    .topbar b{background:rgba(255,255,255,.2);border-radius:4px;padding:1px 8px;margin:0 4px;}
+
+    /* ─── NAV ─── */
+    nav{
+      background:var(--navy);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 40px;position:sticky;top:0;z-index:900;
+      box-shadow:0 2px 20px rgba(0,0,0,.4);
+    }
+    .nav-logo{font-family:'Sora',sans-serif;font-size:18px;font-weight:900;color:#fff;}
+    .nav-logo span{color:var(--gold);}
+    .nav-cta{
+      background:linear-gradient(135deg,var(--org),var(--org2));
+      color:#fff;font-size:13px;font-weight:800;
+      padding:10px 22px;border-radius:50px;
+      text-decoration:none;
+      box-shadow:0 4px 16px rgba(255,92,0,.4);
+      transition:.2s;
+      white-space:nowrap;
+    }
+    .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,92,0,.5);}
+
+    /* ─── HERO ─── */
+    .hero{
+      background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 55%,#112244 100%);
+      min-height:92vh;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center;padding:70px 20px 60px;
+      position:relative;overflow:hidden;
+    }
+    .hero::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(255,92,0,.13),transparent 70%);
+      pointer-events:none;
+    }
+    .hero-eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);
+      border-radius:30px;padding:7px 18px;
+      font-size:12px;font-weight:700;color:#fff;
+      letter-spacing:1px;text-transform:uppercase;margin-bottom:26px;
+    }
+    .hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80;animation:blink 1.4s infinite;}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+    .hero h1{
+      font-family:'Sora',sans-serif;
+      font-size:clamp(32px,5.5vw,64px);
+      font-weight:900;color:#fff;
+      line-height:1.1;max-width:860px;margin:0 auto 20px;
+    }
+    .hero h1 em{
+      font-style:normal;
+      background:linear-gradient(90deg,var(--gold),var(--org2));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+
+    .hero-sub{
+      font-size:clamp(15px,2vw,19px);color:rgba(255,255,255,.7);
+      max-width:620px;margin:0 auto 36px;line-height:1.7;
+    }
+
+    /* STATS ROW */
+    .stats-row{
+      display:flex;flex-wrap:wrap;justify-content:center;gap:24px;
+      margin-bottom:44px;
+    }
+    .stat{
+      display:flex;flex-direction:column;align-items:center;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;padding:16px 26px;min-width:110px;
+    }
+    .stat-num{font-size:28px;font-weight:900;color:var(--gold);}
+    .stat-label{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;text-transform:uppercase;letter-spacing:1px;}
+
+    /* VIDEO */
+    .video-container{
+      max-width:760px;width:100%;margin:0 auto 40px;
+      border-radius:18px;overflow:hidden;
+      box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);
+      position:relative;aspect-ratio:16/9;background:#000;cursor:pointer;
+    }
+    .video-container img{width:100%;height:100%;object-fit:cover;opacity:.65;transition:.3s;}
+    .video-container:hover img{opacity:.5;}
+    .play-ring{
+      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:80px;height:80px;border-radius:50%;
+      background:linear-gradient(135deg,var(--org),var(--org2));
+      display:flex;align-items:center;justify-content:center;
+      font-size:28px;color:#fff;
+      box-shadow:0 0 0 16px rgba(255,92,0,.2),0 0 0 32px rgba(255,92,0,.08);
+      transition:.3s;
+    }
+    .video-container:hover .play-ring{transform:translate(-50%,-50%) scale(1.1);}
+    .video-badge{
+      position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+      background:rgba(0,0,0,.75);backdrop-filter:blur(8px);
+      border:1px solid rgba(255,255,255,.15);
+      color:#fff;font-size:12px;font-weight:600;
+      padding:6px 16px;border-radius:20px;white-space:nowrap;
+    }
+
+    .hero-btn{
+      display:inline-flex;align-items:center;gap:10px;
+      background:linear-gradient(135deg,var(--org),var(--org2));
+      color:#fff;font-size:18px;font-weight:800;
+      padding:20px 50px;border-radius:60px;
+      text-decoration:none;border:none;cursor:pointer;
+      box-shadow:0 10px 40px rgba(255,92,0,.5);
+      transition:.25s;letter-spacing:.3px;
+    }
+    .hero-btn:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(255,92,0,.6);}
+    .hero-btn .arr{font-size:22px;transition:.25s;}
+    .hero-btn:hover .arr{transform:translateX(4px);}
+
+    .hero-micro{margin-top:16px;font-size:13px;color:rgba(255,255,255,.4);}
+    .hero-micro span{color:rgba(255,255,255,.7);font-weight:600;}
+
+    /* ─── LOGOS / TRUST ─── */
+    .trust{
+      background:#fff;padding:28px 20px;
+      border-bottom:1px solid #f0f0f0;
+      text-align:center;
+    }
+    .trust p{font-size:12px;color:#aaa;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;font-weight:600;}
+    .trust-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:20px 36px;align-items:center;}
+    .trust-logo{
+      font-size:13px;font-weight:800;color:#ccc;letter-spacing:.5px;
+    }
+
+    /* ─── SECTION WRAPPER ─── */
+    .section{padding:80px 20px;}
+    .section.gray{background:var(--gray);}
+    .section.dark{background:var(--navy);color:#fff;}
+    .section-inner{max-width:1000px;margin:0 auto;}
+    .section-tag{
+      display:inline-block;
+      background:rgba(255,92,0,.1);color:var(--org);
+      font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+      padding:5px 14px;border-radius:20px;margin-bottom:14px;
+    }
+    .section.dark .section-tag{background:rgba(245,166,35,.15);color:var(--gold);}
+    .section-h{
+      font-family:'Sora',sans-serif;
+      font-size:clamp(24px,4vw,40px);font-weight:900;
+      line-height:1.2;margin-bottom:14px;max-width:700px;
+    }
+    .section-sub{font-size:16px;color:var(--muted);line-height:1.7;max-width:580px;margin-bottom:50px;}
+    .section.dark .section-sub{color:rgba(255,255,255,.5);}
+    .section.dark .section-h{color:#fff;}
+
+    /* ─── PAIN ─── */
+    .pain-grid{display:flex;flex-wrap:wrap;gap:16px;}
+    .pain-card{
+      flex:1 1 210px;
+      background:#fff;border-radius:14px;padding:24px;
+      border-left:4px solid #ff4444;
+      box-shadow:0 2px 16px rgba(0,0,0,.06);
+    }
+    .pain-card .ico{font-size:28px;margin-bottom:10px;}
+    .pain-card p{font-size:14px;color:#555;line-height:1.65;}
+    .pain-card strong{color:#111;}
+
+    /* ─── SOLUTION ─── */
+    .sol-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
+    .sol-card{
+      flex:1 1 180px;max-width:210px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:16px;padding:28px 20px;text-align:center;
+    }
+    .sol-card .big{font-size:42px;margin-bottom:14px;}
+    .sol-card h4{font-size:15px;font-weight:800;color:var(--gold);margin-bottom:8px;}
+    .sol-card p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;}
+
+    /* ─── LEARN ─── */
+    .learn-grid{display:flex;flex-direction:column;gap:14px;max-width:680px;margin:0 auto;}
+    .learn-card{
+      display:flex;gap:18px;align-items:flex-start;
+      background:#fff;border-radius:14px;padding:22px 24px;
+      box-shadow:0 2px 16px rgba(0,0,0,.06);
+      border:1px solid #f0f0f0;
+      transition:.2s;
+    }
+    .learn-card:hover{box-shadow:0 8px 32px rgba(255,92,0,.12);border-color:rgba(255,92,0,.2);}
+    .learn-num{
+      background:linear-gradient(135deg,var(--org),var(--org2));
+      color:#fff;font-size:14px;font-weight:900;
+      min-width:34px;height:34px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    }
+    .learn-card h4{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:4px;}
+    .learn-card p{font-size:13px;color:var(--muted);line-height:1.6;}
+
+    /* ─── WHO ─── */
+    .who-grid{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+    .who-card{
+      flex:1 1 140px;max-width:165px;
+      background:#fff;border-radius:16px;padding:24px 16px;
+      text-align:center;
+      box-shadow:0 2px 16px rgba(0,0,0,.06);
+      border:2px solid transparent;
+      transition:.2s;cursor:default;
+    }
+    .who-card:hover{border-color:var(--org);transform:translateY(-4px);box-shadow:0 12px 32px rgba(255,92,0,.12);}
+    .who-card .ico{font-size:34px;margin-bottom:10px;}
+    .who-card h4{font-size:13px;font-weight:800;color:var(--navy);}
+
+    /* ─── PROOF ─── */
+    .proof-grid{display:flex;flex-wrap:wrap;gap:20px;}
+    .proof-card{
+      flex:1 1 260px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:16px;padding:28px;
+    }
+    .stars{color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:12px;}
+    .proof-card p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:18px;}
+    .proof-author{display:flex;align-items:center;gap:12px;}
+    .proof-av{
+      width:42px;height:42px;border-radius:50%;
+      background:linear-gradient(135deg,var(--org),var(--gold));
+      display:flex;align-items:center;justify-content:center;font-size:20px;
+    }
+    .proof-name{font-size:13px;font-weight:700;color:#fff;}
+    .proof-role{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;}
+
+    /* ─── TIMER ─── */
+    .timer-wrap{
+      background:linear-gradient(135deg,#0d0d0d,#1a0a00);
+      padding:36px 20px;text-align:center;
+      border-top:3px solid var(--org);border-bottom:3px solid var(--org);
+    }
+    .timer-eyebrow{
+      font-size:12px;font-weight:800;color:#ff4444;
+      text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;
+      display:flex;align-items:center;justify-content:center;gap:8px;
+    }
+    .timer-eyebrow::before,.timer-eyebrow::after{content:'';flex:1;max-width:80px;height:1px;background:rgba(255,68,68,.3);}
+    .timer-boxes{display:flex;justify-content:center;align-items:flex-end;gap:6px;}
+    .t-unit{display:flex;flex-direction:column;align-items:center;gap:6px;}
+    .t-num{
+      background:linear-gradient(160deg,#ff5c00,#ff8c00);
+      color:#fff;font-size:48px;font-weight:900;
+      width:96px;height:96px;border-radius:14px;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 8px 32px rgba(255,92,0,.45),inset 0 1px 0 rgba(255,255,255,.15);
+      font-family:'Sora',sans-serif;line-height:1;
+    }
+    .t-label{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;}
+    .t-sep{font-size:44px;font-weight:900;color:var(--org);margin-bottom:24px;opacity:.8;}
+    .timer-note{font-size:13px;color:#555;margin-top:18px;}
+    .timer-note strong{color:var(--gold);}
+
+    /* ─── BOOKING ─── */
+    .booking-wrap{padding:80px 20px;background:#fff;text-align:center;}
+    .booking-card{
+      max-width:520px;margin:0 auto;
+      border-radius:24px;overflow:hidden;
+      box-shadow:0 30px 80px rgba(255,92,0,.15),0 0 0 1px rgba(255,92,0,.15);
+    }
+    .booking-head{
+      background:linear-gradient(135deg,var(--navy),var(--navy2));
+      padding:30px 32px;
+    }
+    .booking-head .badge{
+      display:inline-block;
+      background:rgba(255,92,0,.2);border:1px solid rgba(255,92,0,.4);
+      color:var(--org2);font-size:11px;font-weight:800;
+      letter-spacing:1.5px;text-transform:uppercase;
+      padding:4px 14px;border-radius:20px;margin-bottom:14px;
+    }
+    .booking-head h3{font-family:'Sora',sans-serif;font-size:22px;font-weight:900;color:#fff;margin-bottom:6px;}
+    .booking-head p{font-size:13px;color:rgba(255,255,255,.45);}
+
+    .booking-body{padding:32px 32px 36px;background:#fff;}
+    .price-row2{display:flex;align-items:flex-end;justify-content:center;gap:12px;margin-bottom:8px;}
+    .old-p{font-size:20px;color:#ccc;text-decoration:line-through;line-height:1;padding-bottom:6px;}
+    .new-p{
+      font-family:'Sora',sans-serif;
+      font-size:62px;font-weight:900;color:var(--navy);line-height:1;
+    }
+    .new-p .rs{font-size:26px;color:var(--org);vertical-align:top;margin-top:12px;display:inline-block;}
+    .save-chip{
+      display:inline-block;
+      background:linear-gradient(135deg,#dcfce7,#bbf7d0);
+      color:#15803d;border-radius:20px;
+      font-size:12px;font-weight:800;padding:4px 14px;margin-bottom:26px;
+      border:1px solid #86efac;
+    }
+
+    .inc-list{text-align:left;margin-bottom:26px;}
+    .inc-list h5{font-size:11px;font-weight:800;color:#aaa;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+    .inc-item{
+      display:flex;align-items:center;gap:10px;
+      padding:8px 0;border-bottom:1px solid #f5f5f5;
+      font-size:14px;color:#333;
+    }
+    .inc-item:last-child{border:none;}
+    .inc-item .ck{
+      width:20px;height:20px;border-radius:50%;
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-size:11px;font-weight:900;flex-shrink:0;
+    }
+
+    .book-btn{
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      width:100%;
+      background:linear-gradient(135deg,var(--org),var(--org2));
+      color:#fff;font-size:18px;font-weight:900;
+      padding:20px;border-radius:14px;border:none;cursor:pointer;
+      box-shadow:0 10px 36px rgba(255,92,0,.4);
+      transition:.25s;text-decoration:none;
+      letter-spacing:.3px;
+    }
+    .book-btn:hover{transform:translateY(-2px);box-shadow:0 16px 48px rgba(255,92,0,.5);}
+
+    .trust-row{
+      display:flex;justify-content:center;gap:20px;flex-wrap:wrap;
+      margin-top:16px;
+    }
+    .trust-item{display:flex;align-items:center;gap:5px;font-size:12px;color:#999;}
+    .trust-item .ic{font-size:14px;}
+
+    /* ─── FAQ ─── */
+    .faq-list{max-width:680px;margin:0 auto;}
+    details{
+      background:#fff;border:1px solid #ebebeb;border-radius:12px;
+      margin-bottom:10px;overflow:hidden;
+      transition:.2s;
+    }
+    details:hover{border-color:rgba(255,92,0,.3);}
+    details[open]{border-color:var(--org);box-shadow:0 4px 20px rgba(255,92,0,.1);}
+    summary{
+      padding:18px 22px;font-size:15px;font-weight:700;color:var(--navy);
+      cursor:pointer;list-style:none;
+      display:flex;justify-content:space-between;align-items:center;
+    }
+    summary::after{content:'+';font-size:22px;color:var(--org);font-weight:300;transition:.2s;}
+    details[open] summary::after{content:'−';}
+    summary::-webkit-details-marker{display:none;}
+    .faq-ans{padding:0 22px 18px;font-size:14px;color:var(--muted);line-height:1.75;}
+
+    /* ─── STICKY ─── */
+    .sticky{
+      position:fixed;bottom:0;left:0;right:0;z-index:999;
+      background:rgba(8,18,43,.97);backdrop-filter:blur(12px);
+      border-top:1px solid rgba(255,92,0,.3);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 24px;gap:12px;
+    }
+    .sticky-left p{font-size:13px;color:#fff;font-weight:700;line-height:1.4;}
+    .sticky-left p span{color:var(--gold);}
+    .sticky-left small{font-size:11px;color:rgba(255,255,255,.4);}
+    .sticky-btn{
+      background:linear-gradient(135deg,var(--org),var(--org2));
+      color:#fff;font-size:13px;font-weight:800;
+      padding:12px 26px;border-radius:30px;
+      text-decoration:none;white-space:nowrap;flex-shrink:0;
+      box-shadow:0 4px 16px rgba(255,92,0,.4);
+      transition:.2s;
+    }
+    .sticky-btn:hover{transform:translateY(-1px);}
+
+    /* ─── FOOTER ─── */
+    footer{
+      background:var(--navy);color:rgba(255,255,255,.3);
+      text-align:center;padding:28px 20px;font-size:12px;
+      border-top:1px solid rgba(255,255,255,.06);
+      padding-bottom:80px;
+    }
+    footer strong{color:var(--gold);}
+
+    @media(max-width:600px){
+      nav{padding:12px 16px;}
+      .t-num{font-size:36px;width:74px;height:74px;border-radius:10px;}
+      .t-sep{font-size:32px;}
+      .booking-body,.booking-head{padding:22px 20px;}
+      .new-p{font-size:50px;}
+      .sticky{padding:10px 14px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  🔥 LIVE WORKSHOP — Only <b>49 Seats</b> Remaining at Rs 249 — Grab Yours Before It's Gone!
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Dream<span>App</span> Workshop</div>
+  <a href="#book" class="nav-cta">Book for Rs 249 →</a>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="dot"></span> Live Online Workshop — Limited Seats
+  </div>
+
+  <h1>
+    Build Your <em>Dream App</em><br/>
+    in Just <em>30 Minutes</em><br/>
+    Using AI — <em>No Coding!</em>
+  </h1>
+
+  <p class="hero-sub">
+    You don't need a developer. You don't need to write a single line of code.
+    Just <strong style="color:#fff;">describe your idea in plain language</strong> — AI builds the full app for you. Live. In 30 minutes.
+  </p>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat">
+      <span class="stat-num">500+</span>
+      <span class="stat-label">Students</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">4.9★</span>
+      <span class="stat-label">Rating</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">30 Min</span>
+      <span class="stat-label">To Build</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">₹0</span>
+      <span class="stat-label">Coding Needed</span>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="video-container">
+    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1280&q=80" alt="Workshop Preview"/>
+    <div class="play-ring">▶</div>
+    <div class="video-badge">▶ Watch — See Exactly What You'll Build in the Workshop</div>
+  </div>
+
+  <a href="#book" class="hero-btn">
+    Book My Seat — Only Rs 249 <span class="arr">→</span>
+  </a>
+  <p class="hero-micro">⚡ Early Bird Price · <span>Only 49 Seats · Price Goes Up to Rs 999 Soon</span></p>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <p>Trusted by Business Owners From</p>
+  <div class="trust-logos">
+    <span class="trust-logo">🛍️ Retail Shops</span>
+    <span class="trust-logo">📚 Coaching Centers</span>
+    <span class="trust-logo">🍕 Restaurants</span>
+    <span class="trust-logo">🏋️ Gyms</span>
+    <span class="trust-logo">💆 Salons</span>
+    <span class="trust-logo">🏥 Clinics</span>
+    <span class="trust-logo">💡 Startups</span>
+  </div>
+</div>
+
+<!-- ─── PAIN ─── -->
+<section class="section gray">
+  <div class="section-inner">
+    <span class="section-tag">The Problem</span>
+    <h2 class="section-h">You Have a Great Business Idea. But Building an App Always Felt Out of Reach?</h2>
+    <p class="section-sub">Most people are told they need a technical background, a big budget, or months of learning. That's simply not true anymore.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="ico">😩</div>
+        <p>Developers quoted you <strong>Rs 2–5 Lakhs</strong> just to build a basic app — and it still took months</p>
+      </div>
+      <div class="pain-card">
+        <div class="ico">😰</div>
+        <p>You tried YouTube tutorials but it was <strong>too technical</strong> — you gave up halfway</p>
+      </div>
+      <div class="pain-card">
+        <div class="ico">😤</div>
+        <p>Your competitors already have apps and <strong>you're losing customers</strong> to them every single day</p>
+      </div>
+      <div class="pain-card">
+        <div class="ico">🤯</div>
+        <p>You have the business idea — but <strong>no idea where to start</strong> with the technology</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOLUTION ─── -->
+<section class="section dark">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-tag">The Solution</span>
+    <h2 class="section-h" style="margin:0 auto 14px;">Just Describe It. AI Builds It. You Own It.</h2>
+    <p class="section-sub" style="margin:0 auto 50px;">AI has made app development accessible to everyone. In this workshop I show you the exact method — step by step, live.</p>
+    <div class="sol-grid">
+      <div class="sol-card">
+        <div class="big">💬</div>
+        <h4>Just Type & Describe</h4>
+        <p>Tell the AI what your app should do in plain Hindi or English</p>
+      </div>
+      <div class="sol-card">
+        <div class="big">🤖</div>
+        <h4>AI Writes the Code</h4>
+        <p>Zero coding from your side — AI handles everything automatically</p>
+      </div>
+      <div class="sol-card">
+        <div class="big">⚡</div>
+        <h4>30 Minutes Only</h4>
+        <p>From idea to a working app in one live session</p>
+      </div>
+      <div class="sol-card">
+        <div class="big">📱</div>
+        <h4>Any App You Want</h4>
+        <p>Shop, booking, coaching, restaurant — any business, any app</p>
+      </div>
+      <div class="sol-card">
+        <div class="big">🚀</div>
+        <h4>Launch Same Day</h4>
+        <p>Share your app with customers the very same day you build it</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LEARN ─── -->
+<section class="section gray" style="text-align:center;">
+  <div class="section-inner">
+    <span class="section-tag">The Workshop</span>
+    <h2 class="section-h" style="margin:0 auto 14px;">What You'll Learn — Step by Step, Live</h2>
+    <p class="section-sub" style="margin:0 auto 46px;">No fluff. No theory. Pure hands-on building — you leave with a real app.</p>
+    <div class="learn-grid">
+      <div class="learn-card">
+        <div class="learn-num">1</div>
+        <div>
+          <h4>The AI App Formula</h4>
+          <p>The exact prompt structure to describe your app and get it built in minutes — works for any type of business, any idea.</p>
+        </div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-num">2</div>
+        <div>
+          <h4>Build Your App Live — In 30 Minutes</h4>
+          <p>You won't just watch — you'll actually build your own app during the workshop. Hands on, live, step by step.</p>
+        </div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-num">3</div>
+        <div>
+          <h4>Add Features Without Writing Code</h4>
+          <p>Payments, bookings, login, notifications — add any feature just by asking AI in simple language.</p>
+        </div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-num">4</div>
+        <div>
+          <h4>Publish & Share Your App</h4>
+          <p>Get a shareable link to your working app the same day — send it to your customers immediately.</p>
+        </div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-num">5</div>
+        <div>
+          <h4>Grow Your Business With Your App</h4>
+          <p>Use your app to accept bookings, collect payments, and get more customers — starting from Day 1.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHO ─── -->
+<section class="section" style="text-align:center;">
+  <div class="section-inner">
+    <span class="section-tag">Who Is This For</span>
+    <h2 class="section-h" style="margin:0 auto 14px;">If You Have Any Kind of Business — This Workshop Is For You</h2>
+    <p class="section-sub" style="margin:0 auto 46px;">No technical background needed. If you can type, you can build an app.</p>
+    <div class="who-grid">
+      <div class="who-card"><div class="ico">🛍️</div><h4>Shop Owners</h4></div>
+      <div class="who-card"><div class="ico">📚</div><h4>Coaching Classes</h4></div>
+      <div class="who-card"><div class="ico">🍕</div><h4>Restaurants & Cafes</h4></div>
+      <div class="who-card"><div class="ico">🏋️</div><h4>Gym & Fitness</h4></div>
+      <div class="who-card"><div class="ico">💆</div><h4>Salons & Spas</h4></div>
+      <div class="who-card"><div class="ico">🏥</div><h4>Clinics & Doctors</h4></div>
+      <div class="who-card"><div class="ico">💼</div><h4>Freelancers</h4></div>
+      <div class="who-card"><div class="ico">💡</div><h4>Startup Founders</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROOF ─── -->
+<section class="section dark">
+  <div class="section-inner">
+    <span class="section-tag">Social Proof</span>
+    <h2 class="section-h">Real People. Real Apps. Real Results.</h2>
+    <p class="section-sub">500+ business owners have already built their apps using this method.</p>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <p>"Maine apni coaching class ka app banaya sirf 25 minutes mein. Mujhe coding ka koi idea nahi tha — yeh magic jaisa laga. Ab mere students directly app se notes download karte hain!"</p>
+        <div class="proof-author">
+          <div class="proof-av">👩</div>
+          <div>
+            <div class="proof-name">Priya Sharma</div>
+            <div class="proof-role">Coaching Center Owner, Pune</div>
+          </div>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <p>"Mera restaurant ka app same day ready ho gaya. Customers ab directly app se order aur table book karte hain. Bohot zyada fayda hua — highly recommended!"</p>
+        <div class="proof-author">
+          <div class="proof-av">👨</div>
+          <div>
+            <div class="proof-name">Rajan Patel</div>
+            <div class="proof-role">Restaurant Owner, Surat</div>
+          </div>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <p>"Developer ne 2 lakh quote kiya tha mere shop ka app banane ke liye. Yahan sirf Rs 249 mein workshop attend ki aur khud bana liya. Best investment of my life!"</p>
+        <div class="proof-author">
+          <div class="proof-av">👨</div>
+          <div>
+            <div class="proof-name">Amit Verma</div>
+            <div class="proof-role">Shop Owner, Delhi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TIMER ─── -->
+<div class="timer-wrap">
+  <div class="timer-eyebrow">⏳ Offer Expires In — Price Goes Up After This</div>
+  <div class="timer-boxes">
+    <div class="t-unit">
+      <div class="t-num" id="t-h">02</div>
+      <div class="t-label">Hours</div>
+    </div>
+    <div class="t-sep">:</div>
+    <div class="t-unit">
+      <div class="t-num" id="t-m">00</div>
+      <div class="t-label">Mins</div>
+    </div>
+    <div class="t-sep">:</div>
+    <div class="t-unit">
+      <div class="t-num" id="t-s">00</div>
+      <div class="t-label">Secs</div>
+    </div>
+  </div>
+  <p class="timer-note">🔥 Rs 249 early bird — <strong>jumps to Rs 999 when timer hits zero</strong></p>
+</div>
+
+<!-- ─── BOOKING ─── -->
+<div class="booking-wrap" id="book">
+  <span class="section-tag">Book Your Seat</span>
+  <h2 class="section-h" style="margin:10px auto 40px;text-align:center;">Join the Live Workshop.<br/>Build Your App Today.</h2>
+
+  <div class="booking-card">
+    <div class="booking-head">
+      <div class="badge">🚀 Live Online Workshop</div>
+      <h3>Dream App Workshop — Build in 30 Min</h3>
+      <p>Interactive · Live · Q&A · Recording Access Included</p>
+    </div>
+    <div class="booking-body">
+      <div class="price-row2">
+        <span class="old-p">Rs 999</span>
+        <span class="new-p"><span class="rs">Rs </span>249<span style="font-size:20px;color:#bbb;font-weight:400;">/–</span></span>
+      </div>
+      <div class="save-chip">🎉 You Save Rs 750 — Today Only</div>
+
+      <div class="inc-list">
+        <h5>Everything Included:</h5>
+        <div class="inc-item"><span class="ck">✓</span> Live Workshop — Build Your App in 30 Min</div>
+        <div class="inc-item"><span class="ck">✓</span> Lifetime Recording Access</div>
+        <div class="inc-item"><span class="ck">✓</span> AI Prompt Cheat Sheet</div>
+        <div class="inc-item"><span class="ck">✓</span> Private WhatsApp Community</div>
+        <div class="inc-item"><span class="ck">✓</span> Live Q&A with Instructor</div>
+        <div class="inc-item"><span class="ck">✓</span> Certificate of Completion</div>
+        <div class="inc-item"><span class="ck">✓</span> Accountability Session — FREE</div>
+        <div class="inc-item"><span class="ck">✓</span> WhatsApp Support Group — FREE</div>
+      </div>
+
+      <a href="#" class="book-btn">
+        👉 Book My Seat Now — Rs 249 Only
+      </a>
+
+      <div class="trust-row">
+        <span class="trust-item"><span class="ic">🔒</span> Secure Payment</span>
+        <span class="trust-item"><span class="ic">↩️</span> 100% Money Back Guarantee</span>
+        <span class="trust-item"><span class="ic">⚡</span> Instant Confirmation</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FAQ ─── -->
+<section class="section gray" style="text-align:center;">
+  <div class="section-inner">
+    <span class="section-tag">FAQ</span>
+    <h2 class="section-h" style="margin:10px auto 40px;">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details open>
+        <summary>Kya mujhe coding aani chahiye?</summary>
+        <div class="faq-ans">Bilkul nahi! Yeh workshop specifically un logon ke liye hai jinhe coding ka zero knowledge hai. Sirf apna idea type karo Hindi ya English mein — AI baaki sab khud karta hai.</div>
+      </details>
+      <details>
+        <summary>Kitne time mein app ban jayega?</summary>
+        <div class="faq-ans">Workshop ke andar hi — sirf 30 minutes mein aapka app ready ho jayega. Live, real-time, step-by-step aapke saamne. Aap khud apne haath se banayenge.</div>
+      </details>
+      <details>
+        <summary>Kaunsa app bana sakte hain?</summary>
+        <div class="faq-ans">Koi bhi! Shop app, coaching app, restaurant ordering app, gym membership app, salon booking app, clinic appointment app — jo bhi aapki business need hai.</div>
+      </details>
+      <details>
+        <summary>Kya workshop ki recording milegi?</summary>
+        <div class="faq-ans">Haan! Aapko lifetime recording access milegi. Aap baar baar dekh sakte ho aur apna app refine kar sakte ho at your own pace.</div>
+      </details>
+      <details>
+        <summary>Agar workshop pasand nahi aayi toh?</summary>
+        <div class="faq-ans">Koi problem nahi. Hum 100% money back guarantee dete hain. Koi sawaal nahi poochha jayega, koi condition nahi. Full refund.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>Dream App Workshop</strong> · All Rights Reserved</p>
+  <p style="margin-top:6px;">Questions? WhatsApp us anytime · Money Back Guaranteed</p>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky">
+  <div class="sticky-left">
+    <p>🔥 Only <span>49 seats</span> at Rs 249 — Price goes to Rs 999 soon!</p>
+    <small>⏳ Timer is running — grab your spot now</small>
+  </div>
+  <a href="#book" class="sticky-btn">Book Now — Rs 249 →</a>
+</div>
+
+<script>
+  const end = new Date(Date.now() + 2 * 60 * 60 * 1000);
+  function tick() {
+    const diff = Math.max(0, end - Date.now());
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('t-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('t-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('t-s').textContent = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+</script>
+</body>
+</html>
