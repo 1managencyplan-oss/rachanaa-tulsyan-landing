@@ -230,10 +230,16 @@
     }
     .speaker-bio-col strong { color: #0a0a1a; }
     .speaker-bio-col em { font-style: italic; color: #7c3aed; }
-    @media (max-width: 720px) {
+    @media (max-width: 860px) {
       .speaker-card-wrap { flex-direction: column; }
-      .speaker-photo-col { flex: none; min-height: 320px; width: 100%; }
+      .speaker-photo-col { flex: none; width: 100%; min-height: 0; height: 440px; }
+      .speaker-main-img { height: 100%; object-position: center 20%; }
       .speaker-bio-col { padding: 28px 24px; }
+    }
+    @media (max-width: 480px) {
+      .speaker-photo-col { height: 360px; }
+      .sno-first { font-size: 30px; }
+      .sno-last { font-size: 32px; }
     }
 
     /* ---- WHAT YOU'LL LEARN ---- */
@@ -251,10 +257,13 @@
     }
     .learn-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       max-width: 1020px;
       margin: 0 auto 40px;
+    }
+    @media (max-width: 860px) {
+      .learn-grid { grid-template-columns: 1fr; max-width: 380px; }
     }
     .learn-card {
       background: #fff;
@@ -784,6 +793,14 @@
       .feel-inner { flex-direction: column-reverse; }
       .feel-photo { width: 100%; max-width: 300px; margin: 0 auto; flex: none; }
       .info-inner { flex-direction: column; align-items: flex-start; }
+    }
+    /* ---- Mobile hero & layout fixes ---- */
+    @media (max-width: 600px) {
+      .hero { padding: 32px 18px 28px; }
+      .hero h1 { font-size: 27px; line-height: 1.22; margin-bottom: 16px; }
+      .hero h1 br { display: none; }            /* let it wrap naturally */
+      .hero .sub { font-size: 14.5px; line-height: 1.6; }
+      .hero .sub br { display: none; }
     }
   </style>
 </head>
