@@ -9,6 +9,41 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', Arial, sans-serif; background: #06061a; color: #fff; }
 
+    /* ---- TOP URGENCY BAR ---- */
+    .top-bar {
+      background: linear-gradient(90deg, #7c3aed, #a855f7);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .top-bar-dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: #ff4d4d; display: inline-block;
+      box-shadow: 0 0 0 0 rgba(255,77,77,0.7);
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,77,77,0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(255,77,77,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,77,77,0); }
+    }
+    .top-bar-text strong { color: #ffe600; }
+    .top-bar-timer {
+      background: rgba(0,0,0,0.25);
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+    }
+    .top-bar-timer strong { color: #ffe600; font-variant-numeric: tabular-nums; }
+    @media (max-width: 560px) { .top-bar { font-size: 12.5px; gap: 8px; } }
+
     /* ---- HERO ---- */
     .hero {
       background: #06061a;
@@ -818,6 +853,13 @@
 </head>
 <body>
 
+<!-- ===== TOP URGENCY BAR ===== -->
+<div class="top-bar">
+  <span class="top-bar-dot"></span>
+  <span class="top-bar-text">LIVE 3-Hour Workshop + Guided Hypnosis · Just <strong>$9</strong></span>
+  <span class="top-bar-timer">Registration closes in <strong id="countdown">15:00</strong></span>
+</div>
+
 <!-- ===== HERO ===== -->
 <div style="background:#06061a; padding-top:8px;">
   <div class="hero">
@@ -1198,6 +1240,28 @@
     });
   }, { threshold: 0.25 });
   cards.forEach(c => obs.observe(c));
+})();
+
+// Top-bar countdown (15-min session timer)
+(function(){
+  var el = document.getElementById('countdown');
+  if (!el) return;
+  var KEY = 'rqs_deadline';
+  var now = Date.now();
+  var deadline = parseInt(localStorage.getItem(KEY), 10);
+  if (!deadline || deadline < now) {
+    deadline = now + 15 * 60 * 1000;
+    localStorage.setItem(KEY, deadline);
+  }
+  function tick(){
+    var diff = deadline - Date.now();
+    if (diff <= 0) { el.textContent = "00:00"; return; }
+    var m = Math.floor(diff / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    el.textContent = (m<10?'0':'')+m + ":" + (s<10?'0':'')+s;
+  }
+  tick();
+  setInterval(tick, 1000);
 })();
 
 // FAQ accordion
