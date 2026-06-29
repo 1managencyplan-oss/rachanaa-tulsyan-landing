@@ -856,7 +856,7 @@
 <div class="top-bar">
   <span class="top-bar-dot"></span>
   <span class="top-bar-text">LIVE 3-Hour Workshop + Guided Hypnosis for Wealth · Just <strong>$9</strong></span>
-  <span class="top-bar-timer">Registration closes in <strong id="countdown">15:00</strong></span>
+  <span class="top-bar-timer">Sun 5 July · 10 AM UK · starts in <strong id="countdown">--:--:--</strong></span>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -967,8 +967,8 @@
     <p class="why-sub">This isn't another motivational webinar. It's a live, 3-hour transformation experience where you'll uncover the hidden patterns influencing your success, relationships, wellbeing, and wealth.<br><br>Through practical exercises, powerful insights, and a <strong>guided hypnosis on abundance, success, and inner freedom</strong>, you'll leave with greater clarity, renewed confidence, and a practical roadmap to create lasting change from the inside out.</p>
     <div class="why-details">
       <div class="why-card"><span class="why-icon">📍</span><span class="why-label">Location:</span> <strong>Online / Zoom</strong></div>
-      <div class="why-card"><span class="why-icon">📅</span><span class="why-label">Date:</span> <strong>Announced After Registration</strong></div>
-      <div class="why-card"><span class="why-icon">⏰</span><span class="why-label">Time:</span> <strong>Live Session (UK Time)</strong></div>
+      <div class="why-card"><span class="why-icon">📅</span><span class="why-label">Date:</span> <strong>Sunday, 5th July 2026</strong></div>
+      <div class="why-card"><span class="why-icon">⏰</span><span class="why-label">Time:</span> <strong>10:00 AM UK Time (BST)</strong></div>
       <div class="why-card why-card-fee"><span class="why-icon">💷</span><span class="why-label">Entry Fee:</span> <strong>$9 Only</strong></div>
     </div>
     <p class="why-seats"><strong>Seats Are Limited</strong> — This is an intimate, high-touch session. Not a mass webinar. Once it's full, it's closed.</p>
@@ -1230,23 +1230,20 @@
   cards.forEach(c => obs.observe(c));
 })();
 
-// Top-bar countdown (15-min session timer)
+// Top-bar countdown to workshop: Sunday 5 July 2026, 10:00 AM UK time (BST = 09:00 UTC)
 (function(){
   var el = document.getElementById('countdown');
   if (!el) return;
-  var KEY = 'rqs_deadline';
-  var now = Date.now();
-  var deadline = parseInt(localStorage.getItem(KEY), 10);
-  if (!deadline || deadline < now) {
-    deadline = now + 15 * 60 * 1000;
-    localStorage.setItem(KEY, deadline);
-  }
+  var deadline = Date.parse('2026-07-05T09:00:00Z'); // 10:00 BST
+  function pad(n){ return (n<10?'0':'')+n; }
   function tick(){
     var diff = deadline - Date.now();
-    if (diff <= 0) { el.textContent = "00:00"; return; }
-    var m = Math.floor(diff / 60000);
+    if (diff <= 0) { el.textContent = "Starting now"; return; }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
     var s = Math.floor((diff % 60000) / 1000);
-    el.textContent = (m<10?'0':'')+m + ":" + (s<10?'0':'')+s;
+    el.textContent = (d>0 ? d + "d " : "") + pad(h) + ":" + pad(m) + ":" + pad(s);
   }
   tick();
   setInterval(tick, 1000);
