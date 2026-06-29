@@ -938,7 +938,7 @@
 
   <!-- CTA -->
   <div class="cta-wrap">
-    <a href="https://buy.stripe.com/8x25kEf739Ld9BOfWN6g80w" class="cta-main" target="_blank">
+    <a href="#" class="cta-main js-open-lead" target="_blank">
       Join The Workshop — Only $9 →
     </a>
     <p class="cta-sub">Pay <span class="price">$9</span> to secure your spot · Limited seats available</p>
@@ -998,7 +998,7 @@
     </div>
 
     <div class="wyg-cta-wrap">
-      <a href="https://buy.stripe.com/8x25kEf739Ld9BOfWN6g80w" class="cta-btn" target="_blank">Get All This For Just $9 →</a>
+      <a href="#" class="cta-btn js-open-lead" target="_blank">Get All This For Just $9 →</a>
       <p class="wyg-note">⚡ Limited seats · Live on Zoom · 3 Hours (180 min) · Guided Hypnosis Session</p>
     </div>
   </div>
@@ -1082,7 +1082,7 @@
     If You Are Serious About Stopping The Cycle And Finally Living The Life You Worked For —<br>
     This Workshop Will Show You Exactly How.
   </p>
-  <a href="https://buy.stripe.com/8x25kEf739Ld9BOfWN6g80w" class="cta-main" target="_blank">Join The Workshop For $9 →</a>
+  <a href="#" class="cta-main js-open-lead" target="_blank">Join The Workshop For $9 →</a>
 </section>
 
 <!-- ===== BONUSES ===== -->
@@ -1138,7 +1138,7 @@
       </div>
     </div>
     <div style="text-align:center;margin-top:36px;">
-      <a href="https://buy.stripe.com/8x25kEf739Ld9BOfWN6g80w" class="cta-btn">Join For $9 — Claim Your Spot Now</a>
+      <a href="#" class="cta-btn js-open-lead">Join For $9 — Claim Your Spot Now</a>
     </div>
   </div>
 </section>
@@ -1176,7 +1176,7 @@
       <p class="t-author">~ Banking Professional, London</p>
     </div>
   </div>
-  <a href="https://buy.stripe.com/8x25kEf739Ld9BOfWN6g80w" class="cta-main" target="_blank">I Want This — Join For $9 →</a>
+  <a href="#" class="cta-main js-open-lead" target="_blank">I Want This — Join For $9 →</a>
 </section>
 
 <!-- ===== SPEAKER SECTION ===== -->
@@ -1205,7 +1205,7 @@
     </div>
   </div>
   <div style="text-align:center; margin-top:36px;">
-    <a href="https://buy.stripe.com/8x25kEf739Ld9BOfWN6g80w" class="cta-btn" target="_blank">Join The Workshop For $9 →</a>
+    <a href="#" class="cta-btn js-open-lead" target="_blank">Join The Workshop For $9 →</a>
   </div>
 </section>
 
@@ -1244,7 +1244,7 @@
 <section class="final-cta">
   <h2>You Didn't Move Countries And Build This Life Just To Feel Empty In It.</h2>
   <p>Join the workshop. Experience the shift. Finally enjoy the success you've already built.</p>
-  <a href="https://buy.stripe.com/8x25kEf739Ld9BOfWN6g80w" class="cta-main" target="_blank">
+  <a href="#" class="cta-main js-open-lead" target="_blank">
     Join The Workshop — Only $9 →
   </a>
   <p style="font-size:13px; color:#555; margin-top:16px;">Limited spots · Online · Secure payment</p>
@@ -1319,8 +1319,160 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
       <div class="sticky-label">Hurry Up!!! Limited Seats Available</div>
     </div>
   </div>
-  <a href="https://buy.stripe.com/8x25kEf739Ld9BOfWN6g80w" target="_blank" class="sticky-cta">Discover What's Really Keeping You Stuck →</a>
+  <a href="#" class="sticky-cta js-open-lead">Discover What's Really Keeping You Stuck →</a>
 </div>
+
+<!-- LEAD FORM MODAL -->
+<div id="lead-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeLeadModal()">×</button>
+
+    <div id="modal-form-view">
+      <div style="text-align:center;margin-bottom:22px;">
+        <div class="modal-badge">🔥 Limited Seats Available</div>
+        <h2 class="modal-title">Reserve Your Seat — $9</h2>
+        <p class="modal-sub">Enter your details — we'll save your spot for Sunday, 5th July, 10 AM UK time</p>
+      </div>
+      <form id="lead-form" onsubmit="submitLead(event)">
+        <div style="margin-bottom:16px;">
+          <label class="field-label">Full Name *</label>
+          <input id="lead-name" class="field-input" type="text" placeholder="Enter your full name" required/>
+        </div>
+        <div style="margin-bottom:16px;">
+          <label class="field-label">WhatsApp Number *</label>
+          <input id="lead-phone" class="field-input" type="tel" placeholder="e.g. +44 7xxx xxxxxx" required/>
+        </div>
+        <div style="margin-bottom:24px;">
+          <label class="field-label">Email *</label>
+          <input id="lead-email" class="field-input" type="email" placeholder="Enter your email" required/>
+        </div>
+        <button type="submit" id="lead-submit-btn" class="submit-btn">Reserve My Seat — $9 →</button>
+        <p style="text-align:center;font-size:12px;color:#888;margin-top:12px;">🔒 We respect your privacy. No spam, ever.</p>
+      </form>
+    </div>
+
+    <div id="modal-success-view" class="success-box" style="display:none;">
+      <div class="big-emoji">🎉</div>
+      <h2 class="modal-title">One Last Step!</h2>
+      <p class="modal-sub">Complete your $9 payment to confirm your seat for <strong>Sunday, 5th July, 10 AM UK time</strong>.</p>
+      <a id="pay-btn" class="submit-btn" style="display:block;text-decoration:none;text-align:center;" href="https://buy.stripe.com/8x25kEf739Ld9BOfWN6g80w" target="_blank" rel="noopener">
+        ✅ Pay $9 — Confirm My Spot →
+      </a>
+      <p style="font-size:12px;color:#888;margin-top:14px;text-align:center;">After payment, you'll get a link to join our private WhatsApp group for the Zoom link and reminders.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  #lead-modal {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(6,6,26,0.85);
+    z-index: 99999;
+    align-items: center; justify-content: center;
+    padding: 16px;
+  }
+  .modal-box {
+    background: #fff;
+    border-radius: 18px;
+    max-width: 440px;
+    width: 100%;
+    padding: 32px 28px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .modal-close {
+    position: absolute; top: 14px; right: 16px;
+    background: none; border: none; font-size: 24px;
+    color: #999; cursor: pointer; line-height: 1;
+  }
+  .modal-badge {
+    display: inline-block;
+    background: rgba(249,115,22,0.12);
+    color: #ea580c;
+    font-size: 12px; font-weight: 800;
+    padding: 6px 16px; border-radius: 50px;
+    margin-bottom: 12px;
+  }
+  .modal-title { font-size: 22px; font-weight: 900; color: #0a0a1a; margin-bottom: 8px; }
+  .modal-sub { font-size: 14px; color: #555; line-height: 1.5; }
+  .field-label { display: block; font-size: 13px; font-weight: 700; color: #333; margin-bottom: 6px; }
+  .field-input {
+    width: 100%; padding: 12px 14px;
+    border: 1.5px solid #ddd; border-radius: 10px;
+    font-size: 15px; font-family: inherit;
+  }
+  .field-input:focus { outline: none; border-color: #f97316; }
+  .submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: #fff; font-size: 16px; font-weight: 800;
+    border: none; padding: 16px; border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(249,115,22,0.4);
+  }
+  .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+  .success-box { text-align: center; }
+  .big-emoji { font-size: 48px; margin-bottom: 8px; }
+</style>
+
+<script>
+  // AGENCY: paste the Google Apps Script Web App URL here once deployed (logs leads to Google Sheet)
+  const APPS_SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+  document.querySelectorAll('.js-open-lead').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      openLeadModal();
+    });
+  });
+
+  function openLeadModal(){
+    document.getElementById('modal-form-view').style.display = 'block';
+    document.getElementById('modal-success-view').style.display = 'none';
+    var btn = document.getElementById('lead-submit-btn');
+    btn.disabled = false;
+    btn.innerHTML = 'Reserve My Seat — $9 →';
+    document.getElementById('lead-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLeadModal(){
+    document.getElementById('lead-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.getElementById('lead-modal').addEventListener('click', function(e){
+    if (e.target === this) closeLeadModal();
+  });
+
+  function submitLead(e){
+    e.preventDefault();
+    var name  = document.getElementById('lead-name').value.trim();
+    var phone = document.getElementById('lead-phone').value.trim();
+    var email = document.getElementById('lead-email').value.trim();
+
+    if (!name || !phone || !email) {
+      alert('Please fill in your name, WhatsApp number and email.');
+      return;
+    }
+
+    var btn = document.getElementById('lead-submit-btn');
+    btn.disabled = true;
+    btn.innerHTML = '⏳ Reserving Your Seat...';
+
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead', {value: 9, currency: 'GBP'});
+      fbq('track', 'CompleteRegistration', {value: 9, currency: 'GBP'});
+    }
+
+    if (APPS_SCRIPT_URL.indexOf('PASTE_') === -1) {
+      var params = new URLSearchParams({ name: name, phone: phone, email: email, status: 'Form Fill' });
+      fetch(APPS_SCRIPT_URL + '?' + params.toString(), { method: 'GET', mode: 'no-cors', keepalive: true });
+    }
+
+    document.getElementById('modal-form-view').style.display = 'none';
+    document.getElementById('modal-success-view').style.display = 'block';
+  }
+</script>
 
 </body>
 </html>
