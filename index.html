@@ -36,13 +36,34 @@
     }
     .top-bar-text strong { color: #ffe600; }
     .top-bar-timer {
-      background: rgba(0,0,0,0.25);
-      padding: 5px 14px;
+      background: #f97316;
+      color: #fff;
+      padding: 6px 16px;
       border-radius: 50px;
       font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 0 0 0 rgba(249,115,22,0.6);
+      animation: timerPulse 1.6s ease-in-out infinite;
     }
-    .top-bar-timer strong { color: #ffe600; font-variant-numeric: tabular-nums; }
+    .top-bar-timer strong {
+      color: #fff200;
+      font-variant-numeric: tabular-nums;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+    @keyframes timerPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(255,242,0,0.5); }
+      70%  { box-shadow: 0 0 0 10px rgba(255,242,0,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,242,0,0); }
+    }
     @media (max-width: 560px) { .top-bar { font-size: 12.5px; gap: 8px; } }
+
+    /* highlighted timing badge in hero info box */
+    .badge.badge-time {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      box-shadow: 0 4px 18px rgba(249,115,22,0.5);
+      animation: timerPulse 1.8s ease-in-out infinite;
+    }
 
     /* ---- HERO ---- */
     .hero {
@@ -669,6 +690,12 @@
       color: #f97316;
     }
     .why-card-fee strong { color: #f97316; }
+    .why-card-time {
+      background: rgba(249,115,22,0.1);
+      border-color: rgba(249,115,22,0.45);
+    }
+    .why-card-time strong { color: #f97316; }
+    .why-card-time .why-icon { filter: drop-shadow(0 0 6px rgba(249,115,22,0.6)); }
     .why-label { color: #94a3b8; }
     .why-seats { color: #94a3b8; font-size: 15px; margin-top: 12px; }
     .why-seats strong { color: #fff; }
@@ -902,7 +929,7 @@
         with Rachanaa Tulsyan — Clinical Hypnotherapist · Includes a Guided Hypnosis for Wealth
       </div>
       <div class="info-badges">
-        <div class="badge"><span class="icon">📅</span> Sun, 5th July · 10 AM UK</div>
+        <div class="badge badge-time"><span class="icon">📅</span> Sun, 5th July · 10 AM UK</div>
         <div class="badge"><span class="icon">💻</span> Live on Zoom</div>
         <div class="badge"><span class="icon">🕐</span> 3 Hours (180 min)</div>
       </div>
@@ -984,8 +1011,8 @@
     <p class="why-sub">This isn't another motivational webinar. It's a live, 3-hour transformation experience where you'll uncover the hidden patterns influencing your success, relationships, wellbeing, and wealth.<br><br>Through practical exercises, powerful insights, and a <strong>guided hypnosis on abundance, success, and inner freedom</strong>, you'll leave with greater clarity, renewed confidence, and a practical roadmap to create lasting change from the inside out.</p>
     <div class="why-details">
       <div class="why-card"><span class="why-icon">📍</span><span class="why-label">Location:</span> <strong>Online / Zoom</strong></div>
-      <div class="why-card"><span class="why-icon">📅</span><span class="why-label">Date:</span> <strong>Sunday, 5th July 2026</strong></div>
-      <div class="why-card"><span class="why-icon">⏰</span><span class="why-label">Time:</span> <strong>10:00 AM UK Time (BST)</strong></div>
+      <div class="why-card why-card-time"><span class="why-icon">📅</span><span class="why-label">Date:</span> <strong>Sunday, 5th July 2026</strong></div>
+      <div class="why-card why-card-time"><span class="why-icon">⏰</span><span class="why-label">Time:</span> <strong>10:00 AM UK Time (BST)</strong></div>
       <div class="why-card why-card-fee"><span class="why-icon">💷</span><span class="why-label">Entry Fee:</span> <strong>$9 Only</strong></div>
     </div>
     <p class="why-seats"><strong>Seats Are Limited</strong> — This is an intimate, high-touch session. Not a mass webinar. Once it's full, it's closed.</p>
