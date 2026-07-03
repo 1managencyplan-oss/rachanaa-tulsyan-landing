@@ -1480,6 +1480,22 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
 
     var stripeUrl = 'https://buy.stripe.com/8x25kEf739Ld9BOfWN6g80w?prefilled_email=' + encodeURIComponent(email) + '&prefilled_name=' + encodeURIComponent(name);
 
+    var pabblyUrl = 'https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTY5MDYzMjA0MzE1MjY5NTUzYzUxMzYi_pc';
+    var pabblyData = {
+      name: name,
+      email: email,
+      phone: phone,
+      time: new Date().toISOString(),
+      page_url: window.location.href,
+      status: 'Form Fill'
+    };
+    fetch(pabblyUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(pabblyData),
+      keepalive: true
+    }).catch(function(){});
+
     if (APPS_SCRIPT_URL.indexOf('PASTE_') === -1) {
       var params = new URLSearchParams({ name: name, phone: phone, email: email, status: 'Form Fill' });
       fetch(APPS_SCRIPT_URL + '?' + params.toString(), { method: 'GET', mode: 'no-cors', keepalive: true })
