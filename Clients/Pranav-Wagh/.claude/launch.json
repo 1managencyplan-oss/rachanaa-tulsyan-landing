@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Pranav Landing Page",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "/Users/palashrajak/Desktop/gym app/Clients/Pranav-Wagh/landing-page", "-l", "3011"],
+      "port": 3011
+    }
+  ]
+}
