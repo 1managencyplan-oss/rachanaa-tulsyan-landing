@@ -1362,8 +1362,10 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
     <div id="modal-success-view" class="success-box" style="display:none;">
       <div class="big-emoji">🎉</div>
       <h2 class="modal-title">You're Registered!</h2>
-      <p class="modal-sub">Your spot for <strong>Sunday, 12th July, 10 AM UK time</strong> is confirmed. Check your WhatsApp — Rachanaa will send you the joining link.</p>
-      <button class="submit-btn" onclick="closeLeadModal()" style="margin-top:16px;">Close</button>
+      <p class="modal-sub">Your spot for <strong>Sunday, 12th July, 10 AM UK time</strong> is confirmed.</p>
+      <p style="font-size:15px; color:#1a1a2e; margin:12px 0 6px; font-weight:600;">👇 Step 2 — Join the WhatsApp Group now to get your Zoom link:</p>
+      <a href="https://chat.whatsapp.com/DErZ5Qwi7aSC6JmWOPzPZe?mode=gi_t" target="_blank" style="display:block; background:#25D366; color:#fff; font-size:17px; font-weight:800; padding:16px 24px; border-radius:12px; text-decoration:none; margin:8px 0 16px; text-align:center;">📲 Join WhatsApp Group →</a>
+      <button class="submit-btn" onclick="closeLeadModal()" style="margin-top:4px; background:#888; font-size:14px; padding:10px 20px;">Close</button>
     </div>
   </div>
 </div>
@@ -1495,7 +1497,6 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
     document.getElementById('modal-success-view').style.display = 'block';
     btn.disabled = false;
     btn.innerHTML = 'Reserve My Seat — FREE →';
-    setTimeout(function(){ window.location.href = 'https://chat.whatsapp.com/DErZ5Qwi7aSC6JmWOPzPZe?mode=gi_t'; }, 2000);
   }
 </script>
 
