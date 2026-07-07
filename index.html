@@ -1350,9 +1350,36 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
           <label class="field-label">WhatsApp Number *</label>
           <input id="lead-phone" class="field-input" type="tel" placeholder="e.g. +44 7xxx xxxxxx" required/>
         </div>
-        <div style="margin-bottom:24px;">
+        <div style="margin-bottom:16px;">
           <label class="field-label">Email *</label>
           <input id="lead-email" class="field-input" type="email" placeholder="Enter your email" required/>
+        </div>
+        <div style="margin-bottom:24px;">
+          <label class="field-label">Country *</label>
+          <select id="lead-country" class="field-input" required style="cursor:pointer;">
+            <option value="">— Select your country —</option>
+            <option value="United Kingdom">🇬🇧 United Kingdom</option>
+            <option value="Germany">🇩🇪 Germany</option>
+            <option value="France">🇫🇷 France</option>
+            <option value="Netherlands">🇳🇱 Netherlands</option>
+            <option value="Belgium">🇧🇪 Belgium</option>
+            <option value="Switzerland">🇨🇭 Switzerland</option>
+            <option value="Sweden">🇸🇪 Sweden</option>
+            <option value="Norway">🇳🇴 Norway</option>
+            <option value="Denmark">🇩🇰 Denmark</option>
+            <option value="Ireland">🇮🇪 Ireland</option>
+            <option value="Italy">🇮🇹 Italy</option>
+            <option value="Spain">🇪🇸 Spain</option>
+            <option value="Portugal">🇵🇹 Portugal</option>
+            <option value="Austria">🇦🇹 Austria</option>
+            <option value="Finland">🇫🇮 Finland</option>
+            <option value="Canada">🇨🇦 Canada</option>
+            <option value="United States">🇺🇸 United States</option>
+            <option value="Australia">🇦🇺 Australia</option>
+            <option value="UAE">🇦🇪 UAE</option>
+            <option value="India">🇮🇳 India</option>
+            <option value="Other">🌍 Other</option>
+          </select>
         </div>
         <button type="submit" id="lead-submit-btn" class="submit-btn">Reserve My Seat — FREE →</button>
         <p style="text-align:center;font-size:12px;color:#888;margin-top:12px;">🔒 We respect your privacy. No spam, ever.</p>
@@ -1453,12 +1480,13 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
 
   function submitLead(e){
     e.preventDefault();
-    var name  = document.getElementById('lead-name').value.trim();
-    var phone = document.getElementById('lead-phone').value.trim();
-    var email = document.getElementById('lead-email').value.trim();
+    var name    = document.getElementById('lead-name').value.trim();
+    var phone   = document.getElementById('lead-phone').value.trim();
+    var email   = document.getElementById('lead-email').value.trim();
+    var country = document.getElementById('lead-country').value.trim();
 
-    if (!name || !phone || !email) {
-      alert('Please fill in your name, WhatsApp number and email.');
+    if (!name || !phone || !email || !country) {
+      alert('Please fill in all fields including your country.');
       return;
     }
 
@@ -1476,6 +1504,7 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
       name: name,
       email: email,
       phone: phone,
+      country: country,
       time: new Date().toISOString(),
       page_url: window.location.href,
       status: 'Registered'
@@ -1488,7 +1517,7 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
     }).catch(function(){});
 
     if (APPS_SCRIPT_URL.indexOf('PASTE_') === -1) {
-      var params = new URLSearchParams({ name: name, phone: phone, email: email, status: 'Registered' });
+      var params = new URLSearchParams({ name: name, phone: phone, email: email, country: country, status: 'Registered' });
       fetch(APPS_SCRIPT_URL + '?' + params.toString(), { method: 'GET', mode: 'no-cors', keepalive: true })
         .catch(function(){});
     }
