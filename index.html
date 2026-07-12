@@ -1499,16 +1499,34 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
       fbq('track', 'CompleteRegistration', {value: 0, currency: 'GBP'});
     }
 
-    var pabblyUrl = 'https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTY5MDYzMjA0MzE1MjY5NTUzYzUxMzYi_pc';
+    var pabblyUrl = 'https://connect.pabbly.com/webhook-listener/webhook/IjU3NjIwNTY5MDYzNjA0M2M1MjY0NTUzYyI_3D_pc/IjU3NjcwNTY5MDYzMzA0MzY1MjZkNTUzNjUxMzci_pc';
+
+    // Split timestamp into separate date + time (UK / Europe/London timezone)
+    var nowDate = new Date();
+    var ukDate = nowDate.toLocaleDateString('en-GB', { timeZone: 'Europe/London' }); // DD/MM/YYYY
+    var ukTime = nowDate.toLocaleTimeString('en-GB', { timeZone: 'Europe/London' }); // HH:MM:SS
+
+    // Collect all current URL query parameters (utm_source, utm_campaign, fbclid, etc.)
+    var urlParams = {};
+    new URLSearchParams(window.location.search).forEach(function(value, key){
+      urlParams[key] = value;
+    });
+
     var pabblyData = {
       name: name,
       email: email,
       phone: phone,
       country: country,
-      time: new Date().toISOString(),
+      date: ukDate,
+      time: ukTime,
+      timestamp: nowDate.toISOString(),
       page_url: window.location.href,
+      url_params: urlParams,
       status: 'Registered'
     };
+    // also merge each URL param as a top-level field for easy Pabbly mapping
+    for (var k in urlParams) { if (!(k in pabblyData)) { pabblyData[k] = urlParams[k]; } }
+
     fetch(pabblyUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
