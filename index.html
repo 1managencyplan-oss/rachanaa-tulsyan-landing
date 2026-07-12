@@ -1348,7 +1348,31 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
         </div>
         <div style="margin-bottom:16px;">
           <label class="field-label">WhatsApp Number *</label>
-          <input id="lead-phone" class="field-input" type="tel" placeholder="e.g. +44 7xxx xxxxxx" required/>
+          <div style="display:flex; gap:8px;">
+            <select id="lead-country-code" class="field-input" required style="flex:0 0 118px; cursor:pointer; padding-left:10px; padding-right:6px;">
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+31">🇳🇱 +31</option>
+              <option value="+32">🇧🇪 +32</option>
+              <option value="+41">🇨🇭 +41</option>
+              <option value="+46">🇸🇪 +46</option>
+              <option value="+47">🇳🇴 +47</option>
+              <option value="+45">🇩🇰 +45</option>
+              <option value="+353">🇮🇪 +353</option>
+              <option value="+39">🇮🇹 +39</option>
+              <option value="+34">🇪🇸 +34</option>
+              <option value="+351">🇵🇹 +351</option>
+              <option value="+43">🇦🇹 +43</option>
+              <option value="+358">🇫🇮 +358</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+971">🇦🇪 +971</option>
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+other">🌍 Other</option>
+            </select>
+            <input id="lead-phone" class="field-input" type="tel" placeholder="7xxx xxxxxx" required style="flex:1; min-width:0;"/>
+          </div>
         </div>
         <div style="margin-bottom:16px;">
           <label class="field-label">Email *</label>
@@ -1480,15 +1504,21 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
 
   function submitLead(e){
     e.preventDefault();
-    var name    = document.getElementById('lead-name').value.trim();
-    var phone   = document.getElementById('lead-phone').value.trim();
-    var email   = document.getElementById('lead-email').value.trim();
-    var country = document.getElementById('lead-country').value.trim();
+    var name        = document.getElementById('lead-name').value.trim();
+    var dialCode    = document.getElementById('lead-country-code').value.trim();
+    var phoneLocal  = document.getElementById('lead-phone').value.trim();
+    var email       = document.getElementById('lead-email').value.trim();
+    var country     = document.getElementById('lead-country').value.trim();
 
-    if (!name || !phone || !email || !country) {
+    if (!name || !dialCode || !phoneLocal || !email || !country) {
       alert('Please fill in all fields including your country.');
       return;
     }
+
+    // "+other" is a placeholder, not a real dial code — treat as blank
+    var countryCode = (dialCode === '+other') ? '' : dialCode;
+    // Full number = country code + local number (strip any leading 0 from local part)
+    var phone = (countryCode + ' ' + phoneLocal.replace(/^0+/, '')).trim();
 
     var btn = document.getElementById('lead-submit-btn');
     btn.disabled = true;
@@ -1516,6 +1546,7 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
       name: name,
       email: email,
       phone: phone,
+      country_code: countryCode,
       country: country,
       date: ukDate,
       time: ukTime,
