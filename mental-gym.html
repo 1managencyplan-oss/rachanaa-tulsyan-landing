@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mental Gym — Train Your Mind Like You Train Your Body</title>
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1474043517040815');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1474043517040815&ev=PageView&noscript=1"/></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;}
+
+    /* ── TOP BAR ── */
+    .top-bar{background:linear-gradient(90deg,#dc2626,#ef4444);padding:10px 20px;text-align:center;font-size:14px;font-weight:700;letter-spacing:.3px;}
+    .top-bar span{color:#fff200;}
+
+    /* ── HERO ── */
+    .hero{background:#0a0a0a;padding:56px 20px 48px;text-align:center;max-width:860px;margin:0 auto;}
+    .eyebrow{display:inline-block;background:rgba(220,38,38,.15);border:1px solid rgba(220,38,38,.4);color:#ef4444;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:24px;}
+    .hero h1{font-size:clamp(32px,5vw,58px);font-weight:900;line-height:1.1;color:#fff;margin-bottom:20px;}
+    .hero h1 span{color:#ef4444;}
+    .hero-sub{font-size:clamp(16px,2vw,20px);color:#aaa;line-height:1.6;max-width:680px;margin:0 auto 32px;}
+    .hero-sub strong{color:#fff;}
+    .badge-row{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:36px;}
+    .badge{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#ddd;font-size:13px;font-weight:600;padding:8px 18px;border-radius:50px;display:flex;align-items:center;gap:7px;}
+    .badge.red{background:rgba(220,38,38,.2);border-color:rgba(220,38,38,.5);color:#fca5a5;}
+    .hero-cta{display:inline-block;background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;font-size:18px;font-weight:800;padding:18px 44px;border-radius:12px;text-decoration:none;cursor:pointer;border:none;box-shadow:0 8px 32px rgba(220,38,38,.4);transition:.2s;}
+    .hero-cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(220,38,38,.5);}
+    .cta-note{font-size:13px;color:#666;margin-top:12px;}
+
+    /* ── SECTION WRAPPER ── */
+    .section{padding:64px 20px;max-width:860px;margin:0 auto;}
+    .section-label{color:#ef4444;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+    .section h2{font-size:clamp(26px,3.5vw,40px);font-weight:900;line-height:1.15;color:#fff;margin-bottom:20px;}
+    .section h2 span{color:#ef4444;}
+    .section p{font-size:16px;color:#aaa;line-height:1.7;margin-bottom:14px;}
+    .section p strong{color:#fff;}
+
+    /* ── DIVIDER ── */
+    .divider{border:none;border-top:1px solid rgba(255,255,255,.07);margin:0;}
+
+    /* ── PAIN SECTION ── */
+    .pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;}
+    @media(max-width:580px){.pain-grid{grid-template-columns:1fr;}}
+    .pain-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px 20px;font-size:15px;color:#ccc;line-height:1.5;}
+    .pain-card .icon{font-size:20px;margin-bottom:8px;display:block;}
+    .pain-highlight{background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.3);border-radius:12px;padding:20px 24px;margin-top:28px;font-size:17px;font-weight:700;color:#fff;text-align:center;line-height:1.5;}
+
+    /* ── REFRAME ── */
+    .reframe-box{background:rgba(255,255,255,.04);border-left:4px solid #ef4444;border-radius:0 12px 12px 0;padding:24px 28px;margin:24px 0;}
+    .reframe-box p{font-size:17px;color:#eee;margin:0;}
+
+    /* ── NOT THIS / IS THIS ── */
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px;}
+    @media(max-width:580px){.two-col{grid-template-columns:1fr;}}
+    .col-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;}
+    .col-box h3{font-size:16px;font-weight:800;margin-bottom:16px;}
+    .col-box h3.red{color:#ef4444;}
+    .col-box h3.green{color:#22c55e;}
+    .col-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#bbb;margin-bottom:10px;line-height:1.5;}
+
+    /* ── TRANSFORMATION ── */
+    .transform-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:24px;}
+    @media(max-width:680px){.transform-grid{grid-template-columns:1fr;}}
+    .transform-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;}
+    .transform-card .t-icon{font-size:28px;margin-bottom:12px;}
+    .transform-card h3{font-size:15px;font-weight:800;color:#fff;margin-bottom:12px;}
+    .transform-card ul{list-style:none;padding:0;}
+    .transform-card ul li{font-size:13px;color:#aaa;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:flex-start;gap:8px;}
+    .transform-card ul li:last-child{border-bottom:none;}
+    .transform-card ul li::before{content:"✅";font-size:11px;flex-shrink:0;margin-top:1px;}
+
+    /* ── HOW IT WORKS ── */
+    .steps{margin-top:24px;}
+    .step{display:flex;gap:20px;margin-bottom:32px;align-items:flex-start;}
+    .step-num{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#dc2626,#b91c1c);font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .step-body h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:6px;}
+    .step-body p{font-size:15px;color:#aaa;margin:0;}
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-bg{background:rgba(255,255,255,.02);padding:64px 20px;}
+    .testimonials-inner{max-width:860px;margin:0 auto;}
+    .t-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px;}
+    @media(max-width:580px){.t-grid{grid-template-columns:1fr;}}
+    .t-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px;}
+    .t-stars{color:#f59e0b;font-size:16px;margin-bottom:14px;letter-spacing:2px;}
+    .t-quote{font-size:15px;color:#ddd;line-height:1.7;font-style:italic;margin-bottom:16px;}
+    .t-name{font-size:13px;font-weight:700;color:#fff;}
+    .t-role{font-size:12px;color:#666;}
+    .t-photos{display:flex;gap:12px;margin-top:32px;overflow-x:auto;padding-bottom:8px;}
+    .t-photos img{width:120px;height:120px;object-fit:cover;border-radius:12px;border:2px solid rgba(255,255,255,.1);flex-shrink:0;}
+
+    /* ── ABOUT ── */
+    .about-wrap{display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:start;margin-top:28px;}
+    @media(max-width:620px){.about-wrap{grid-template-columns:1fr;}}
+    .about-img{width:100%;border-radius:16px;object-fit:cover;border:2px solid rgba(255,255,255,.1);}
+    .about-text h3{font-size:22px;font-weight:900;color:#fff;margin-bottom:4px;}
+    .about-text .title{font-size:14px;color:#ef4444;font-weight:700;margin-bottom:16px;}
+    .about-text p{font-size:15px;color:#aaa;line-height:1.7;margin-bottom:12px;}
+    .about-quote{border-left:3px solid #ef4444;padding-left:18px;font-size:16px;color:#fff;font-weight:600;font-style:italic;margin-top:20px;line-height:1.6;}
+
+    /* ── FAQ ── */
+    .faq-item{border-bottom:1px solid rgba(255,255,255,.07);padding:20px 0;}
+    .faq-q{font-size:16px;font-weight:700;color:#fff;margin-bottom:10px;}
+    .faq-a{font-size:15px;color:#aaa;line-height:1.65;}
+
+    /* ── FINAL CTA ── */
+    .final-cta{background:linear-gradient(135deg,#1a0000,#2d0000);border:1px solid rgba(220,38,38,.3);border-radius:20px;padding:56px 32px;text-align:center;margin:64px auto;max-width:740px;}
+    .final-cta h2{font-size:clamp(24px,3.5vw,38px);font-weight:900;color:#fff;margin-bottom:16px;line-height:1.2;}
+    .final-cta p{font-size:16px;color:#aaa;margin-bottom:32px;line-height:1.6;}
+
+    /* ── MODAL ── */
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;display:none;align-items:center;justify-content:center;padding:16px;}
+    .modal-overlay.open{display:flex;}
+    .modal-box{background:#111;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:36px 32px;max-width:460px;width:100%;}
+    .modal-box h3{font-size:22px;font-weight:900;color:#fff;margin-bottom:6px;}
+    .modal-box .modal-sub{font-size:14px;color:#888;margin-bottom:24px;}
+    .field-label{display:block;font-size:13px;font-weight:700;color:#aaa;margin-bottom:6px;margin-top:16px;}
+    .field-input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:13px 16px;font-size:15px;color:#fff;outline:none;font-family:inherit;}
+    .field-input:focus{border-color:#ef4444;}
+    .field-input option{background:#111;color:#fff;}
+    .submit-btn{width:100%;background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;font-size:17px;font-weight:800;padding:16px;border-radius:12px;border:none;cursor:pointer;margin-top:20px;font-family:inherit;box-shadow:0 6px 24px rgba(220,38,38,.4);}
+    .modal-close{position:absolute;top:16px;right:20px;background:none;border:none;color:#666;font-size:24px;cursor:pointer;}
+    .success-box{text-align:center;}
+    .success-box .big-emoji{font-size:52px;margin-bottom:12px;}
+    .success-box h2{font-size:24px;font-weight:900;color:#fff;margin-bottom:8px;}
+    .success-box p{font-size:15px;color:#aaa;margin-bottom:8px;}
+
+    @media(max-width:480px){.modal-box{padding:28px 20px;}}
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  🧠 FREE Live Masterclass — <span>Sunday 26th July · 10 AM UK Time</span> — Limited Spots
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="eyebrow">Free Live Masterclass</span>
+  <h1>Your Body Has a Gym.<br><span>Your Mind Deserves One Too.</span></h1>
+  <p class="hero-sub">
+    Join the <strong>Mental Gym Masterclass</strong> — a free 90-minute live session for ambitious professionals who have achieved everything externally but still feel stuck, exhausted, or empty inside.
+  </p>
+  <div class="badge-row">
+    <span class="badge red">📅 Sun, 26th July · 10 AM UK</span>
+    <span class="badge">⏱ 90 Minutes</span>
+    <span class="badge">💻 Live Online</span>
+    <span class="badge">🆓 Free to Join</span>
+  </div>
+  <button class="hero-cta" onclick="openModal()">👉 Reserve My Free Spot</button>
+  <p class="cta-note">✅ Instant confirmation · Join WhatsApp group after registration</p>
+</div>
+
+<hr class="divider"/>
+
+<!-- PAIN SECTION -->
+<div class="section">
+  <p class="section-label">Does This Sound Like You?</p>
+  <h2>You've Achieved Everything.<br><span>So Why Does It Still Feel Like This?</span></h2>
+  <div class="pain-grid">
+    <div class="pain-card"><span class="icon">😔</span>You wake up already tired — even after 8 hours of sleep</div>
+    <div class="pain-card"><span class="icon">💼</span>Work ends at 6pm. But your mind never clocks out</div>
+    <div class="pain-card"><span class="icon">📧</span>One bad email ruins your entire day</div>
+    <div class="pain-card"><span class="icon">😤</span>You snap at the people you love — and hate yourself for it</div>
+    <div class="pain-card"><span class="icon">🌍</span>You've changed jobs, cities, relationships — but the heaviness followed you</div>
+    <div class="pain-card"><span class="icon">😰</span>Sunday evenings feel like dread, not peace</div>
+    <div class="pain-card"><span class="icon">📚</span>You've tried meditation, journaling, therapy — still the same patterns</div>
+    <div class="pain-card"><span class="icon">🎭</span>You feel like you're performing your life — not actually living it</div>
+  </div>
+  <div class="pain-highlight">
+    If even 3 of these hit close to home — this masterclass was made for you.
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- REFRAME -->
+<div class="section">
+  <p class="section-label">The Real Problem</p>
+  <h2>Here's What <span>Nobody Told You.</span></h2>
+  <p>What you're experiencing is not stress. It's not anxiety. It's not a personality flaw.</p>
+  <div class="reframe-box"><p>It's <strong>mental conditioning.</strong> And it can be retrained.</p></div>
+  <p>Your mind has been running the same programmes since childhood. Old fears. Old beliefs. Old survival patterns.</p>
+  <p>Every time you can't switch off — that's conditioning.<br>
+  Every time you seek approval before trusting yourself — that's conditioning.<br>
+  Every time you carry everyone else's emotions — that's conditioning.</p>
+  <p>No app, holiday, or promotion will change your mental conditioning. <strong>Only training will.</strong></p>
+  <p>Think about your body. If you never went to the gym, your muscles would weaken — no matter how much sleep you get.</p>
+  <p><strong>Your mind works the same way.</strong></p>
+  <div class="reframe-box"><p>The Mental Gym is the training your mind has been waiting for.</p></div>
+</div>
+
+<hr class="divider"/>
+
+<!-- NOT THIS / IS THIS -->
+<div class="section">
+  <p class="section-label">What It Is</p>
+  <h2>Mental Gym Is <span>Different.</span></h2>
+  <div class="two-col">
+    <div class="col-box">
+      <h3 class="red">❌ What it is NOT:</h3>
+      <div class="col-item"><span>❌</span> A meditation app (you've already tried those)</div>
+      <div class="col-item"><span>❌</span> Motivational content (feels good, changes nothing)</div>
+      <div class="col-item"><span>❌</span> Therapy (we're not diagnosing — we're training)</div>
+      <div class="col-item"><span>❌</span> A 3-hour seminar you forget by Monday</div>
+      <div class="col-item"><span>❌</span> Another "positive thinking" course</div>
+    </div>
+    <div class="col-box">
+      <h3 class="green">✅ What it IS:</h3>
+      <div class="col-item"><span>✅</span> Subconscious training — targeting the root, not the symptom</div>
+      <div class="col-item"><span>✅</span> Progressive daily sessions — 10 minutes a day</div>
+      <div class="col-item"><span>✅</span> Built for high-achieving professionals</div>
+      <div class="col-item"><span>✅</span> Results you feel in daily life — not just during the session</div>
+      <div class="col-item"><span>✅</span> The missing piece between where you are and where you want to be</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- TRANSFORMATION -->
+<div class="section">
+  <p class="section-label">What Changes</p>
+  <h2>After 21 Days of Mental Gym, <span>You Will:</span></h2>
+  <div class="transform-grid">
+    <div class="transform-card">
+      <div class="t-icon">💼</div>
+      <h3>At Work</h3>
+      <ul>
+        <li>Walk into meetings with genuine confidence</li>
+        <li>Stop second-guessing your decisions</li>
+        <li>Stay calm under pressure</li>
+        <li>Finish work without carrying it home mentally</li>
+        <li>Recover from setbacks in minutes, not days</li>
+      </ul>
+    </div>
+    <div class="transform-card">
+      <div class="t-icon">🏠</div>
+      <h3>At Home</h3>
+      <ul>
+        <li>Be mentally present with your family</li>
+        <li>Stop snapping at your partner after stressful days</li>
+        <li>Set boundaries without guilt</li>
+        <li>Actually enjoy your weekends</li>
+        <li>Have conversations without replaying them all night</li>
+      </ul>
+    </div>
+    <div class="transform-card">
+      <div class="t-icon">🧠</div>
+      <h3>Inside</h3>
+      <ul>
+        <li>Fall asleep faster — mind actually switches off</li>
+        <li>Wake up feeling mentally refreshed</li>
+        <li>Trust yourself without seeking approval</li>
+        <li>Feel the inner calm you've been chasing</li>
+        <li>Stop repeating the same emotional patterns</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pain-highlight" style="margin-top:32px;">
+    Life doesn't necessarily get easier. <strong>You get mentally stronger.</strong>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials-bg">
+  <div class="testimonials-inner">
+    <p class="section-label" style="text-align:center;">What People Say</p>
+    <h2 style="text-align:center;">Real Results from <span style="color:#ef4444;">Real People</span></h2>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"She is god sent for me. I finally feel like myself again — for the first time in years."</p>
+        <p class="t-name">Priya S.</p>
+        <p class="t-role">IT Manager, London</p>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"I feel happy, positive, light — good vibes only. I didn't know what I was carrying until it was gone."</p>
+        <p class="t-name">Anjali K.</p>
+        <p class="t-role">Business Owner, Birmingham</p>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Something shifted that years of talking therapy never could. I didn't believe it was possible — until it happened."</p>
+        <p class="t-name">Rahul M.</p>
+        <p class="t-role">Finance Professional, Amsterdam</p>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"I've done therapy, coaching, retreats. Nothing came close to this. I feel like myself for the first time in years."</p>
+        <p class="t-name">Meera T.</p>
+        <p class="t-role">Medical Professional, Manchester</p>
+      </div>
+    </div>
+    <div class="t-photos">
+      <img src="testimonial1.jpg" alt="Client result"/>
+      <img src="testimonial2.jpg" alt="Client result"/>
+      <img src="testimonial3.jpg" alt="Client result"/>
+      <img src="testimonial4.jpg" alt="Client result"/>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- HOW IT WORKS -->
+<div class="section">
+  <p class="section-label">The Process</p>
+  <h2>How It <span>Works</span></h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Join the FREE Masterclass</h3>
+        <p>Register for the free 90-minute live session on Sunday 26th July at 10 AM UK time. You'll experience your first Mental Gym training session live — and understand why this is different from anything you've tried before.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Discover Your Mental Conditioning</h3>
+        <p>Rachanaa will show you exactly which mental patterns are keeping you stuck — the ones no app, holiday, or promotion has been able to fix. This single insight changes everything.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Begin the 21-Day Mental Gym</h3>
+        <p>After the masterclass, you'll have everything you need to start your 21-day training programme — 10 minutes a day, progressive sessions, real measurable results in your daily life.</p>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="hero-cta" onclick="openModal()">👉 Reserve My Free Spot Now</button>
+    <p class="cta-note">✅ Sunday 26th July · 10 AM UK · Free</p>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ABOUT -->
+<div class="section">
+  <p class="section-label">Your Coach</p>
+  <h2>Meet <span>Rachanaa Tulsyan</span></h2>
+  <div class="about-wrap">
+    <img src="rachana-speaker.jpg" alt="Rachanaa Tulsyan" class="about-img"/>
+    <div class="about-text">
+      <h3>Rachanaa Tulsyan</h3>
+      <p class="title">Clinical Hypnotherapist · Mental Fitness Coach</p>
+      <p>Rachanaa is not just a therapist. She's lived the experience.</p>
+      <p>She moved countries. Changed careers. Changed relationships. Ticked every box. And still felt that invisible heaviness that success never seemed to cure.</p>
+      <p>That journey led her to discover the power of subconscious training — and it changed everything. Today she helps ambitious Indian professionals living in the UK and Europe break through the invisible ceiling that achievement alone can never reach.</p>
+      <p>Her method — <strong>RELEASE · RESET · RECLAIM</strong> — is not therapy. It's training.</p>
+      <div class="about-quote">"The goal isn't to remove pressure from your life. It's to build a mind that can thrive under pressure."</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- FAQ -->
+<div class="section">
+  <p class="section-label">Questions</p>
+  <h2>Frequently Asked <span>Questions</span></h2>
+  <div class="faq-item">
+    <p class="faq-q">Is this just another meditation or mindfulness thing?</p>
+    <p class="faq-a">No. Meditation works at the conscious level. Mental Gym works at the subconscious level — where your habits, reactions, and beliefs actually live. That's why it produces lasting change when other approaches haven't.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">I've tried so many things. Why would this be different?</p>
+    <p class="faq-a">Because most approaches treat the symptom, not the root. Mental Gym targets the subconscious conditioning that drives your behaviour — not just the surface thoughts you're aware of.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">I'm too busy. How much time does it take?</p>
+    <p class="faq-a">10 minutes a day. The masterclass itself is 90 minutes on Sunday. If you have time to scroll your phone before bed, you have time for Mental Gym.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Is the masterclass really free?</p>
+    <p class="faq-a">Yes. Completely free. No credit card. No catch. Just register and show up on 26th July at 10 AM UK time.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">What if I can't attend live?</p>
+    <p class="faq-a">Register anyway — you'll be added to our WhatsApp group where you'll receive the details and next steps.</p>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div style="padding:0 20px;">
+  <div class="final-cta">
+    <h2>You've Spent Years Building Your Career.<br>Isn't It Time to Build Your Mind?</h2>
+    <p>Your career. Your relationships. Your peace. Your sleep. Your presence.<br>All of it improves when your mind is trained.</p>
+    <button class="hero-cta" onclick="openModal()">👉 Reserve My Free Spot — 26th July</button>
+    <p class="cta-note" style="margin-top:14px;">✅ Free · Live · Online · 10 AM UK Time</p>
+  </div>
+</div>
+
+<div style="text-align:center;padding:32px 20px;border-top:1px solid rgba(255,255,255,.06);">
+  <p style="font-size:13px;color:#444;">© 2026 Rachanaa Tulsyan · Rapid Quantum Shift Academy · <a href="mailto:hello@rachanaatulsyan.com" style="color:#666;">hello@rachanaatulsyan.com</a></p>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
+  <div class="modal-box" style="position:relative;">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modal-form-view">
+      <h3>🧠 Reserve Your Free Spot</h3>
+      <p class="modal-sub">Sunday, 26th July · 10 AM UK Time · Free Live Masterclass</p>
+      <form id="lead-form" onsubmit="submitLead(event)">
+        <label class="field-label">Full Name *</label>
+        <input id="lead-name" class="field-input" type="text" placeholder="Your name" required/>
+        <label class="field-label">WhatsApp Number *</label>
+        <input id="lead-phone" class="field-input" type="tel" placeholder="+44 7xxx xxxxxx" required/>
+        <label class="field-label">Email Address *</label>
+        <input id="lead-email" class="field-input" type="email" placeholder="your@email.com" required/>
+        <label class="field-label">Country *</label>
+        <select id="lead-country" class="field-input" required>
+          <option value="">— Select your country —</option>
+          <option value="United Kingdom">🇬🇧 United Kingdom</option>
+          <option value="Germany">🇩🇪 Germany</option>
+          <option value="France">🇫🇷 France</option>
+          <option value="Netherlands">🇳🇱 Netherlands</option>
+          <option value="Belgium">🇧🇪 Belgium</option>
+          <option value="Switzerland">🇨🇭 Switzerland</option>
+          <option value="Sweden">🇸🇪 Sweden</option>
+          <option value="Norway">🇳🇴 Norway</option>
+          <option value="Denmark">🇩🇰 Denmark</option>
+          <option value="Ireland">🇮🇪 Ireland</option>
+          <option value="Italy">🇮🇹 Italy</option>
+          <option value="Spain">🇪🇸 Spain</option>
+          <option value="Portugal">🇵🇹 Portugal</option>
+          <option value="Austria">🇦🇹 Austria</option>
+          <option value="Finland">🇫🇮 Finland</option>
+          <option value="Canada">🇨🇦 Canada</option>
+          <option value="United States">🇺🇸 United States</option>
+          <option value="Australia">🇦🇺 Australia</option>
+          <option value="UAE">🇦🇪 UAE</option>
+          <option value="India">🇮🇳 India</option>
+          <option value="Other">🌍 Other</option>
+        </select>
+        <button type="submit" class="submit-btn">✅ Confirm My Free Spot →</button>
+      </form>
+    </div>
+    <div id="modal-success-view" class="success-box" style="display:none;">
+      <div class="big-emoji">🎉</div>
+      <h2>You're Registered!</h2>
+      <p>Your spot for <strong>Sunday, 26th July, 10 AM UK time</strong> is confirmed.</p>
+      <p style="font-size:15px;color:#ccc;margin:16px 0 8px;font-weight:600;">👇 Step 2 — Join the WhatsApp Group to get your Zoom link:</p>
+      <a href="https://chat.whatsapp.com/DErZ5Qwi7aSC6JmWOPzPZe?mode=gi_t" target="_blank" style="display:block;background:#25D366;color:#fff;font-size:17px;font-weight:800;padding:16px 24px;border-radius:12px;text-decoration:none;margin:8px 0 16px;text-align:center;">📲 Join WhatsApp Group →</a>
+      <button class="submit-btn" onclick="closeModal()" style="background:#333;font-size:14px;padding:12px;">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyTlLRvuTBQfAgoftko0LscWjqKnkkircu5ye2-Q6VKisnnc-ZZgKFY2CN3vIP1R8pG/exec';
+
+  function openModal() {
+    document.getElementById('modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+    document.body.style.overflow = '';
+    document.getElementById('modal-form-view').style.display = 'block';
+    document.getElementById('modal-success-view').style.display = 'none';
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('modal')) closeModal();
+  }
+
+  function submitLead(e) {
+    e.preventDefault();
+    var name    = document.getElementById('lead-name').value.trim();
+    var phone   = document.getElementById('lead-phone').value.trim();
+    var email   = document.getElementById('lead-email').value.trim();
+    var country = document.getElementById('lead-country').value.trim();
+    if (!name || !phone || !email || !country) {
+      alert('Please fill in all fields including your country.');
+      return;
+    }
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead', {value: 0, currency: 'GBP'});
+      fbq('track', 'CompleteRegistration', {value: 0, currency: 'GBP'});
+    }
+    var pabblyUrl = 'https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTY5MDYzMjA0MzE1MjY5NTUzYzUxMzYi_pc';
+    fetch(pabblyUrl, {
+      method: 'POST', mode: 'no-cors', keepalive: true,
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name, email, phone, country, time: new Date().toISOString(), page_url: window.location.href, status: 'Registered', product: 'Mental Gym - FREE'})
+    });
+    var params = new URLSearchParams({name, phone, email, country, status: 'Registered'});
+    fetch(APPS_SCRIPT_URL + '?' + params.toString(), {method: 'GET', mode: 'no-cors', keepalive: true});
+    document.getElementById('modal-form-view').style.display = 'none';
+    document.getElementById('modal-success-view').style.display = 'block';
+  }
+</script>
+</body>
+</html>
