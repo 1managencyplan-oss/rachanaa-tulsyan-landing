@@ -298,10 +298,11 @@
     .learn-wrap h2 span{color:#ef4444;}
     .learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
     @media(max-width:560px){.learn-grid{grid-template-columns:1fr;}}
-    .learn-item{display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:20px;}
+    .learn-item{display:flex;flex-direction:column;align-items:flex-start;gap:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:24px;}
     .learn-item .l-ico{font-size:22px;flex-shrink:0;margin-top:2px;}
     .learn-item p{font-size:14px;color:#ccc;line-height:1.55;font-weight:600;}
     .learn-item p strong{color:#fff;display:block;margin-bottom:3px;font-size:15px;}
+    .learn-item svg{width:100%;height:90px;display:block;margin-bottom:4px;}
 
     /* ── FAQ ── */
     .faq-wrap{max-width:760px;margin:0 auto;padding:72px 20px;}
@@ -658,22 +659,127 @@
   <p class="sec-label reveal" style="text-align:center;">How It Works</p>
   <h2 class="reveal" style="text-align:center;">3 Simple Steps to<br><span>Start Your Mental Training</span></h2>
   <div class="learn-grid">
+
+    <!-- STEP 1 — JOIN -->
     <div class="learn-item reveal">
-      <span class="l-ico">🎟️</span>
+      <svg viewBox="0 0 280 90" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>.s1dot{animation:s1pulse 2s ease-in-out infinite;} .s1dot:nth-child(2){animation-delay:.4s;} .s1dot:nth-child(3){animation-delay:.8s;} @keyframes s1pulse{0%,100%{opacity:.4;}50%{opacity:1;}}</style>
+        </defs>
+        <!-- Screen/laptop -->
+        <rect x="70" y="10" width="140" height="52" rx="6" fill="none" stroke="rgba(220,38,38,0.5)" stroke-width="1.5"/>
+        <rect x="76" y="16" width="128" height="40" rx="3" fill="rgba(220,38,38,0.07)"/>
+        <!-- Screen content: play button -->
+        <circle cx="140" cy="36" r="12" fill="none" stroke="rgba(220,38,38,0.6)" stroke-width="1.3"/>
+        <polygon points="136,30 136,42 150,36" fill="rgba(220,38,38,0.6)"/>
+        <!-- Stand -->
+        <path d="M 120 62 L 115 75 M 160 62 L 165 75" stroke="rgba(220,38,38,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="110" y1="75" x2="170" y2="75" stroke="rgba(220,38,38,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- People / attendees dots -->
+        <circle cx="30" cy="55" r="10" fill="none" stroke="rgba(220,38,38,0.4)" stroke-width="1.2" class="s1dot"/>
+        <circle cx="30" cy="42" r="5" fill="none" stroke="rgba(220,38,38,0.4)" stroke-width="1.2" class="s1dot"/>
+        <circle cx="250" cy="55" r="10" fill="none" stroke="rgba(220,38,38,0.4)" stroke-width="1.2" class="s1dot"/>
+        <circle cx="250" cy="42" r="5" fill="none" stroke="rgba(220,38,38,0.4)" stroke-width="1.2" class="s1dot"/>
+        <!-- Wifi/signal lines -->
+        <path d="M 140 10 Q 140 4 140 2" stroke="rgba(220,38,38,0.4)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M 128 8 Q 134 2 140 2 Q 146 2 152 8" fill="none" stroke="rgba(220,38,38,0.35)" stroke-width="1"/>
+        <path d="M 120 12 Q 130 2 140 2 Q 150 2 160 12" fill="none" stroke="rgba(220,38,38,0.25)" stroke-width="1"/>
+        <!-- Step label -->
+        <text x="140" y="87" font-family="Manrope,sans-serif" font-size="9" fill="rgba(220,38,38,0.5)" text-anchor="middle" letter-spacing="1.5">STEP 1 · LIVE SESSION</text>
+      </svg>
       <p><strong>Step 1 — Join the FREE Masterclass</strong>Register for the free 90-minute live session on Sunday 3rd August at 10 AM UK time. Rachanaa will walk you through the Mental Gym framework and you'll experience your first training session live.</p>
     </div>
+
+    <!-- STEP 2 — UNDERSTAND -->
     <div class="learn-item reveal">
-      <span class="l-ico">🔍</span>
+      <svg viewBox="0 0 280 90" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>.s2line{stroke-dasharray:5 3;animation:s2flow 1.8s linear infinite;} @keyframes s2flow{to{stroke-dashoffset:-16;}} .s2node{animation:s2blink 2.4s ease-in-out infinite;} .s2node:nth-child(odd){animation-delay:.6s;} @keyframes s2blink{0%,100%{opacity:.4;}50%{opacity:1;}}</style>
+        </defs>
+        <!-- Brain outline -->
+        <path d="M 100 60 Q 85 60 80 50 Q 74 38 82 30 Q 86 24 94 24 Q 96 18 104 16 Q 114 12 124 18 Q 130 12 140 14 Q 150 12 156 18 Q 166 12 176 16 Q 184 18 186 24 Q 194 24 198 30 Q 206 38 200 50 Q 195 60 180 60 Q 175 68 165 68 Q 155 72 140 70 Q 125 72 115 68 Q 105 68 100 60 Z"
+              fill="none" stroke="rgba(220,38,38,0.45)" stroke-width="1.4"/>
+        <!-- Neural nodes inside brain -->
+        <circle cx="118" cy="35" r="3.5" fill="rgba(220,38,38,0.6)" class="s2node"/>
+        <circle cx="140" cy="28" r="3.5" fill="rgba(220,38,38,0.6)" class="s2node"/>
+        <circle cx="162" cy="35" r="3.5" fill="rgba(220,38,38,0.6)" class="s2node"/>
+        <circle cx="128" cy="52" r="3.5" fill="rgba(220,38,38,0.55)" class="s2node"/>
+        <circle cx="152" cy="52" r="3.5" fill="rgba(220,38,38,0.55)" class="s2node"/>
+        <circle cx="140" cy="45" r="4.5" fill="rgba(220,38,38,0.75)" class="s2node"/>
+        <!-- Connections -->
+        <line x1="118" y1="35" x2="140" y2="28" stroke="rgba(220,38,38,0.3)" stroke-width="1" class="s2line"/>
+        <line x1="140" y1="28" x2="162" y2="35" stroke="rgba(220,38,38,0.3)" stroke-width="1" class="s2line"/>
+        <line x1="118" y1="35" x2="140" y2="45" stroke="rgba(220,38,38,0.3)" stroke-width="1" class="s2line"/>
+        <line x1="162" y1="35" x2="140" y2="45" stroke="rgba(220,38,38,0.3)" stroke-width="1" class="s2line"/>
+        <line x1="140" y1="45" x2="128" y2="52" stroke="rgba(220,38,38,0.3)" stroke-width="1" class="s2line"/>
+        <line x1="140" y1="45" x2="152" y2="52" stroke="rgba(220,38,38,0.3)" stroke-width="1" class="s2line"/>
+        <!-- Magnifying glass -->
+        <circle cx="200" cy="68" r="13" fill="none" stroke="rgba(220,38,38,0.6)" stroke-width="1.5"/>
+        <line x1="210" y1="78" x2="220" y2="88" stroke="rgba(220,38,38,0.55)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="200" cy="68" r="7" fill="rgba(220,38,38,0.08)"/>
+        <text x="140" y="87" font-family="Manrope,sans-serif" font-size="9" fill="rgba(220,38,38,0.5)" text-anchor="middle" letter-spacing="1.5">STEP 2 · IDENTIFY PATTERNS</text>
+      </svg>
       <p><strong>Step 2 — Understand Your Mental Conditioning</strong>You'll identify the exact mental patterns that are keeping you stuck — the ones that no app, holiday, or promotion has been able to fix.</p>
     </div>
+
+    <!-- STEP 3 — TRAIN -->
     <div class="learn-item reveal">
-      <span class="l-ico">🏋️</span>
+      <svg viewBox="0 0 280 90" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>.s3bar{animation:s3grow 2.2s ease-in-out infinite;transform-origin:bottom;} .s3bar:nth-child(2){animation-delay:.3s;} .s3bar:nth-child(3){animation-delay:.6s;} .s3bar:nth-child(4){animation-delay:.9s;} .s3bar:nth-child(5){animation-delay:1.2s;} @keyframes s3grow{0%,100%{opacity:.5;}50%{opacity:1;}}</style>
+        </defs>
+        <!-- Dumbbell left -->
+        <rect x="30" y="38" width="36" height="10" rx="2" fill="none" stroke="rgba(220,38,38,0.45)" stroke-width="1.3"/>
+        <rect x="24" y="30" width="12" height="26" rx="3" fill="none" stroke="rgba(220,38,38,0.5)" stroke-width="1.3"/>
+        <rect x="60" y="30" width="12" height="26" rx="3" fill="none" stroke="rgba(220,38,38,0.5)" stroke-width="1.3"/>
+        <!-- Dumbbell right -->
+        <rect x="214" y="38" width="36" height="10" rx="2" fill="none" stroke="rgba(220,38,38,0.45)" stroke-width="1.3"/>
+        <rect x="208" y="30" width="12" height="26" rx="3" fill="none" stroke="rgba(220,38,38,0.5)" stroke-width="1.3"/>
+        <rect x="244" y="30" width="12" height="26" rx="3" fill="none" stroke="rgba(220,38,38,0.5)" stroke-width="1.3"/>
+        <!-- Calendar / 21 days progress bars -->
+        <rect x="100" y="12" width="80" height="58" rx="6" fill="none" stroke="rgba(220,38,38,0.4)" stroke-width="1.2"/>
+        <text x="140" y="30" font-family="Manrope,sans-serif" font-size="11" font-weight="700" fill="rgba(220,38,38,0.7)" text-anchor="middle">21 DAYS</text>
+        <!-- Progress bars inside calendar -->
+        <rect x="108" y="36" width="64" height="6" rx="3" fill="rgba(220,38,38,0.1)" class="s3bar"/>
+        <rect x="108" y="36" width="52" height="6" rx="3" fill="rgba(220,38,38,0.5)" class="s3bar"/>
+        <rect x="108" y="46" width="64" height="6" rx="3" fill="rgba(220,38,38,0.1)" class="s3bar"/>
+        <rect x="108" y="46" width="38" height="6" rx="3" fill="rgba(220,38,38,0.4)" class="s3bar"/>
+        <rect x="108" y="56" width="64" height="6" rx="3" fill="rgba(220,38,38,0.1)" class="s3bar"/>
+        <rect x="108" y="56" width="20" height="6" rx="3" fill="rgba(220,38,38,0.3)" class="s3bar"/>
+        <text x="140" y="87" font-family="Manrope,sans-serif" font-size="9" fill="rgba(220,38,38,0.5)" text-anchor="middle" letter-spacing="1.5">STEP 3 · 21-DAY TRAINING</text>
+      </svg>
       <p><strong>Step 3 — Begin the 21-Day Training</strong>After the masterclass, you'll have everything you need to start your 21-day Mental Gym programme — with daily sessions, progressive training, and real measurable results.</p>
     </div>
+
+    <!-- STEP 4 — EXPERIENCE LIVE -->
     <div class="learn-item reveal">
-      <span class="l-ico">🎧</span>
+      <svg viewBox="0 0 280 90" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>.s4wave{animation:s4ripple 2s ease-in-out infinite;} .s4wave:nth-child(2){animation-delay:.5s;} .s4wave:nth-child(3){animation-delay:1s;} @keyframes s4ripple{0%,100%{opacity:.2;transform:scale(1);}50%{opacity:.7;transform:scale(1.04);}}</style>
+        </defs>
+        <!-- Person silhouette (meditating) -->
+        <circle cx="140" cy="28" r="11" fill="none" stroke="rgba(220,38,38,0.55)" stroke-width="1.3"/>
+        <!-- Body sitting -->
+        <path d="M 125 50 Q 128 40 140 40 Q 152 40 155 50 L 160 62 Q 140 68 120 62 Z" fill="none" stroke="rgba(220,38,38,0.45)" stroke-width="1.3" stroke-linejoin="round"/>
+        <!-- Legs crossed -->
+        <path d="M 120 62 Q 130 70 140 68 Q 150 70 160 62" fill="none" stroke="rgba(220,38,38,0.4)" stroke-width="1.2"/>
+        <!-- Arms out (open/receiving) -->
+        <path d="M 126 46 L 108 52" stroke="rgba(220,38,38,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M 154 46 L 172 52" stroke="rgba(220,38,38,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- Ripple waves (energy/subconscious) -->
+        <ellipse cx="140" cy="52" rx="30" ry="20" fill="none" stroke="rgba(220,38,38,0.25)" stroke-width="1" class="s4wave" style="transform-origin:140px 52px"/>
+        <ellipse cx="140" cy="52" rx="45" ry="30" fill="none" stroke="rgba(220,38,38,0.18)" stroke-width="1" class="s4wave" style="transform-origin:140px 52px"/>
+        <ellipse cx="140" cy="52" rx="60" ry="38" fill="none" stroke="rgba(220,38,38,0.1)" stroke-width="1" class="s4wave" style="transform-origin:140px 52px"/>
+        <!-- Sparkles -->
+        <circle cx="85" cy="25" r="2" fill="rgba(220,38,38,0.6)"/>
+        <circle cx="195" cy="25" r="2" fill="rgba(220,38,38,0.6)"/>
+        <circle cx="75" cy="42" r="1.5" fill="rgba(220,38,38,0.4)"/>
+        <circle cx="205" cy="42" r="1.5" fill="rgba(220,38,38,0.4)"/>
+        <text x="140" y="87" font-family="Manrope,sans-serif" font-size="9" fill="rgba(220,38,38,0.5)" text-anchor="middle" letter-spacing="1.5">LIVE EXPERIENCE · FEEL IT FIRST</text>
+      </svg>
       <p><strong>Experience It Live — Not Just Information</strong>You won't just hear about the technique. Rachanaa will guide you through an actual subconscious session during the masterclass. You'll feel the difference before it even ends.</p>
     </div>
+
   </div>
   <div style="text-align:center;margin-top:40px;" class="reveal">
     <button class="cta-btn" onclick="openModal()">👉 Secure My Free Spot Now</button>
