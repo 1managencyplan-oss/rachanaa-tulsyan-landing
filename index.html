@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mental Gym — Train Your Mind Like You Train Your Body</title>
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1474043517040815');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1474043517040815&ev=PageView&noscript=1"/></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,.5)}70%{box-shadow:0 0 0 20px rgba(220,38,38,0)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    @keyframes scaleIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
+    @keyframes slideLeft{from{opacity:0;transform:translateX(-50px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes slideRight{from{opacity:0;transform:translateX(50px)}to{opacity:1;transform:translateX(0)}}
+
+    .reveal{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .reveal-left{opacity:0;transform:translateX(-50px);transition:opacity .75s ease,transform .75s ease;}
+    .reveal-left.visible{opacity:1;transform:translateX(0);}
+    .reveal-right{opacity:0;transform:translateX(50px);transition:opacity .75s ease,transform .75s ease;}
+    .reveal-right.visible{opacity:1;transform:translateX(0);}
+    .reveal-scale{opacity:0;transform:scale(.9);transition:opacity .75s ease,transform .75s ease;}
+    .reveal-scale.visible{opacity:1;transform:scale(1);}
+
+    /* TOP BAR */
+    .top-bar{background:linear-gradient(90deg,#dc2626,#ef4444);padding:10px 20px;text-align:center;font-size:13px;font-weight:700;letter-spacing:.2px;}
+    .top-bar span{color:#fff200;}
+
+    /* ── HERO ── */
+    .hero-wrap{max-width:960px;margin:0 auto;padding:48px 24px 32px;text-align:center;animation:fadeUp .9s ease forwards;}
+    .eyebrow{display:inline-block;background:rgba(220,38,38,.15);border:1px solid rgba(220,38,38,.4);color:#ef4444;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:28px;}
+    .hero-line1{font-size:clamp(22px,3vw,42px);font-weight:900;line-height:1.2;color:#fff;margin-bottom:4px;}
+    .hero-line2{font-size:clamp(36px,5.5vw,68px);font-weight:900;line-height:1.1;color:#ef4444;margin-bottom:16px;}
+    .hero-wrap h1 .red{color:#ef4444;}
+    .hero-sub{font-size:clamp(16px,2vw,20px);color:#888;line-height:1.65;max-width:560px;margin:0 auto 36px;}
+    .hero-sub strong{color:#ccc;}
+
+    .badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;justify-content:center;}
+    .badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#ccc;font-size:12px;font-weight:700;padding:7px 16px;border-radius:50px;}
+    .badge.hot{background:rgba(220,38,38,.15);border-color:rgba(220,38,38,.4);color:#fca5a5;}
+
+    .cta-btn{display:inline-block;background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;font-size:17px;font-weight:800;padding:17px 42px;border-radius:13px;cursor:pointer;border:none;animation:pulse 2.5s infinite;box-shadow:0 8px 32px rgba(220,38,38,.35);transition:transform .2s;}
+    .cta-btn:hover{transform:scale(1.03);}
+    .cta-note{font-size:12px;color:#555;margin-top:11px;}
+
+    /* ── VIDEO ── */
+    .divider{border:none;border-top:1px solid rgba(255,255,255,.07);}
+    .video-wrap{max-width:960px;margin:0 auto;padding:0 20px 64px;}
+    .video-card{position:relative;padding-bottom:56.25%;border-radius:20px;overflow:hidden;border:2px solid rgba(255,255,255,.12);box-shadow:0 32px 80px rgba(0,0,0,.8);}
+    .video-card iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+
+    /* ── SECTION LABEL ── */
+    .sec-label{color:#ef4444;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;}
+
+    /* ── GYM VS ── */
+    .gym-vs-wrap{max-width:860px;margin:0 auto;padding:72px 20px;}
+    .gym-vs-wrap h2{text-align:center;font-size:clamp(24px,3.5vw,40px);font-weight:900;color:#fff;margin-bottom:48px;line-height:1.15;}
+    .gym-vs-wrap h2 span{color:#ef4444;}
+
+    .vs-grid{display:grid;grid-template-columns:1fr 60px 1fr;align-items:center;gap:0;}
+    @media(max-width:560px){.vs-grid{grid-template-columns:1fr;gap:12px;}}
+
+    .vs-card{border-radius:20px;padding:32px 24px;text-align:center;}
+    .vs-card.body-side{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);}
+    .vs-card.mind-side{background:linear-gradient(135deg,rgba(220,38,38,.15),rgba(185,28,28,.04));border:2px solid rgba(220,38,38,.4);}
+    .vs-card .big-ico{font-size:52px;margin-bottom:16px;display:block;}
+    .vs-card.mind-side .big-ico{animation:float 3s ease-in-out infinite;}
+    .vs-card h3{font-size:18px;font-weight:900;margin-bottom:12px;}
+    .vs-card.body-side h3{color:#666;}
+    .vs-card.mind-side h3{color:#ef4444;}
+    .vs-card p{font-size:13px;color:#555;line-height:1.7;}
+    .vs-card.mind-side p{color:#bbb;}
+    .vs-new{display:inline-block;background:rgba(220,38,38,.2);border:1px solid rgba(220,38,38,.4);color:#fca5a5;font-size:11px;font-weight:800;padding:3px 12px;border-radius:50px;margin-top:14px;}
+    .vs-center{text-align:center;font-size:24px;font-weight:900;color:#ef4444;}
+
+    .vs-q{margin-top:40px;padding:28px;background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.2);border-radius:16px;text-align:center;}
+    .vs-q p{font-size:clamp(16px,2vw,20px);font-weight:800;color:#fff;line-height:1.55;}
+    .vs-q p span{color:#ef4444;}
+
+    /* ── PAIN ── */
+    .pain-wrap{max-width:860px;margin:0 auto;padding:72px 20px;}
+    .pain-wrap h2{font-size:clamp(24px,3.5vw,40px);font-weight:900;color:#fff;margin-bottom:40px;line-height:1.15;}
+    .pain-wrap h2 span{color:#ef4444;}
+
+    .pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+    @media(max-width:700px){.pain-grid{grid-template-columns:repeat(2,1fr);}}
+
+    .pain-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px 14px;text-align:center;transition:border-color .3s,transform .3s,background .3s;}
+    .pain-card:hover{border-color:rgba(220,38,38,.4);transform:translateY(-5px);background:rgba(220,38,38,.06);}
+    .pain-card .p-ico{font-size:34px;margin-bottom:12px;display:block;}
+    .pain-card p{font-size:12px;color:#888;font-weight:600;line-height:1.45;}
+
+    .pain-cta{margin-top:36px;background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.3);border-radius:14px;padding:22px;text-align:center;font-size:16px;font-weight:700;color:#fff;}
+
+    /* ── PHOTO QUOTE BREAK ── */
+    .photo-quote{max-width:1060px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+    @media(max-width:720px){.photo-quote{grid-template-columns:1fr;gap:32px;}}
+    .photo-quote img{width:100%;border-radius:20px;display:block;border:2px solid rgba(255,255,255,.08);box-shadow:0 16px 48px rgba(0,0,0,.5);}
+    .photo-quote-text{display:flex;flex-direction:column;justify-content:center;}
+    .photo-quote-text h2{font-size:clamp(28px,3.5vw,50px);font-weight:900;color:#fff;line-height:1.12;}
+    .photo-quote-text h2 span{color:#ef4444;}
+    .photo-quote-text p{font-size:clamp(15px,1.6vw,18px);color:#888;margin-top:18px;max-width:440px;line-height:1.7;}
+
+    /* ── METHOD ── */
+    @keyframes cardGlow{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,0),0 4px 24px rgba(0,0,0,.3)}50%{box-shadow:0 0 32px 4px rgba(220,38,38,.25),0 4px 24px rgba(0,0,0,.3)}}
+    @keyframes numPop{0%{transform:scale(1)}40%{transform:scale(1.3)}70%{transform:scale(.95)}100%{transform:scale(1)}}
+    @keyframes icoFloat{0%,100%{transform:translateY(0) rotate(0deg)}33%{transform:translateY(-8px) rotate(-5deg)}66%{transform:translateY(-4px) rotate(3deg)}}
+
+    .method-wrap{max-width:900px;margin:0 auto;padding:72px 20px;}
+    .method-wrap h2{font-size:clamp(24px,3.5vw,40px);font-weight:900;color:#fff;margin-bottom:48px;line-height:1.15;}
+    .method-wrap h2 span{color:#ef4444;}
+
+    .steps-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;}
+    @media(max-width:600px){.steps-row{grid-template-columns:1fr;}}
+
+    .step-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:36px 24px;text-align:center;transition:transform .35s,border-color .35s,background .35s;position:relative;overflow:hidden;}
+    .step-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(220,38,38,.06),transparent);opacity:0;transition:opacity .35s;border-radius:20px;}
+    .step-card:hover{transform:translateY(-8px);border-color:rgba(220,38,38,.5);background:rgba(220,38,38,.05);}
+    .step-card:hover::before{opacity:1;}
+    .step-card.animate-glow{animation:cardGlow 2s ease-in-out;}
+    .step-num{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#dc2626,#b91c1c);font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 4px 16px rgba(220,38,38,.5);}
+    .step-num.pop{animation:numPop .5s ease;}
+    .step-card .s-ico{font-size:44px;margin-bottom:16px;display:block;}
+    .step-card:hover .s-ico{animation:icoFloat 1.5s ease-in-out infinite;}
+    .step-card h3{font-size:17px;font-weight:900;color:#fff;margin-bottom:10px;letter-spacing:.5px;}
+    .step-card p{font-size:13px;color:#777;line-height:1.65;}
+    .step-connector{display:flex;align-items:center;justify-content:center;color:rgba(220,38,38,.4);font-size:22px;padding-top:60px;}
+    @media(max-width:600px){.step-connector{display:none;}}
+
+    /* ── ABOUT (SPLIT) ── */
+    .about-split{max-width:1060px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+    @media(max-width:720px){.about-split{grid-template-columns:1fr;gap:36px;}}
+
+    .about-photo{position:relative;}
+    .about-photo img{width:100%;border-radius:24px;object-fit:cover;display:block;border:2px solid rgba(255,255,255,.08);box-shadow:0 24px 64px rgba(0,0,0,.6);}
+    .about-photo-badge{position:absolute;bottom:-16px;right:-16px;background:#111;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:14px 20px;box-shadow:0 8px 32px rgba(0,0,0,.5);}
+    .about-photo-badge p{font-size:13px;font-weight:800;color:#fff;line-height:1.4;}
+    .about-photo-badge span{font-size:11px;color:#ef4444;font-weight:700;}
+    @media(max-width:720px){.about-photo-badge{right:0;bottom:-12px;}}
+
+    .about-info .sec-label{margin-bottom:14px;}
+    .about-info h2{font-size:clamp(24px,3vw,38px);font-weight:900;color:#fff;margin-bottom:6px;line-height:1.2;}
+    .about-info h2 span{color:#ef4444;}
+    .about-info .coach-title{font-size:14px;color:#ef4444;font-weight:700;margin-bottom:20px;}
+    .about-info p{font-size:15px;color:#888;line-height:1.7;margin-bottom:12px;}
+    .about-quote{border-left:3px solid #ef4444;padding-left:18px;font-size:16px;color:#fff;font-weight:700;font-style:italic;margin-top:20px;line-height:1.55;}
+
+    /* ── TESTIMONIALS ── */
+    .t-bg{background:rgba(255,255,255,.02);padding:72px 20px;}
+    .t-inner{max-width:860px;margin:0 auto;}
+    .t-inner h2{font-size:clamp(24px,3.5vw,40px);font-weight:900;color:#fff;margin-bottom:40px;line-height:1.15;}
+    .t-inner h2 span{color:#ef4444;}
+    .t-vid-inner{max-width:1200px;margin:0 auto;}
+
+    .t-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+    @media(max-width:560px){.t-grid{grid-template-columns:1fr;}}
+    .t-vid-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;}
+    @media(max-width:580px){.t-vid-grid{grid-template-columns:1fr;}}
+    .t-vid-wrap{position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);}
+    .t-vid-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+
+    .t-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:28px;}
+    .t-stars{color:#f59e0b;font-size:14px;letter-spacing:2px;margin-bottom:14px;}
+    .t-quote{font-size:14px;color:#ccc;line-height:1.75;font-style:italic;margin-bottom:16px;}
+    .t-name{font-size:13px;font-weight:800;color:#fff;}
+    .t-role{font-size:11px;color:#555;margin-top:2px;}
+
+    /* ── SECOND PHOTO BREAK ── */
+    .photo-side{max-width:1060px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+    @media(max-width:720px){.photo-side{grid-template-columns:1fr;}}
+    .photo-side img{width:100%;border-radius:20px;object-fit:cover;max-height:480px;border:2px solid rgba(255,255,255,.08);box-shadow:0 16px 48px rgba(0,0,0,.5);}
+    .photo-side-text .sec-label{margin-bottom:14px;}
+    .photo-side-text h2{font-size:clamp(22px,3vw,36px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:16px;}
+    .photo-side-text h2 span{color:#ef4444;}
+    .photo-side-text p{font-size:15px;color:#888;line-height:1.7;margin-bottom:20px;}
+
+    /* ── FINAL CTA ── */
+    .final-wrap{padding:0 20px 80px;}
+    .final-box{max-width:720px;margin:0 auto;background:linear-gradient(135deg,#1a0000,#2d0000);border:1px solid rgba(220,38,38,.35);border-radius:24px;padding:60px 32px;text-align:center;}
+    .final-box h2{font-size:clamp(22px,3.5vw,38px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:6px;}
+    .final-box h2.red-h{color:#ef4444;}
+    .final-box p{font-size:15px;color:#777;margin:18px 0 32px;line-height:1.6;}
+
+    /* ── MODAL ── */
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:1000;display:none;align-items:center;justify-content:center;padding:16px;}
+    .modal-overlay.open{display:flex;animation:fadeIn .2s ease;}
+    .modal-box{background:#111;border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:36px 32px;max-width:460px;width:100%;animation:scaleIn .25s ease;}
+    .modal-box h3{font-size:22px;font-weight:900;color:#fff;margin-bottom:6px;}
+    .modal-box .modal-sub{font-size:13px;color:#555;margin-bottom:24px;}
+    .field-label{display:block;font-size:12px;font-weight:700;color:#777;margin-bottom:6px;margin-top:16px;}
+    .field-input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:13px 16px;font-size:15px;color:#fff;outline:none;font-family:inherit;transition:border-color .2s;}
+    .field-input:focus{border-color:#ef4444;}
+    .field-input option{background:#111;color:#fff;}
+    .submit-btn{width:100%;background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;font-size:17px;font-weight:800;padding:16px;border-radius:12px;border:none;cursor:pointer;margin-top:20px;font-family:inherit;box-shadow:0 6px 24px rgba(220,38,38,.4);}
+    .modal-close{position:absolute;top:16px;right:20px;background:none;border:none;color:#444;font-size:24px;cursor:pointer;}
+    .success-box{text-align:center;}
+    .success-box .big-emoji{font-size:52px;margin-bottom:12px;}
+    .success-box h2{font-size:22px;font-weight:900;color:#fff;margin-bottom:8px;}
+    .success-box p{font-size:14px;color:#888;margin-bottom:8px;}
+    @media(max-width:480px){.modal-box{padding:28px 20px;}}
+
+    footer{text-align:center;padding:24px 20px 80px;border-top:1px solid rgba(255,255,255,.05);}
+    footer p{font-size:12px;color:#2a2a2a;}
+    footer a{color:#333;}
+
+    /* ── HERO DATE & COUNTDOWN ── */
+    .hero-event-date{font-size:14px;font-weight:700;color:#ccc;margin-bottom:20px;letter-spacing:.3px;}
+    .hero-event-date span{color:#ef4444;}
+    .hero-proof{font-size:12px;color:#555;margin-bottom:24px;}
+    .hero-proof strong{color:#888;}
+
+    .countdown-wrap{display:flex;gap:12px;justify-content:center;margin:24px 0 30px;}
+    .cd-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 18px;min-width:70px;text-align:center;}
+    .cd-num{font-size:30px;font-weight:900;color:#ef4444;line-height:1;display:block;}
+    .cd-label{font-size:10px;color:#555;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;display:block;}
+    @media(max-width:400px){.cd-box{padding:10px 12px;min-width:58px;}.cd-num{font-size:24px;}}
+
+    /* ── WHAT YOU'LL LEARN ── */
+    /* ── PAIN BEHIND PAIN ── */
+    .pbp-wrap{max-width:1100px;margin:0 auto;padding:72px 20px;}
+    .pbp-wrap h2{font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;margin-bottom:14px;line-height:1.1;text-align:center;}
+    .pbp-wrap h2 span{color:#ef4444;}
+    .pbp-sub{text-align:center;color:#666;font-size:16px;margin-bottom:56px;max-width:600px;margin-left:auto;margin-right:auto;}
+    .pbp-stack{display:flex;flex-direction:column;gap:28px;}
+    .pbp-card{border-radius:24px;overflow:hidden;display:grid;grid-template-columns:380px 1fr;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);}
+    @media(max-width:780px){.pbp-card{grid-template-columns:1fr;}}
+    .pbp-img{position:relative;overflow:hidden;min-height:320px;}
+    .pbp-img img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85;}
+    .pbp-img-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,rgba(10,10,10,.95));}
+    @media(max-width:780px){.pbp-img{min-height:220px;} .pbp-img-overlay{background:linear-gradient(to bottom,transparent 60%,rgba(10,10,10,.95));}}
+    .pbp-cascade{padding:32px 36px;display:flex;flex-direction:column;gap:0;justify-content:center;}
+    @media(max-width:780px){.pbp-cascade{padding:24px 20px;}}
+    .pbp-row{padding:18px 20px;border-radius:14px;margin-bottom:0;}
+    .pbp-row .ico{font-size:26px;flex-shrink:0;margin-top:2px;}
+    .pbp-row-inner{display:flex;align-items:flex-start;gap:14px;}
+    .pbp-row p{font-size:14px;font-weight:700;line-height:1.5;}
+    .pbp-surface{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);}
+    .pbp-surface p{color:#bbb;}
+    .pbp-arrow{text-align:center;padding:8px 0;color:#333;font-size:20px;}
+    .pbp-deeper{background:rgba(220,38,38,.07);border:1px solid rgba(220,38,38,.2);}
+    .pbp-deeper p{color:#fca5a5;}
+    .pbp-deepest{background:rgba(220,38,38,.16);border:2px solid rgba(220,38,38,.4);}
+    .pbp-deepest p{color:#ef4444;font-size:15px;}
+    .pbp-label{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:4px;display:block;}
+    .pbp-surface .pbp-label{color:#555;}
+    .pbp-deeper .pbp-label{color:rgba(220,38,38,.6);}
+    .pbp-deepest .pbp-label{color:#ef4444;}
+
+    /* ── MIND RESULTS ── */
+    .mindresult-wrap{max-width:900px;margin:0 auto;padding:72px 20px;}
+    .mindresult-wrap h2{font-size:clamp(24px,3.5vw,40px);font-weight:900;color:#fff;margin-bottom:12px;line-height:1.15;text-align:center;}
+    .mindresult-wrap h2 span{color:#ef4444;}
+    .mindresult-sub{text-align:center;color:#666;font-size:15px;margin-bottom:48px;}
+    .gym-compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;}
+    @media(max-width:640px){.gym-compare{grid-template-columns:1fr;}}
+    .gc-box{border-radius:20px;padding:28px 24px;}
+    .gc-box.known{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);}
+    .gc-box.mental{background:linear-gradient(135deg,rgba(220,38,38,.12),rgba(185,28,28,.04));border:2px solid rgba(220,38,38,.35);}
+    .gc-box h3{font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
+    .gc-box.known h3{color:#555;}
+    .gc-box.mental h3{color:#ef4444;}
+    .gc-chain{display:flex;flex-direction:column;gap:0;}
+    .gc-step{display:flex;align-items:center;gap:12px;padding:10px 0;}
+    .gc-step .gs-ico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+    .gc-box.known .gs-ico{background:rgba(255,255,255,.07);}
+    .gc-box.mental .gs-ico{background:rgba(220,38,38,.15);}
+    .gc-step p{font-size:13px;font-weight:700;color:#ccc;line-height:1.3;}
+    .gc-box.mental .gc-step p{color:#fff;}
+    .gc-arrow{text-align:center;color:#333;font-size:16px;padding:2px 0;}
+    .gc-box.mental .gc-arrow{color:rgba(220,38,38,.4);}
+    .gc-result{margin-top:14px;padding:14px 16px;border-radius:12px;text-align:center;font-size:13px;font-weight:800;}
+    .gc-box.known .gc-result{background:rgba(255,255,255,.06);color:#666;}
+    .gc-box.mental .gc-result{background:rgba(220,38,38,.2);color:#ef4444;}
+    .timeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+    @media(max-width:640px){.timeline-grid{grid-template-columns:repeat(2,1fr);}}
+    .tl-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px 14px;text-align:center;}
+    .tl-week{font-size:11px;font-weight:800;letter-spacing:1.5px;color:#ef4444;text-transform:uppercase;margin-bottom:8px;}
+    .tl-ico{font-size:32px;margin-bottom:10px;display:block;}
+    .tl-card p{font-size:12px;color:#888;font-weight:600;line-height:1.45;}
+
+    .learn-wrap{max-width:860px;margin:0 auto;padding:72px 20px;}
+    .learn-wrap h2{font-size:clamp(24px,3.5vw,40px);font-weight:900;color:#fff;margin-bottom:40px;line-height:1.15;}
+    .learn-wrap h2 span{color:#ef4444;}
+    .learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    @media(max-width:560px){.learn-grid{grid-template-columns:1fr;}}
+    .learn-item{display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:20px;}
+    .learn-item .l-ico{font-size:22px;flex-shrink:0;margin-top:2px;}
+    .learn-item p{font-size:14px;color:#ccc;line-height:1.55;font-weight:600;}
+    .learn-item p strong{color:#fff;display:block;margin-bottom:3px;font-size:15px;}
+
+    /* ── FAQ ── */
+    .faq-wrap{max-width:760px;margin:0 auto;padding:72px 20px;}
+    .faq-wrap h2{font-size:clamp(24px,3.5vw,40px);font-weight:900;color:#fff;margin-bottom:40px;line-height:1.15;text-align:center;}
+    .faq-wrap h2 span{color:#ef4444;}
+    .faq-item{border:1px solid rgba(255,255,255,.08);border-radius:14px;margin-bottom:12px;overflow:hidden;}
+    .faq-q{width:100%;background:rgba(255,255,255,.04);border:none;color:#fff;font-family:inherit;font-size:15px;font-weight:700;padding:20px 24px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;}
+    .faq-q:hover{background:rgba(255,255,255,.07);}
+    .faq-q .faq-arrow{color:#ef4444;font-size:18px;transition:transform .3s;flex-shrink:0;}
+    .faq-q.open .faq-arrow{transform:rotate(180deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;padding:0 24px;}
+    .faq-a.open{max-height:300px;padding:0 24px 20px;}
+    .faq-a p{font-size:14px;color:#888;line-height:1.7;}
+
+    /* ── STICKY BAR ── */
+    .sticky-bar{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#111,#1a0000);border-top:1px solid rgba(220,38,38,.3);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:999;transform:translateY(100%);transition:transform .4s ease;box-shadow:0 -8px 32px rgba(0,0,0,.6);}
+    .sticky-bar.visible{transform:translateY(0);}
+    .sticky-bar-text{font-size:13px;color:#ccc;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .sticky-bar-text span{color:#ef4444;}
+    .sticky-bar-btn{background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;font-size:14px;font-weight:800;padding:11px 24px;border-radius:10px;border:none;cursor:pointer;white-space:nowrap;flex-shrink:0;font-family:inherit;}
+    @media(max-width:480px){.sticky-bar-text{display:none;}.sticky-bar{justify-content:center;}}
+
+    /* ── VIDEO LABEL ── */
+    .video-label{text-align:center;font-size:13px;font-weight:700;color:#555;margin-bottom:12px;letter-spacing:.3px;}
+    .video-label span{color:#ef4444;}
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  🧠 FREE Live Masterclass — <span>Mental Gym · Limited Spots · Online</span> — Register Now
+</div>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="eyebrow">Free Live Masterclass</div>
+  <p class="hero-event-date">📅 <span>Sunday, 3rd August 2026</span> · 10:00 AM UK Time · Online</p>
+  <p class="hero-line1">You Go to the Gym for Your Body.</p>
+  <h1 class="hero-line2">What About Your Mind?</h1>
+  <p class="hero-sub">In the human body, the mind is the <strong>most powerful muscle.</strong> Yet nobody trains it. Until now.</p>
+</div>
+
+<!-- VIDEO -->
+<p class="video-label reveal">▶ <span>Watch this 3-minute message</span> before you register</p>
+<div class="video-wrap reveal">
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/YeqevyrsdWM?rel=0" title="Rachanaa Tulsyan — Mental Gym" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- COUNTDOWN + CTA BELOW VIDEO -->
+<div style="text-align:center;padding:40px 20px 56px;max-width:720px;margin:0 auto;">
+  <p class="hero-proof reveal">🔥 <strong>847 Indian professionals</strong> from UK &amp; Europe have already registered</p>
+  <div class="countdown-wrap reveal">
+    <div class="cd-box"><span class="cd-num" id="cd-d">00</span><span class="cd-label">Days</span></div>
+    <div class="cd-box"><span class="cd-num" id="cd-h">00</span><span class="cd-label">Hours</span></div>
+    <div class="cd-box"><span class="cd-num" id="cd-m">00</span><span class="cd-label">Mins</span></div>
+    <div class="cd-box"><span class="cd-num" id="cd-s">00</span><span class="cd-label">Secs</span></div>
+  </div>
+  <button class="cta-btn reveal" onclick="openModal()">👉 Reserve My Free Spot</button>
+  <p class="cta-note" style="margin-top:11px;">✅ Instant confirmation · Free WhatsApp group access · Limited Spots</p>
+</div>
+
+<hr class="divider"/>
+
+<!-- GYM VS -->
+<div class="gym-vs-wrap">
+  <p class="sec-label reveal" style="text-align:center;">The Comparison Nobody Makes</p>
+  <h2 class="reveal">You Train <span>One.</span> Time to Train the Other.</h2>
+  <div class="vs-grid">
+    <div class="vs-card body-side reveal-left">
+      <span class="big-ico">💪</span>
+      <h3>Physical Gym</h3>
+      <p>3–5 times a week<br>Protein shakes<br>Tracking progress<br>For your body</p>
+    </div>
+    <div class="vs-center reveal"><div style="font-size:28px;font-weight:900;">VS</div></div>
+    <div class="vs-card mind-side reveal-right">
+      <span class="big-ico">🧠</span>
+      <h3>Mental Gym</h3>
+      <p>20 minutes a day<br>21 days<br>Subconscious training<br>For the mind that runs everything</p>
+      <span class="vs-new">NEW</span>
+    </div>
+  </div>
+  <div class="vs-q reveal">
+    <p>Your body is 20% of your life.<br><span>Your mind is running 100% of it.</span><br>Which one actually deserves more training?</p>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- PAIN SECTION -->
+<div class="pain-wrap">
+  <p class="sec-label reveal">Does This Sound Like You?</p>
+  <h2 class="reveal">You're Exhausted.<br><span>But Not Physically.</span></h2>
+  <div class="pain-grid">
+    <div class="pain-card reveal"><span class="p-ico">😴</span><p>Always tired even after sleep</p></div>
+    <div class="pain-card reveal"><span class="p-ico">💼</span><p>Work ends — brain doesn't</p></div>
+    <div class="pain-card reveal"><span class="p-ico">🌍</span><p>Changed everything. Same feeling.</p></div>
+    <div class="pain-card reveal"><span class="p-ico">🏆</span><p>Achieved so much. Feels like nothing.</p></div>
+    <div class="pain-card reveal"><span class="p-ico">😤</span><p>Snapping. People-pleasing. Overworking.</p></div>
+    <div class="pain-card reveal"><span class="p-ico">📱</span><p>Can't switch off before sleep</p></div>
+    <div class="pain-card reveal"><span class="p-ico">🧘</span><p>Tried meditation. Didn't last.</p></div>
+    <div class="pain-card reveal"><span class="p-ico">🎭</span><p>Performing life — not living it</p></div>
+  </div>
+  <div class="pain-cta reveal">
+    If even 3 hit close to home — your mind is asking for training.
+  </div>
+</div>
+
+<!-- PAIN BEHIND THE PAIN -->
+<div class="pbp-wrap">
+  <p class="sec-label reveal" style="text-align:center;">The Real Problem</p>
+  <h2 class="reveal">It's Not Just the Pain You See.<br><span>It's What's Growing Underneath.</span></h2>
+  <p class="pbp-sub reveal">Every visible struggle hides a deeper emotional wound — and then a silent fear that never goes away.</p>
+  <div class="pbp-stack">
+
+    <div class="pbp-card reveal">
+      <div class="pbp-img">
+        <img src="https://images.unsplash.com/photo-1565728744382-61accd4aa148?w=800&q=80&fit=crop&fp-y=0.3" alt="Professional stress"/>
+        <div class="pbp-img-overlay"></div>
+      </div>
+      <div class="pbp-cascade">
+        <div class="pbp-row pbp-surface">
+          <div class="pbp-row-inner">
+            <span class="ico">💼</span>
+            <div><span class="pbp-label">Surface Pain</span><p>Can't get promoted. Passed over again. Working harder than everyone — still invisible.</p></div>
+          </div>
+        </div>
+        <div class="pbp-arrow">↓</div>
+        <div class="pbp-row pbp-deeper">
+          <div class="pbp-row-inner">
+            <span class="ico">🧠</span>
+            <div><span class="pbp-label">The Emotional Consequence</span><p>You start questioning your own ability. Feel like a fraud in every meeting. Imposter syndrome takes over.</p></div>
+          </div>
+        </div>
+        <div class="pbp-arrow">↓</div>
+        <div class="pbp-row pbp-deepest">
+          <div class="pbp-row-inner">
+            <span class="ico">😶</span>
+            <div><span class="pbp-label">The Deepest Fear</span><p>"What if I was never actually good enough — and everyone is about to find out?"</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pbp-card reveal">
+      <div class="pbp-img">
+        <img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=800&q=80&fit=crop" alt="Family disconnect"/>
+        <div class="pbp-img-overlay"></div>
+      </div>
+      <div class="pbp-cascade">
+        <div class="pbp-row pbp-surface">
+          <div class="pbp-row-inner">
+            <span class="ico">😤</span>
+            <div><span class="pbp-label">Surface Pain</span><p>Snapping at family. Irritable at home. The people you love most get the worst version of you.</p></div>
+          </div>
+        </div>
+        <div class="pbp-arrow">↓</div>
+        <div class="pbp-row pbp-deeper">
+          <div class="pbp-row-inner">
+            <span class="ico">💔</span>
+            <div><span class="pbp-label">The Emotional Consequence</span><p>You feel guilty. Ashamed. Completely disconnected from the people who need you — and you know it's getting worse.</p></div>
+          </div>
+        </div>
+        <div class="pbp-arrow">↓</div>
+        <div class="pbp-row pbp-deepest">
+          <div class="pbp-row-inner">
+            <span class="ico">😶</span>
+            <div><span class="pbp-label">The Deepest Fear</span><p>"What if I push everyone away before I finally figure out what's wrong with me?"</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pbp-card reveal">
+      <div class="pbp-img">
+        <img src="https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Searching for meaning"/>
+        <div class="pbp-img-overlay"></div>
+      </div>
+      <div class="pbp-cascade">
+        <div class="pbp-row pbp-surface">
+          <div class="pbp-row-inner">
+            <span class="ico">🌍</span>
+            <div><span class="pbp-label">Surface Pain</span><p>Changed job, city, relationship, country. Every time you think this will fix it. It never does.</p></div>
+          </div>
+        </div>
+        <div class="pbp-arrow">↓</div>
+        <div class="pbp-row pbp-deeper">
+          <div class="pbp-row-inner">
+            <span class="ico">🎭</span>
+            <div><span class="pbp-label">The Emotional Consequence</span><p>The realisation hits: the problem travels with you. It's not the job, the city, the person. It's something inside you that you can't name.</p></div>
+          </div>
+        </div>
+        <div class="pbp-arrow">↓</div>
+        <div class="pbp-row pbp-deepest">
+          <div class="pbp-row-inner">
+            <span class="ico">😶</span>
+            <div><span class="pbp-label">The Deepest Fear</span><p>"What if I spend my entire life searching and never actually feel at peace — even once?"</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="pain-cta reveal" style="margin-top:32px;font-size:17px;">
+    The surface pain is manageable. The fear underneath it — <strong>that's what's quietly running your life.</strong>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- WHAT YOU'LL LEARN -->
+<div class="learn-wrap">
+  <p class="sec-label reveal" style="text-align:center;">In This Free Masterclass</p>
+  <h2 class="reveal" style="text-align:center;">By The End, You'll Discover<br><span>Exactly Why You Feel Stuck</span></h2>
+  <div class="learn-grid">
+    <div class="learn-item reveal">
+      <span class="l-ico">🧠</span>
+      <p><strong>Why willpower never works</strong>Because change must happen at the subconscious level — not through effort or discipline alone.</p>
+    </div>
+    <div class="learn-item reveal">
+      <span class="l-ico">🌍</span>
+      <p><strong>The invisible load Indian professionals carry</strong>The specific mental patterns created by moving abroad, over-achieving, and performing success.</p>
+    </div>
+    <div class="learn-item reveal">
+      <span class="l-ico">⏱️</span>
+      <p><strong>The 20-minute daily method</strong>A clinical hypnotherapy technique that rewires your subconscious — not therapy, not meditation, not journaling.</p>
+    </div>
+    <div class="learn-item reveal">
+      <span class="l-ico">✅</span>
+      <p><strong>Your first real mental training session</strong>You won't just learn — you'll experience a live session and feel the shift before the class ends.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:40px;" class="reveal">
+    <button class="cta-btn" onclick="openModal()">👉 Save My Free Spot</button>
+    <p class="cta-note" style="margin-top:10px;">✅ Free · Live Online · Sunday 3rd August</p>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- TESTIMONIALS -->
+<div class="t-bg">
+  <div class="t-inner">
+    <p class="sec-label reveal">Real People. Real Results.</p>
+    <h2 class="reveal">What Happens When You<br><span>Train Your Mind</span></h2>
+    <div class="t-grid">
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"She is god sent for me. I finally feel like myself again — for the first time in years."</p>
+        <p class="t-name">Priya S.</p>
+        <p class="t-role">IT Manager · London</p>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"I feel happy, positive, light — good vibes only. I didn't know what I was carrying until it was gone."</p>
+        <p class="t-name">Anjali K.</p>
+        <p class="t-role">Business Owner · Birmingham</p>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Something shifted that years of talking therapy never could. I didn't believe it was possible — until it happened."</p>
+        <p class="t-name">Rahul M.</p>
+        <p class="t-role">Finance Professional · Amsterdam</p>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"I've done therapy, coaching, retreats. Nothing came close to this. I feel like myself for the first time in years."</p>
+        <p class="t-name">Meera T.</p>
+        <p class="t-role">Medical Professional · Manchester</p>
+      </div>
+    </div>
+  </div>
+  <div class="t-vid-inner">
+    <p class="sec-label reveal" style="text-align:center;margin-top:48px;">Video Testimonials</p>
+    <h2 class="reveal" style="text-align:center;margin-bottom:24px;font-size:clamp(26px,3.5vw,44px);font-weight:900;color:#fff;">Hear It From <span style="color:#ef4444;">Them</span></h2>
+    <div class="t-vid-grid">
+      <div class="t-vid-wrap reveal">
+        <iframe src="https://player.vimeo.com/video/1181991350?badge=0&autopause=0&player_id=0&app_id=58479" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe>
+      </div>
+      <div class="t-vid-wrap reveal">
+        <iframe src="https://player.vimeo.com/video/1181988607?badge=0&autopause=0&player_id=0&app_id=58479" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe>
+      </div>
+      <div class="t-vid-wrap reveal">
+        <iframe src="https://player.vimeo.com/video/1181989827?badge=0&autopause=0&player_id=0&app_id=58479" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe>
+      </div>
+      <div class="t-vid-wrap reveal">
+        <iframe src="https://player.vimeo.com/video/1181987028?badge=0&autopause=0&player_id=0&app_id=58479" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- PHOTO QUOTE BREAK -->
+<div class="photo-quote reveal-scale">
+  <img src="rachana-quote.jpg" alt="Rachanaa Tulsyan" loading="lazy"/>
+  <div class="photo-quote-text">
+    <h2>This Is Not Therapy.<br>This Is <span>Mental Training.</span></h2>
+    <p>20 minutes a day. 21 days. The subconscious rewired.</p>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- METHOD -->
+<div class="method-wrap">
+  <p class="sec-label reveal">The Method</p>
+  <h2 class="reveal">3 Steps to Train<br><span>Your Mind</span></h2>
+  <div class="steps-row">
+    <div class="step-card reveal" id="step1">
+      <span class="s-ico">🔓</span>
+      <div class="step-num" id="num1">1</div>
+      <h3>RELEASE</h3>
+      <p>Let go of the patterns keeping you stuck — overthinking, anxiety, people-pleasing.</p>
+    </div>
+    <div class="step-card reveal" id="step2">
+      <span class="s-ico">🔄</span>
+      <div class="step-num" id="num2">2</div>
+      <h3>RESET</h3>
+      <p>Rewire your subconscious with 20 minutes of daily training over 21 days.</p>
+    </div>
+    <div class="step-card reveal" id="step3">
+      <span class="s-ico">👑</span>
+      <div class="step-num" id="num3">3</div>
+      <h3>RECLAIM</h3>
+      <p>Get back your peace, presence, and confidence. The version of you that success never quite unlocked.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:44px;" class="reveal">
+    <button class="cta-btn" onclick="openModal()">👉 Join Mental Gym — It's Free</button>
+    <p class="cta-note" style="margin-top:11px;">✅ Free · Live · Online</p>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- MIND RESULTS -->
+<div class="mindresult-wrap">
+  <p class="sec-label reveal" style="text-align:center;">The Transformation</p>
+  <h2 class="reveal">In The Gym, You Know What Happens.<br><span>Now Know What Happens When You Train Your Mind.</span></h2>
+  <p class="mindresult-sub reveal">People go to the gym because they can see the result. Here's what the result of mental training actually looks like — week by week.</p>
+
+  <div class="gym-compare reveal">
+    <div class="gc-box known">
+      <h3>🏋️ Body Gym (You Already Know This)</h3>
+      <div class="gc-chain">
+        <div class="gc-step"><div class="gs-ico">💪</div><p>You lift weights consistently</p></div>
+        <div class="gc-arrow">↓</div>
+        <div class="gc-step"><div class="gs-ico">🥛</div><p>Protein repairs the muscle fibres</p></div>
+        <div class="gc-arrow">↓</div>
+        <div class="gc-step"><div class="gs-ico">🔁</div><p>Muscles grow stronger over time</p></div>
+        <div class="gc-arrow">↓</div>
+        <div class="gc-step"><div class="gs-ico">🪞</div><p>You see and feel the change</p></div>
+      </div>
+      <div class="gc-result">Visible. Predictable. Proven.</div>
+    </div>
+
+    <div class="gc-box mental">
+      <h3>🧠 Mental Gym (Now You Know This Too)</h3>
+      <div class="gc-chain">
+        <div class="gc-step"><div class="gs-ico">🎧</div><p>20-min daily hypnotherapy session</p></div>
+        <div class="gc-arrow">↓</div>
+        <div class="gc-step"><div class="gs-ico">⚡</div><p>Reaches the subconscious — where patterns live</p></div>
+        <div class="gc-arrow">↓</div>
+        <div class="gc-step"><div class="gs-ico">🔄</div><p>Old patterns dissolve. New responses form.</p></div>
+        <div class="gc-arrow">↓</div>
+        <div class="gc-step"><div class="gs-ico">🌟</div><p>You think, feel, and react differently</p></div>
+      </div>
+      <div class="gc-result">Real. Measurable. Lasting.</div>
+    </div>
+  </div>
+
+  <p style="text-align:center;font-size:16px;font-weight:800;color:#fff;margin-bottom:24px;" class="reveal">Here's What Clients Actually Experience — Week by Week:</p>
+  <div class="timeline-grid reveal">
+    <div class="tl-card">
+      <p class="tl-week">Week 1</p>
+      <span class="tl-ico">😴→😌</span>
+      <p>Sleep improves. Brain stops racing at night. First time in years you wake up feeling rested.</p>
+    </div>
+    <div class="tl-card">
+      <p class="tl-week">Week 2</p>
+      <span class="tl-ico">😤→😌</span>
+      <p>Emotional reactions reduce. Less snapping, less overthinking. A quieter inner voice.</p>
+    </div>
+    <div class="tl-card">
+      <p class="tl-week">Week 3</p>
+      <span class="tl-ico">😶→😎</span>
+      <p>Confidence shows up naturally. You stop second-guessing. Speak up without rehearsing.</p>
+    </div>
+    <div class="tl-card">
+      <p class="tl-week">Week 4+</p>
+      <span class="tl-ico">🎭→🌟</span>
+      <p>Relationships shift. Work feels lighter. Success starts feeling like yours — not a performance.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:40px;" class="reveal">
+    <button class="cta-btn" onclick="openModal()">👉 Start Training My Mind — Free</button>
+    <p class="cta-note" style="margin-top:10px;">✅ Free Masterclass · 20 mins a day · 21 days to a different inner world</p>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ABOUT SPLIT -->
+<div class="about-split">
+  <div class="about-photo reveal-left">
+    <img src="rachana-about.jpg" alt="Rachanaa Tulsyan" style="max-height:600px;"/>
+    <div class="about-photo-badge">
+      <p>Rapid Quantum Shift Academy</p>
+      <span>risebeyondtoxic.com</span>
+    </div>
+  </div>
+  <div class="about-info reveal-right">
+    <p class="sec-label">Your Coach</p>
+    <h2>Meet <span>Rachanaa</span><br>Tulsyan</h2>
+    <p class="coach-title">Clinical Hypnotherapist · Mental Fitness Coach</p>
+    <p>She moved countries. Changed careers. Built success from the outside. And still felt that invisible heaviness no achievement could fix.</p>
+    <p>That journey led her to subconscious training — and it changed everything. Today she helps ambitious Indian professionals in UK & Europe train their minds the way they train their bodies.</p>
+    <div class="about-quote">"The goal isn't to escape the pressure. It's to build a mind that thrives under it."</div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- SECOND PHOTO BREAK -->
+<div class="photo-side">
+  <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&fit=crop&q=80" alt="Mental Training" class="reveal-left" loading="lazy"/>
+  <div class="photo-side-text reveal-right">
+    <p class="sec-label">Why This Works</p>
+    <h2>Your Mind Is a <span>Muscle.</span><br>Muscles Need Training.</h2>
+    <p>Meditation manages the surface. Therapy talks about the past. Mental Gym trains the subconscious — where your habits, reactions, and patterns actually live.</p>
+    <p>That's why it produces lasting change when everything else hasn't.</p>
+    <button class="cta-btn" onclick="openModal()" style="animation:none;">👉 Start Training Your Mind</button>
+    <p class="cta-note" style="margin-top:10px;">Free · Live · Limited Spots</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-wrap">
+  <p class="sec-label reveal" style="text-align:center;">Got Questions?</p>
+  <h2 class="reveal">We've Got <span>Answers</span></h2>
+  <div class="faq-item reveal">
+    <button class="faq-q" onclick="toggleFaq(this)">Is this therapy or counselling? <span class="faq-arrow">▼</span></button>
+    <div class="faq-a"><p>No. This is subconscious training — clinical hypnotherapy. It's not talking about your past or diagnosing problems. It's about training your mind the same way you train your body: with a specific technique, daily repetition, and measurable results.</p></div>
+  </div>
+  <div class="faq-item reveal">
+    <button class="faq-q" onclick="toggleFaq(this)">I've tried meditation, therapy, coaching. Why will this be different? <span class="faq-arrow">▼</span></button>
+    <div class="faq-a"><p>Meditation manages the surface. Therapy talks about the past. Coaching changes your thinking. None of them directly access the subconscious where your patterns, habits, and reactions actually live. That's why this works when other things haven't — it operates at a completely different level.</p></div>
+  </div>
+  <div class="faq-item reveal">
+    <button class="faq-q" onclick="toggleFaq(this)">What if I can't attend live? <span class="faq-arrow">▼</span></button>
+    <div class="faq-a"><p>Register anyway. Everyone who registers receives the recording and resources. But attending live gives you an actual experience of the technique — not just information. The live session is where the real shift happens.</p></div>
+  </div>
+  <div class="faq-item reveal">
+    <button class="faq-q" onclick="toggleFaq(this)">How much time does this take? <span class="faq-arrow">▼</span></button>
+    <div class="faq-a"><p>The masterclass is 90 minutes. The 21-day programme after is 20 minutes a day — designed specifically for busy professionals. You don't need a retreat or a weekend away. Just 20 minutes before bed.</p></div>
+  </div>
+  <div class="faq-item reveal">
+    <button class="faq-q" onclick="toggleFaq(this)">Will this actually work for me? <span class="faq-arrow">▼</span></button>
+    <div class="faq-a"><p>If you're an Indian professional living in UK or Europe, feeling the gap between your external success and internal fulfilment — yes. Rachanaa has lived this exact journey herself. She doesn't teach theory. She teaches what worked for her and hundreds of clients just like you.</p></div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- FINAL CTA -->
+<div class="final-wrap">
+  <div class="final-box reveal">
+    <h2>You've Trained Your Body for Years.</h2>
+    <h2 class="red-h">Now Train Your Mind.</h2>
+    <p>20 minutes a day. 21 days. A completely different inner world.</p>
+    <button class="cta-btn" onclick="openModal()">👉 Reserve My Free Spot</button>
+    <p class="cta-note" style="margin-top:13px;">✅ Free · Live · Online · Limited Spots</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Rachanaa Tulsyan · Rapid Quantum Shift Academy · <a href="mailto:hello@rachanaatulsyan.com">hello@rachanaatulsyan.com</a></p>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <p class="sticky-bar-text">🧠 <span>Mental Gym Masterclass</span> · Sunday 3rd Aug · 10 AM UK · FREE</p>
+  <button class="sticky-bar-btn" onclick="openModal()">Reserve My Spot →</button>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
+  <div class="modal-box" style="position:relative;">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modal-form-view">
+      <h3>🧠 Reserve Your Free Spot</h3>
+      <p class="modal-sub">Mental Gym Masterclass — Free & Live Online</p>
+      <form id="lead-form" onsubmit="submitLead(event)">
+        <label class="field-label">Your Name *</label>
+        <input id="lead-name" class="field-input" type="text" placeholder="Your full name" required/>
+        <label class="field-label">WhatsApp Number *</label>
+        <input id="lead-phone" class="field-input" type="tel" placeholder="+44 7xxx xxxxxx" required/>
+        <button type="submit" class="submit-btn">✅ Confirm My Free Spot →</button>
+        <p style="font-size:11px;color:#333;text-align:center;margin-top:10px;">We'll send your Zoom link via WhatsApp</p>
+      </form>
+    </div>
+    <div id="modal-success-view" class="success-box" style="display:none;">
+      <div class="big-emoji">🎉</div>
+      <h2>You're Registered!</h2>
+      <p>Your spot for the <strong>Mental Gym Masterclass</strong> is confirmed.</p>
+      <p style="font-size:14px;color:#aaa;margin:16px 0 8px;font-weight:700;">👇 Join the WhatsApp Group for your Zoom link:</p>
+      <a href="https://chat.whatsapp.com/DErZ5Qwi7aSC6JmWOPzPZe?mode=gi_t" target="_blank" style="display:block;background:#25D366;color:#fff;font-size:16px;font-weight:800;padding:14px 20px;border-radius:12px;text-decoration:none;margin:8px 0 16px;text-align:center;">📲 Join WhatsApp Group →</a>
+      <button class="submit-btn" onclick="closeModal()" style="background:#1a1a1a;font-size:13px;padding:12px;">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyTlLRvuTBQfAgoftko0LscWjqKnkkircu5ye2-Q6VKisnnc-ZZgKFY2CN3vIP1R8pG/exec';
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.pain-card').forEach((el,i) => { el.style.transitionDelay = (i * 0.06) + 's'; });
+
+  // Sequential step card glow when section scrolls into view
+  const stepObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        [1,2,3].forEach(n => {
+          setTimeout(() => {
+            const card = document.getElementById('step'+n);
+            const num = document.getElementById('num'+n);
+            if(card){ card.classList.add('animate-glow'); card.addEventListener('animationend',()=>card.classList.remove('animate-glow'),{once:true}); }
+            if(num){ num.classList.add('pop'); num.addEventListener('animationend',()=>num.classList.remove('pop'),{once:true}); }
+          }, (n-1) * 400);
+        });
+        stepObserver.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.3});
+  const stepsRow = document.querySelector('.steps-row');
+  if(stepsRow) stepObserver.observe(stepsRow);
+
+  function openModal() {
+    document.getElementById('modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+    document.body.style.overflow = '';
+    document.getElementById('modal-form-view').style.display = 'block';
+    document.getElementById('modal-success-view').style.display = 'none';
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('modal')) closeModal();
+  }
+  function submitLead(e) {
+    e.preventDefault();
+    var name=document.getElementById('lead-name').value.trim();
+    var phone=document.getElementById('lead-phone').value.trim();
+    if (!name||!phone){alert('Please fill in all fields.');return;}
+    if(typeof fbq!=='undefined'){fbq('track','Lead',{value:0,currency:'GBP'});fbq('track','CompleteRegistration',{value:0,currency:'GBP'});}
+    fetch('https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTY5MDYzMjA0MzE1MjY5NTUzYzUxMzYi_pc',{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/json'},body:JSON.stringify({name,phone,time:new Date().toISOString(),page_url:window.location.href,status:'Registered',product:'Mental Gym - FREE'})});
+    fetch(APPS_SCRIPT_URL+'?'+new URLSearchParams({name,phone,status:'Registered'}).toString(),{method:'GET',mode:'no-cors',keepalive:true});
+    document.getElementById('modal-form-view').style.display='none';
+    document.getElementById('modal-success-view').style.display='block';
+  }
+
+  // Countdown timer — update date when masterclass date changes
+  (function countdown(){
+    const event = new Date('2026-08-03T10:00:00+01:00');
+    function tick(){
+      const diff = event - Date.now();
+      if(diff<=0){['cd-d','cd-h','cd-m','cd-s'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent='00';});return;}
+      const d=Math.floor(diff/86400000);
+      const h=Math.floor((diff%86400000)/3600000);
+      const m=Math.floor((diff%3600000)/60000);
+      const s=Math.floor((diff%60000)/1000);
+      const pad=n=>String(n).padStart(2,'0');
+      document.getElementById('cd-d').textContent=pad(d);
+      document.getElementById('cd-h').textContent=pad(h);
+      document.getElementById('cd-m').textContent=pad(m);
+      document.getElementById('cd-s').textContent=pad(s);
+    }
+    tick(); setInterval(tick,1000);
+  })();
+
+  // Sticky bar — show after scrolling past hero
+  (function stickyBar(){
+    const bar = document.getElementById('stickyBar');
+    if(!bar) return;
+    window.addEventListener('scroll',()=>{
+      if(window.scrollY > 500) bar.classList.add('visible');
+      else bar.classList.remove('visible');
+    },{passive:true});
+  })();
+
+  // FAQ accordion
+  function toggleFaq(btn){
+    const ans = btn.nextElementSibling;
+    const isOpen = ans.classList.contains('open');
+    document.querySelectorAll('.faq-a.open').forEach(a=>a.classList.remove('open'));
+    document.querySelectorAll('.faq-q.open').forEach(b=>b.classList.remove('open'));
+    if(!isOpen){ans.classList.add('open');btn.classList.add('open');}
+  }
+</script>
+</body>
+</html>
