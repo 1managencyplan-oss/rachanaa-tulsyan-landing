@@ -14,10 +14,11 @@
   fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1474043517040815&ev=PageView&noscript=1"/></noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;}
+    body{font-family:'Manrope',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;}
+    h1,h2,h3,.hero-headline,.section-title,.pbp-wrap h2,.mindresult-wrap h2,.learn-wrap h2,.about-wrap h2,.testimonial-wrap h2,.faq-wrap h2{font-family:'Cormorant Garamond',serif;}
 
     @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -46,7 +47,7 @@
     .hero-line1{font-size:clamp(22px,3vw,42px);font-weight:900;line-height:1.2;color:#fff;margin-bottom:4px;}
     .hero-line2{font-size:clamp(36px,5.5vw,68px);font-weight:900;line-height:1.1;color:#ef4444;margin-bottom:16px;}
     .hero-wrap h1 .red{color:#ef4444;}
-    .hero-sub{font-size:clamp(16px,2vw,20px);color:#888;line-height:1.65;max-width:560px;margin:0 auto 36px;}
+    .hero-sub{font-size:clamp(15px,1.8vw,18px);color:#888;line-height:1.7;max-width:680px;margin:0 auto 36px;}
     .hero-sub strong{color:#ccc;}
 
     .badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;justify-content:center;}
@@ -230,15 +231,78 @@
     @media(max-width:400px){.cd-box{padding:10px 12px;min-width:58px;}.cd-num{font-size:24px;}}
 
     /* ── WHAT YOU'LL LEARN ── */
+    /* ── PAIN BEHIND PAIN ── */
+    .pbp-wrap{max-width:1100px;margin:0 auto;padding:72px 20px;}
+    .pbp-wrap h2{font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;margin-bottom:14px;line-height:1.1;text-align:center;}
+    .pbp-wrap h2 span{color:#ef4444;}
+    .pbp-sub{text-align:center;color:#666;font-size:16px;margin-bottom:56px;max-width:600px;margin-left:auto;margin-right:auto;}
+    .pbp-stack{display:flex;flex-direction:column;gap:28px;}
+    .pbp-card{border-radius:24px;overflow:hidden;display:grid;grid-template-columns:380px 1fr;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);}
+    @media(max-width:780px){.pbp-card{grid-template-columns:1fr;}}
+    .pbp-img{position:relative;overflow:hidden;min-height:320px;}
+    .pbp-img img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85;}
+    .pbp-img-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,rgba(10,10,10,.95));}
+    @media(max-width:780px){.pbp-img{min-height:220px;} .pbp-img-overlay{background:linear-gradient(to bottom,transparent 60%,rgba(10,10,10,.95));}}
+    .pbp-cascade{padding:32px 36px;display:flex;flex-direction:column;gap:0;justify-content:center;}
+    @media(max-width:780px){.pbp-cascade{padding:24px 20px;}}
+    .pbp-row{padding:18px 20px;border-radius:14px;margin-bottom:0;}
+    .pbp-row .ico{font-size:26px;flex-shrink:0;margin-top:2px;}
+    .pbp-row-inner{display:flex;align-items:flex-start;gap:14px;}
+    .pbp-row p{font-size:14px;font-weight:700;line-height:1.5;}
+    .pbp-surface{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);}
+    .pbp-surface p{color:#bbb;}
+    .pbp-arrow{text-align:center;padding:8px 0;color:#333;font-size:20px;}
+    .pbp-deeper{background:rgba(220,38,38,.07);border:1px solid rgba(220,38,38,.2);}
+    .pbp-deeper p{color:#fca5a5;}
+    .pbp-deepest{background:rgba(220,38,38,.16);border:2px solid rgba(220,38,38,.4);}
+    .pbp-deepest p{color:#ef4444;font-size:15px;}
+    .pbp-label{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:4px;display:block;}
+    .pbp-surface .pbp-label{color:#555;}
+    .pbp-deeper .pbp-label{color:rgba(220,38,38,.6);}
+    .pbp-deepest .pbp-label{color:#ef4444;}
+
+    /* ── MIND RESULTS ── */
+    .mindresult-wrap{max-width:900px;margin:0 auto;padding:72px 20px;}
+    .mindresult-wrap h2{font-size:clamp(24px,3.5vw,40px);font-weight:900;color:#fff;margin-bottom:12px;line-height:1.15;text-align:center;}
+    .mindresult-wrap h2 span{color:#ef4444;}
+    .mindresult-sub{text-align:center;color:#666;font-size:15px;margin-bottom:48px;}
+    .gym-compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;}
+    @media(max-width:640px){.gym-compare{grid-template-columns:1fr;}}
+    .gc-box{border-radius:20px;padding:28px 24px;}
+    .gc-box.known{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);}
+    .gc-box.mental{background:linear-gradient(135deg,rgba(220,38,38,.12),rgba(185,28,28,.04));border:2px solid rgba(220,38,38,.35);}
+    .gc-box h3{font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
+    .gc-box.known h3{color:#555;}
+    .gc-box.mental h3{color:#ef4444;}
+    .gc-chain{display:flex;flex-direction:column;gap:0;}
+    .gc-step{display:flex;align-items:center;gap:12px;padding:10px 0;}
+    .gc-step .gs-ico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+    .gc-box.known .gs-ico{background:rgba(255,255,255,.07);}
+    .gc-box.mental .gs-ico{background:rgba(220,38,38,.15);}
+    .gc-step p{font-size:13px;font-weight:700;color:#ccc;line-height:1.3;}
+    .gc-box.mental .gc-step p{color:#fff;}
+    .gc-arrow{text-align:center;color:#333;font-size:16px;padding:2px 0;}
+    .gc-box.mental .gc-arrow{color:rgba(220,38,38,.4);}
+    .gc-result{margin-top:14px;padding:14px 16px;border-radius:12px;text-align:center;font-size:13px;font-weight:800;}
+    .gc-box.known .gc-result{background:rgba(255,255,255,.06);color:#666;}
+    .gc-box.mental .gc-result{background:rgba(220,38,38,.2);color:#ef4444;}
+    .timeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+    @media(max-width:640px){.timeline-grid{grid-template-columns:repeat(2,1fr);}}
+    .tl-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px 14px;text-align:center;}
+    .tl-week{font-size:11px;font-weight:800;letter-spacing:1.5px;color:#ef4444;text-transform:uppercase;margin-bottom:8px;}
+    .tl-ico{font-size:32px;margin-bottom:10px;display:block;}
+    .tl-card p{font-size:12px;color:#888;font-weight:600;line-height:1.45;}
+
     .learn-wrap{max-width:860px;margin:0 auto;padding:72px 20px;}
     .learn-wrap h2{font-size:clamp(24px,3.5vw,40px);font-weight:900;color:#fff;margin-bottom:40px;line-height:1.15;}
     .learn-wrap h2 span{color:#ef4444;}
     .learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
     @media(max-width:560px){.learn-grid{grid-template-columns:1fr;}}
-    .learn-item{display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:20px;}
+    .learn-item{display:flex;flex-direction:column;align-items:flex-start;gap:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:24px;}
     .learn-item .l-ico{font-size:22px;flex-shrink:0;margin-top:2px;}
     .learn-item p{font-size:14px;color:#ccc;line-height:1.55;font-weight:600;}
     .learn-item p strong{color:#fff;display:block;margin-bottom:3px;font-size:15px;}
+    .learn-item svg{width:100%;height:90px;display:block;margin-bottom:4px;}
 
     /* ── FAQ ── */
     .faq-wrap{max-width:760px;margin:0 auto;padding:72px 20px;}
@@ -252,6 +316,55 @@
     .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;padding:0 24px;}
     .faq-a.open{max-height:300px;padding:0 24px 20px;}
     .faq-a p{font-size:14px;color:#888;line-height:1.7;}
+
+    /* ── LIGHT SECTIONS ── */
+    section.s-light{background:#faf5f3;}
+    section.s-light .divider{border-top-color:rgba(0,0,0,.08);}
+
+    /* headings & text */
+    section.s-light h2,section.s-light h3{color:#160505;}
+    section.s-light h2 span{color:#dc2626;}
+    section.s-light p{color:#5a4040;}
+    section.s-light .sec-label{color:#dc2626;}
+
+    /* gym vs cards */
+    section.s-light .gym-vs-wrap h2{color:#160505;}
+    section.s-light .vs-card.body-side{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.1);}
+    section.s-light .vs-card.body-side h3{color:#3a3030;}
+    section.s-light .vs-card.body-side p{color:#4a4040;}
+    section.s-light .vs-card.mind-side p{color:#3a1a1a;}
+    section.s-light .vs-new{background:rgba(220,38,38,.15);border-color:rgba(220,38,38,.3);color:#c0150f;}
+    section.s-light .vs-q{background:rgba(220,38,38,.07);border-color:rgba(220,38,38,.2);}
+    section.s-light .vs-q p{color:#160505;}
+    section.s-light .vs-q p span{color:#dc2626;}
+
+    /* learn items */
+    section.s-light .learn-wrap h2{color:#160505;}
+    section.s-light .learn-item{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.07);}
+    section.s-light .learn-item p{color:#666;}
+    section.s-light .learn-item p strong{color:#160505;}
+
+    /* about split */
+    section.s-light .about-info h2{color:#160505;}
+    section.s-light .about-info p{color:#5a4040;}
+    section.s-light .about-quote{color:#160505;}
+    section.s-light .about-photo-badge{background:#fff;border-color:rgba(0,0,0,.1);}
+    section.s-light .about-photo-badge p{color:#160505;}
+    section.s-light .about-photo img{border-color:rgba(0,0,0,.1);}
+    section.s-light .about-photo-badge span{color:#dc2626;}
+    section.s-light .photo-side img{border-color:rgba(0,0,0,.1);}
+    section.s-light .photo-side-text h2{color:#160505;}
+    section.s-light .photo-side-text p{color:#5a4040;}
+
+    /* faq */
+    section.s-light .faq-wrap h2{color:#160505;}
+    section.s-light .faq-item{border-color:rgba(0,0,0,.1);}
+    section.s-light .faq-q{background:rgba(0,0,0,.03);color:#160505;}
+    section.s-light .faq-q:hover{background:rgba(0,0,0,.06);}
+    section.s-light .faq-a p{color:#666;}
+
+    /* cta-note inside light */
+    section.s-light .cta-note{color:#999;}
 
     /* ── STICKY BAR ── */
     .sticky-bar{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#111,#1a0000);border-top:1px solid rgba(220,38,38,.3);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:999;transform:translateY(100%);transition:transform .4s ease;box-shadow:0 -8px 32px rgba(0,0,0,.6);}
@@ -270,20 +383,20 @@
 
 <!-- TOP BAR -->
 <div class="top-bar">
-  🧠 FREE Live Masterclass — <span>Mental Gym · Limited Spots · Online</span> — Register Now
+  🔥 FREE Live Masterclass — <span>Sunday 3rd Aug · 10 AM UK · Limited Spots Remaining</span> — Register Before It's Full
 </div>
 
 <!-- HERO -->
 <div class="hero-wrap">
-  <div class="eyebrow">Free Live Masterclass</div>
-  <p class="hero-event-date">📅 <span>Sunday, 3rd August 2026</span> · 10:00 AM UK Time · Online</p>
-  <p class="hero-line1">You Go to the Gym for Your Body.</p>
-  <h1 class="hero-line2">What About Your Mind?</h1>
-  <p class="hero-sub">In the human body, the mind is the <strong>most powerful muscle.</strong> Yet nobody trains it. Until now.</p>
+  <div class="eyebrow">Free Live Masterclass · For Indian Professionals in UK &amp; Europe</div>
+  <p class="hero-event-date">📅 <span>Sunday, 3rd August 2026</span> · 10:00 AM UK Time · Online · 90 Minutes</p>
+  <p class="hero-line1">Your Body Has a Gym.</p>
+  <h1 class="hero-line2">Your Mind Deserves One Too.</h1>
+  <p class="hero-sub">A 21-day science-backed mental training programme that helps ambitious professionals reduce overthinking, build stronger mental habits, and improve focus, confidence, and emotional resilience.</p>
 </div>
 
 <!-- VIDEO -->
-<p class="video-label reveal">▶ <span>Watch this 3-minute message</span> before you register</p>
+<p class="video-label reveal">▶ <span>Watch this first — Rachanaa explains exactly who this is for</span></p>
 <div class="video-wrap reveal">
   <div class="video-card">
     <iframe src="https://www.youtube.com/embed/YeqevyrsdWM?rel=0" title="Rachanaa Tulsyan — Mental Gym" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -292,7 +405,7 @@
 
 <!-- COUNTDOWN + CTA BELOW VIDEO -->
 <div style="text-align:center;padding:40px 20px 56px;max-width:720px;margin:0 auto;">
-  <p class="hero-proof reveal">🔥 <strong>847 Indian professionals</strong> from UK &amp; Europe have already registered</p>
+  <p class="hero-proof reveal">🔥 <strong>1,200+ Indian professionals</strong> from UK &amp; Europe have already registered</p>
   <div class="countdown-wrap reveal">
     <div class="cd-box"><span class="cd-num" id="cd-d">00</span><span class="cd-label">Days</span></div>
     <div class="cd-box"><span class="cd-num" id="cd-h">00</span><span class="cd-label">Hours</span></div>
@@ -303,109 +416,407 @@
   <p class="cta-note" style="margin-top:11px;">✅ Instant confirmation · Free WhatsApp group access · Limited Spots</p>
 </div>
 
+<section class="s-light">
 <hr class="divider"/>
 
-<!-- GYM VS -->
+<!-- GYM VS / REFRAME -->
 <div class="gym-vs-wrap">
-  <p class="sec-label reveal" style="text-align:center;">The Comparison Nobody Makes</p>
-  <h2 class="reveal">You Train <span>One.</span> Time to Train the Other.</h2>
+  <p class="sec-label reveal" style="text-align:center;">The Big Idea</p>
+  <h2 class="reveal">Here's What <span>Nobody Told You.</span></h2>
   <div class="vs-grid">
     <div class="vs-card body-side reveal-left">
-      <span class="big-ico">💪</span>
-      <h3>Physical Gym</h3>
-      <p>3–5 times a week<br>Protein shakes<br>Tracking progress<br>For your body</p>
+      <span class="big-ico">🔁</span>
+      <h3>What You've Been Told</h3>
+      <p>Work harder. Think positive. Push through. Change your job, your city, your relationship. Eventually it will feel better.</p>
     </div>
     <div class="vs-center reveal"><div style="font-size:28px;font-weight:900;">VS</div></div>
     <div class="vs-card mind-side reveal-right">
       <span class="big-ico">🧠</span>
-      <h3>Mental Gym</h3>
-      <p>10 minutes a day<br>21 days<br>Subconscious training<br>For the mind that runs everything</p>
-      <span class="vs-new">NEW</span>
+      <h3>What's Actually True</h3>
+      <p>What you're experiencing is mental conditioning. Old programmes running since childhood. No circumstance change can reach them. Only training will.</p>
+      <span class="vs-new">THE TRUTH</span>
     </div>
   </div>
   <div class="vs-q reveal">
-    <p>Your body is 20% of your life.<br><span>Your mind is running 100% of it.</span><br>Which one actually deserves more training?</p>
+    <p>Every time you can't switch off — that's conditioning.<br><span>Every time you seek approval before trusting yourself — that's conditioning.</span><br>No app, holiday, or promotion will change it. Only training will.</p>
   </div>
 </div>
 
 <hr class="divider"/>
+</section>
 
 <!-- PAIN SECTION -->
 <div class="pain-wrap">
-  <p class="sec-label reveal">Does This Sound Like You?</p>
-  <h2 class="reveal">You're Exhausted.<br><span>But Not Physically.</span></h2>
+  <p class="sec-label reveal">The Mirror</p>
+  <h2 class="reveal">You've Achieved Everything.<br><span>So Why Does It Still Feel Like This?</span></h2>
+  <p style="color:#666;font-size:15px;margin-bottom:36px;" class="reveal">Read these slowly. See which ones feel familiar.</p>
   <div class="pain-grid">
-    <div class="pain-card reveal"><span class="p-ico">😴</span><p>Always tired even after sleep</p></div>
-    <div class="pain-card reveal"><span class="p-ico">💼</span><p>Work ends — brain doesn't</p></div>
-    <div class="pain-card reveal"><span class="p-ico">🌍</span><p>Changed everything. Same feeling.</p></div>
-    <div class="pain-card reveal"><span class="p-ico">🏆</span><p>Achieved so much. Feels like nothing.</p></div>
-    <div class="pain-card reveal"><span class="p-ico">😤</span><p>Snapping. People-pleasing. Overworking.</p></div>
-    <div class="pain-card reveal"><span class="p-ico">📱</span><p>Can't switch off before sleep</p></div>
-    <div class="pain-card reveal"><span class="p-ico">🧘</span><p>Tried meditation. Didn't last.</p></div>
-    <div class="pain-card reveal"><span class="p-ico">🎭</span><p>Performing life — not living it</p></div>
+    <div class="pain-card reveal"><span class="p-ico">😔</span><p>You wake up already tired — even after 8 hours of sleep</p></div>
+    <div class="pain-card reveal"><span class="p-ico">😔</span><p>Work ends at 6pm. But your mind never clocks out</p></div>
+    <div class="pain-card reveal"><span class="p-ico">😔</span><p>One bad email can ruin your entire day</p></div>
+    <div class="pain-card reveal"><span class="p-ico">😔</span><p>You snap at the people you love — and hate yourself for it</p></div>
+    <div class="pain-card reveal"><span class="p-ico">😔</span><p>You've changed jobs, cities, relationships — but the heaviness followed you</p></div>
+    <div class="pain-card reveal"><span class="p-ico">😔</span><p>Sunday evenings feel like dread, not peace</p></div>
+    <div class="pain-card reveal"><span class="p-ico">😔</span><p>You've tried meditation. Journaling. Self-help books. Still the same patterns</p></div>
+    <div class="pain-card reveal"><span class="p-ico">😔</span><p>You feel like you're performing your life — not actually living it</p></div>
   </div>
   <div class="pain-cta reveal">
-    If even 3 hit close to home — your mind is asking for training.
+    If even 3 of these hit close to home — this page was written for you.
   </div>
 </div>
 
-<!-- WHAT YOU'LL LEARN -->
-<div class="learn-wrap">
-  <p class="sec-label reveal" style="text-align:center;">In This Free Masterclass</p>
-  <h2 class="reveal" style="text-align:center;">By The End, You'll Discover<br><span>Exactly Why You Feel Stuck</span></h2>
-  <div class="learn-grid">
-    <div class="learn-item reveal">
-      <span class="l-ico">🧠</span>
-      <p><strong>Why willpower never works</strong>Because change must happen at the subconscious level — not through effort or discipline alone.</p>
-    </div>
-    <div class="learn-item reveal">
-      <span class="l-ico">🌍</span>
-      <p><strong>The invisible load Indian professionals carry</strong>The specific mental patterns created by moving abroad, over-achieving, and performing success.</p>
-    </div>
-    <div class="learn-item reveal">
-      <span class="l-ico">⏱️</span>
-      <p><strong>The 10-minute daily method</strong>A clinical hypnotherapy technique that rewires your subconscious — not therapy, not meditation, not journaling.</p>
-    </div>
-    <div class="learn-item reveal">
-      <span class="l-ico">✅</span>
-      <p><strong>Your first real mental training session</strong>You won't just learn — you'll experience a live session and feel the shift before the class ends.</p>
-    </div>
+<!-- SECTION 3 — THE REFRAME -->
+<div style="max-width:760px;margin:0 auto;padding:72px 24px;">
+  <p class="sec-label reveal" style="text-align:center;">The Big Idea</p>
+  <h2 class="reveal" style="font-size:clamp(28px,4vw,50px);font-weight:900;color:#fff;line-height:1.15;margin-bottom:28px;">Here's What Nobody Told You.</h2>
+
+  <!-- AI Graphic: Neural Mind -->
+  <div class="reveal" style="text-align:center;margin-bottom:36px;">
+    <svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;height:auto;display:inline-block;">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ef4444" stop-opacity="0.08"/>
+          <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="headGlow" cx="50%" cy="40%" r="55%">
+          <stop offset="0%" stop-color="#1a0a0a"/>
+          <stop offset="100%" stop-color="#0d0d0d"/>
+        </radialGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+          <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="softglow">
+          <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+          <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <!-- Node pulse animation -->
+        <style>
+          .pulse-node { animation: nodePulse 3s ease-in-out infinite; }
+          .pulse-node:nth-child(2n) { animation-delay: 0.8s; }
+          .pulse-node:nth-child(3n) { animation-delay: 1.6s; }
+          .flow-line { stroke-dasharray: 6 4; animation: flowDash 2s linear infinite; }
+          .flow-line-rev { stroke-dasharray: 6 4; animation: flowDash 2.4s linear infinite reverse; }
+          @keyframes nodePulse {
+            0%,100% { opacity: 0.6; r: 4; }
+            50% { opacity: 1; r: 5.5; }
+          }
+          @keyframes flowDash {
+            to { stroke-dashoffset: -20; }
+          }
+        </style>
+      </defs>
+
+      <!-- Background glow -->
+      <ellipse cx="260" cy="160" rx="220" ry="150" fill="url(#bgGlow)"/>
+
+      <!-- Head silhouette -->
+      <path d="M 210 290 Q 190 260 185 230 Q 170 200 168 175 Q 162 130 175 100 Q 195 55 260 50 Q 325 55 345 100 Q 358 130 352 175 Q 350 200 335 230 Q 330 260 310 290 Z"
+            fill="url(#headGlow)" stroke="rgba(239,68,68,0.25)" stroke-width="1.5"/>
+
+      <!-- Neck -->
+      <rect x="235" y="285" width="50" height="22" rx="8" fill="#0d0d0d" stroke="rgba(239,68,68,0.15)" stroke-width="1"/>
+
+      <!-- Neural network nodes — left cluster (old patterns) -->
+      <circle cx="198" cy="130" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
+      <circle cx="210" cy="155" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
+      <circle cx="195" cy="178" r="4" fill="#ef4444" opacity="0.4" filter="url(#glow)" class="pulse-node"/>
+      <circle cx="218" cy="198" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
+
+      <!-- Neural network nodes — right cluster (new patterns) -->
+      <circle cx="322" cy="130" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
+      <circle cx="310" cy="155" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
+      <circle cx="325" cy="178" r="4" fill="#ef4444" opacity="0.4" filter="url(#glow)" class="pulse-node"/>
+      <circle cx="302" cy="198" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
+
+      <!-- Central nodes -->
+      <circle cx="260" cy="105" r="5" fill="#ef4444" opacity="0.7" filter="url(#glow)" class="pulse-node"/>
+      <circle cx="240" cy="135" r="4" fill="#ef4444" opacity="0.55" filter="url(#glow)" class="pulse-node"/>
+      <circle cx="280" cy="135" r="4" fill="#ef4444" opacity="0.55" filter="url(#glow)" class="pulse-node"/>
+      <circle cx="260" cy="165" r="6" fill="#ef4444" opacity="0.9" filter="url(#softglow)" class="pulse-node"/>
+      <circle cx="245" cy="195" r="4" fill="#ef4444" opacity="0.55" filter="url(#glow)" class="pulse-node"/>
+      <circle cx="275" cy="195" r="4" fill="#ef4444" opacity="0.55" filter="url(#glow)" class="pulse-node"/>
+      <circle cx="260" cy="225" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
+
+      <!-- Connecting lines — left to center -->
+      <line x1="198" y1="130" x2="240" y2="135" stroke="rgba(239,68,68,0.25)" stroke-width="1" class="flow-line"/>
+      <line x1="210" y1="155" x2="240" y2="135" stroke="rgba(239,68,68,0.2)" stroke-width="1" class="flow-line"/>
+      <line x1="210" y1="155" x2="260" y2="165" stroke="rgba(239,68,68,0.22)" stroke-width="1" class="flow-line-rev"/>
+      <line x1="195" y1="178" x2="245" y2="195" stroke="rgba(239,68,68,0.18)" stroke-width="1" class="flow-line"/>
+      <line x1="218" y1="198" x2="245" y2="195" stroke="rgba(239,68,68,0.2)" stroke-width="1" class="flow-line-rev"/>
+
+      <!-- Connecting lines — right to center -->
+      <line x1="322" y1="130" x2="280" y2="135" stroke="rgba(239,68,68,0.25)" stroke-width="1" class="flow-line-rev"/>
+      <line x1="310" y1="155" x2="280" y2="135" stroke="rgba(239,68,68,0.2)" stroke-width="1" class="flow-line-rev"/>
+      <line x1="310" y1="155" x2="260" y2="165" stroke="rgba(239,68,68,0.22)" stroke-width="1" class="flow-line"/>
+      <line x1="325" y1="178" x2="275" y2="195" stroke="rgba(239,68,68,0.18)" stroke-width="1" class="flow-line-rev"/>
+      <line x1="302" y1="198" x2="275" y2="195" stroke="rgba(239,68,68,0.2)" stroke-width="1" class="flow-line"/>
+
+      <!-- Connecting lines — center vertical -->
+      <line x1="260" y1="105" x2="240" y2="135" stroke="rgba(239,68,68,0.3)" stroke-width="1" class="flow-line"/>
+      <line x1="260" y1="105" x2="280" y2="135" stroke="rgba(239,68,68,0.3)" stroke-width="1" class="flow-line-rev"/>
+      <line x1="240" y1="135" x2="260" y2="165" stroke="rgba(239,68,68,0.3)" stroke-width="1.2" class="flow-line"/>
+      <line x1="280" y1="135" x2="260" y2="165" stroke="rgba(239,68,68,0.3)" stroke-width="1.2" class="flow-line-rev"/>
+      <line x1="260" y1="165" x2="245" y2="195" stroke="rgba(239,68,68,0.3)" stroke-width="1.2" class="flow-line"/>
+      <line x1="260" y1="165" x2="275" y2="195" stroke="rgba(239,68,68,0.3)" stroke-width="1.2" class="flow-line-rev"/>
+      <line x1="245" y1="195" x2="260" y2="225" stroke="rgba(239,68,68,0.25)" stroke-width="1" class="flow-line"/>
+      <line x1="275" y1="195" x2="260" y2="225" stroke="rgba(239,68,68,0.25)" stroke-width="1" class="flow-line-rev"/>
+
+      <!-- Central highlight ring -->
+      <circle cx="260" cy="165" r="14" fill="none" stroke="rgba(239,68,68,0.2)" stroke-width="1" stroke-dasharray="4 3"/>
+
+      <!-- Left label: OLD PATTERNS -->
+      <text x="72" y="148" font-family="Manrope, sans-serif" font-size="9" fill="rgba(239,68,68,0.6)" letter-spacing="1.5" text-anchor="middle">OLD</text>
+      <text x="72" y="160" font-family="Manrope, sans-serif" font-size="9" fill="rgba(239,68,68,0.6)" letter-spacing="1.5" text-anchor="middle">PATTERNS</text>
+      <line x1="103" y1="154" x2="194" y2="154" stroke="rgba(239,68,68,0.2)" stroke-width="0.8" stroke-dasharray="3 3"/>
+
+      <!-- Right label: NEW PATHWAYS -->
+      <text x="452" y="148" font-family="Manrope, sans-serif" font-size="9" fill="rgba(239,68,68,0.6)" letter-spacing="1.5" text-anchor="middle">NEW</text>
+      <text x="452" y="160" font-family="Manrope, sans-serif" font-size="9" fill="rgba(239,68,68,0.6)" letter-spacing="1.5" text-anchor="middle">PATHWAYS</text>
+      <line x1="417" y1="154" x2="325" y2="154" stroke="rgba(239,68,68,0.2)" stroke-width="0.8" stroke-dasharray="3 3"/>
+
+      <!-- Bottom label -->
+      <text x="260" y="308" font-family="Manrope, sans-serif" font-size="9" fill="rgba(255,255,255,0.2)" letter-spacing="2" text-anchor="middle">SUBCONSCIOUS REWIRING</text>
+    </svg>
   </div>
-  <div style="text-align:center;margin-top:40px;" class="reveal">
-    <button class="cta-btn" onclick="openModal()">👉 Save My Free Spot</button>
-    <p class="cta-note" style="margin-top:10px;">✅ Free · Live Online · Sunday 3rd August</p>
+
+  <p class="reveal" style="font-size:17px;color:#888;line-height:1.8;margin-bottom:18px;">What you're experiencing is not stress.<br>It's not anxiety. It's not burnout. It's not a personality flaw.</p>
+
+  <div class="reveal" style="border-left:3px solid #ef4444;padding:18px 24px;background:rgba(220,38,38,.07);border-radius:0 12px 12px 0;margin-bottom:28px;">
+    <p style="font-size:19px;font-weight:800;color:#fff;line-height:1.5;">It's mental conditioning. And it can be retrained.</p>
+  </div>
+
+  <p class="reveal" style="font-size:16px;color:#888;line-height:1.8;margin-bottom:24px;">Your mind has been running the same programmes since childhood. Old fears. Old beliefs. Old survival patterns.</p>
+
+  <div class="reveal" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px 28px;margin-bottom:28px;">
+    <p style="font-size:15px;color:#ccc;line-height:2;">Every time you can't switch off — <strong style="color:#ef4444;">that's conditioning.</strong><br>
+    Every time you seek approval before trusting yourself — <strong style="color:#ef4444;">that's conditioning.</strong><br>
+    Every time you carry everyone else's emotions — <strong style="color:#ef4444;">that's conditioning.</strong></p>
+  </div>
+
+  <p class="reveal" style="font-size:16px;color:#888;line-height:1.8;margin-bottom:18px;">No app, holiday, or promotion will change your mental conditioning.<br>Only training will.</p>
+
+  <p class="reveal" style="font-size:16px;color:#888;line-height:1.8;margin-bottom:28px;">Think about your body. If you never went to the gym, your muscles would weaken. No matter how good your diet is, no matter how much sleep you get.<br><br>Your mind works the same way.</p>
+
+  <div class="reveal" style="border-left:3px solid #ef4444;padding:18px 24px;background:rgba(220,38,38,.07);border-radius:0 12px 12px 0;margin-bottom:0;">
+    <p style="font-size:19px;font-weight:800;color:#fff;line-height:1.5;">The Mental Gym is the training your mind has been waiting for.</p>
   </div>
 </div>
 
 <hr class="divider"/>
+
+<!-- SECTION 5 — WHAT IT IS NOT / IS -->
+<section class="s-light">
+<div style="max-width:860px;margin:0 auto;padding:72px 24px;">
+  <p class="sec-label reveal" style="text-align:center;">Let's Be Clear</p>
+  <h2 class="reveal" style="font-size:clamp(26px,3.5vw,44px);font-weight:900;color:#160505;line-height:1.15;text-align:center;margin-bottom:48px;">Mental Gym Is <span style="color:#dc2626;">NOT…</span></h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:48px;" class="reveal">
+    <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;">
+      <span style="font-size:20px;flex-shrink:0;">❌</span><p style="font-size:14px;color:#5a4040;font-weight:600;line-height:1.5;">A meditation app (you've already tried those)</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;">
+      <span style="font-size:20px;flex-shrink:0;">❌</span><p style="font-size:14px;color:#5a4040;font-weight:600;line-height:1.5;">Motivational content (feels good, changes nothing)</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;">
+      <span style="font-size:20px;flex-shrink:0;">❌</span><p style="font-size:14px;color:#5a4040;font-weight:600;line-height:1.5;">Therapy (we're not diagnosing — we're training)</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;">
+      <span style="font-size:20px;flex-shrink:0;">❌</span><p style="font-size:14px;color:#5a4040;font-weight:600;line-height:1.5;">A 3-hour seminar you forget by Monday</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;grid-column:1/-1;">
+      <span style="font-size:20px;flex-shrink:0;">❌</span><p style="font-size:14px;color:#5a4040;font-weight:600;line-height:1.5;">Another 'positive thinking' course</p>
+    </div>
+  </div>
+
+  <h2 class="reveal" style="font-size:clamp(26px,3.5vw,44px);font-weight:900;color:#160505;line-height:1.15;text-align:center;margin-bottom:32px;">Mental Gym <span style="color:#dc2626;">IS…</span></h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;" class="reveal">
+    <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.2);border-radius:12px;padding:16px 18px;">
+      <span style="font-size:20px;flex-shrink:0;">✅</span><p style="font-size:14px;color:#3a1a1a;font-weight:600;line-height:1.5;">Subconscious reprogramming — targeting the root, not the symptom</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.2);border-radius:12px;padding:16px 18px;">
+      <span style="font-size:20px;flex-shrink:0;">✅</span><p style="font-size:14px;color:#3a1a1a;font-weight:600;line-height:1.5;">Progressive daily training — each session builds on the last</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.2);border-radius:12px;padding:16px 18px;">
+      <span style="font-size:20px;flex-shrink:0;">✅</span><p style="font-size:14px;color:#3a1a1a;font-weight:600;line-height:1.5;">Built specifically for high-achieving professionals</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.2);border-radius:12px;padding:16px 18px;">
+      <span style="font-size:20px;flex-shrink:0;">✅</span><p style="font-size:14px;color:#3a1a1a;font-weight:600;line-height:1.5;">Results you can feel in daily life — not just during the session</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.2);border-radius:12px;padding:16px 18px;grid-column:1/-1;">
+      <span style="font-size:20px;flex-shrink:0;">✅</span><p style="font-size:14px;color:#3a1a1a;font-weight:600;line-height:1.5;">The missing piece between where you are and where you want to be</p>
+    </div>
+  </div>
+</div>
+<hr class="divider"/>
+</section>
+
+
+<section class="s-light">
+<hr class="divider"/>
+
+<!-- HOW IT WORKS -->
+<div class="learn-wrap">
+  <p class="sec-label reveal" style="text-align:center;">How It Works</p>
+  <h2 class="reveal" style="text-align:center;">3 Simple Steps to<br><span>Start Your Mental Training</span></h2>
+  <div class="learn-grid">
+
+    <!-- STEP 1 — JOIN -->
+    <div class="learn-item reveal">
+      <svg viewBox="0 0 280 90" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>.s1dot{animation:s1pulse 2s ease-in-out infinite;} .s1dot:nth-child(2){animation-delay:.4s;} .s1dot:nth-child(3){animation-delay:.8s;} @keyframes s1pulse{0%,100%{opacity:.4;}50%{opacity:1;}}</style>
+        </defs>
+        <!-- Screen/laptop -->
+        <rect x="70" y="10" width="140" height="52" rx="6" fill="none" stroke="rgba(220,38,38,0.5)" stroke-width="1.5"/>
+        <rect x="76" y="16" width="128" height="40" rx="3" fill="rgba(220,38,38,0.07)"/>
+        <!-- Screen content: play button -->
+        <circle cx="140" cy="36" r="12" fill="none" stroke="rgba(220,38,38,0.6)" stroke-width="1.3"/>
+        <polygon points="136,30 136,42 150,36" fill="rgba(220,38,38,0.6)"/>
+        <!-- Stand -->
+        <path d="M 120 62 L 115 75 M 160 62 L 165 75" stroke="rgba(220,38,38,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="110" y1="75" x2="170" y2="75" stroke="rgba(220,38,38,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- People / attendees dots -->
+        <circle cx="30" cy="55" r="10" fill="none" stroke="rgba(220,38,38,0.4)" stroke-width="1.2" class="s1dot"/>
+        <circle cx="30" cy="42" r="5" fill="none" stroke="rgba(220,38,38,0.4)" stroke-width="1.2" class="s1dot"/>
+        <circle cx="250" cy="55" r="10" fill="none" stroke="rgba(220,38,38,0.4)" stroke-width="1.2" class="s1dot"/>
+        <circle cx="250" cy="42" r="5" fill="none" stroke="rgba(220,38,38,0.4)" stroke-width="1.2" class="s1dot"/>
+        <!-- Wifi/signal lines -->
+        <path d="M 140 10 Q 140 4 140 2" stroke="rgba(220,38,38,0.4)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M 128 8 Q 134 2 140 2 Q 146 2 152 8" fill="none" stroke="rgba(220,38,38,0.35)" stroke-width="1"/>
+        <path d="M 120 12 Q 130 2 140 2 Q 150 2 160 12" fill="none" stroke="rgba(220,38,38,0.25)" stroke-width="1"/>
+        <!-- Step label -->
+        <text x="140" y="87" font-family="Manrope,sans-serif" font-size="9" fill="rgba(220,38,38,0.5)" text-anchor="middle" letter-spacing="1.5">STEP 1 · LIVE SESSION</text>
+      </svg>
+      <p><strong>Step 1 — Join the FREE Masterclass</strong>Register for the free 90-minute live session on Sunday 3rd August at 10 AM UK time. Rachanaa will walk you through the Mental Gym framework and you'll experience your first training session live.</p>
+    </div>
+
+    <!-- STEP 2 — UNDERSTAND -->
+    <div class="learn-item reveal">
+      <svg viewBox="0 0 280 90" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>.s2line{stroke-dasharray:5 3;animation:s2flow 1.8s linear infinite;} @keyframes s2flow{to{stroke-dashoffset:-16;}} .s2node{animation:s2blink 2.4s ease-in-out infinite;} .s2node:nth-child(odd){animation-delay:.6s;} @keyframes s2blink{0%,100%{opacity:.4;}50%{opacity:1;}}</style>
+        </defs>
+        <!-- Brain outline -->
+        <path d="M 100 60 Q 85 60 80 50 Q 74 38 82 30 Q 86 24 94 24 Q 96 18 104 16 Q 114 12 124 18 Q 130 12 140 14 Q 150 12 156 18 Q 166 12 176 16 Q 184 18 186 24 Q 194 24 198 30 Q 206 38 200 50 Q 195 60 180 60 Q 175 68 165 68 Q 155 72 140 70 Q 125 72 115 68 Q 105 68 100 60 Z"
+              fill="none" stroke="rgba(220,38,38,0.45)" stroke-width="1.4"/>
+        <!-- Neural nodes inside brain -->
+        <circle cx="118" cy="35" r="3.5" fill="rgba(220,38,38,0.6)" class="s2node"/>
+        <circle cx="140" cy="28" r="3.5" fill="rgba(220,38,38,0.6)" class="s2node"/>
+        <circle cx="162" cy="35" r="3.5" fill="rgba(220,38,38,0.6)" class="s2node"/>
+        <circle cx="128" cy="52" r="3.5" fill="rgba(220,38,38,0.55)" class="s2node"/>
+        <circle cx="152" cy="52" r="3.5" fill="rgba(220,38,38,0.55)" class="s2node"/>
+        <circle cx="140" cy="45" r="4.5" fill="rgba(220,38,38,0.75)" class="s2node"/>
+        <!-- Connections -->
+        <line x1="118" y1="35" x2="140" y2="28" stroke="rgba(220,38,38,0.3)" stroke-width="1" class="s2line"/>
+        <line x1="140" y1="28" x2="162" y2="35" stroke="rgba(220,38,38,0.3)" stroke-width="1" class="s2line"/>
+        <line x1="118" y1="35" x2="140" y2="45" stroke="rgba(220,38,38,0.3)" stroke-width="1" class="s2line"/>
+        <line x1="162" y1="35" x2="140" y2="45" stroke="rgba(220,38,38,0.3)" stroke-width="1" class="s2line"/>
+        <line x1="140" y1="45" x2="128" y2="52" stroke="rgba(220,38,38,0.3)" stroke-width="1" class="s2line"/>
+        <line x1="140" y1="45" x2="152" y2="52" stroke="rgba(220,38,38,0.3)" stroke-width="1" class="s2line"/>
+        <!-- Magnifying glass -->
+        <circle cx="200" cy="68" r="13" fill="none" stroke="rgba(220,38,38,0.6)" stroke-width="1.5"/>
+        <line x1="210" y1="78" x2="220" y2="88" stroke="rgba(220,38,38,0.55)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="200" cy="68" r="7" fill="rgba(220,38,38,0.08)"/>
+        <text x="140" y="87" font-family="Manrope,sans-serif" font-size="9" fill="rgba(220,38,38,0.5)" text-anchor="middle" letter-spacing="1.5">STEP 2 · IDENTIFY PATTERNS</text>
+      </svg>
+      <p><strong>Step 2 — Understand Your Mental Conditioning</strong>You'll identify the exact mental patterns that are keeping you stuck — the ones that no app, holiday, or promotion has been able to fix.</p>
+    </div>
+
+    <!-- STEP 3 — TRAIN -->
+    <div class="learn-item reveal">
+      <svg viewBox="0 0 280 90" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>.s3bar{animation:s3grow 2.2s ease-in-out infinite;transform-origin:bottom;} .s3bar:nth-child(2){animation-delay:.3s;} .s3bar:nth-child(3){animation-delay:.6s;} .s3bar:nth-child(4){animation-delay:.9s;} .s3bar:nth-child(5){animation-delay:1.2s;} @keyframes s3grow{0%,100%{opacity:.5;}50%{opacity:1;}}</style>
+        </defs>
+        <!-- Dumbbell left -->
+        <rect x="30" y="38" width="36" height="10" rx="2" fill="none" stroke="rgba(220,38,38,0.45)" stroke-width="1.3"/>
+        <rect x="24" y="30" width="12" height="26" rx="3" fill="none" stroke="rgba(220,38,38,0.5)" stroke-width="1.3"/>
+        <rect x="60" y="30" width="12" height="26" rx="3" fill="none" stroke="rgba(220,38,38,0.5)" stroke-width="1.3"/>
+        <!-- Dumbbell right -->
+        <rect x="214" y="38" width="36" height="10" rx="2" fill="none" stroke="rgba(220,38,38,0.45)" stroke-width="1.3"/>
+        <rect x="208" y="30" width="12" height="26" rx="3" fill="none" stroke="rgba(220,38,38,0.5)" stroke-width="1.3"/>
+        <rect x="244" y="30" width="12" height="26" rx="3" fill="none" stroke="rgba(220,38,38,0.5)" stroke-width="1.3"/>
+        <!-- Calendar / 21 days progress bars -->
+        <rect x="100" y="12" width="80" height="58" rx="6" fill="none" stroke="rgba(220,38,38,0.4)" stroke-width="1.2"/>
+        <text x="140" y="30" font-family="Manrope,sans-serif" font-size="11" font-weight="700" fill="rgba(220,38,38,0.7)" text-anchor="middle">21 DAYS</text>
+        <!-- Progress bars inside calendar -->
+        <rect x="108" y="36" width="64" height="6" rx="3" fill="rgba(220,38,38,0.1)" class="s3bar"/>
+        <rect x="108" y="36" width="52" height="6" rx="3" fill="rgba(220,38,38,0.5)" class="s3bar"/>
+        <rect x="108" y="46" width="64" height="6" rx="3" fill="rgba(220,38,38,0.1)" class="s3bar"/>
+        <rect x="108" y="46" width="38" height="6" rx="3" fill="rgba(220,38,38,0.4)" class="s3bar"/>
+        <rect x="108" y="56" width="64" height="6" rx="3" fill="rgba(220,38,38,0.1)" class="s3bar"/>
+        <rect x="108" y="56" width="20" height="6" rx="3" fill="rgba(220,38,38,0.3)" class="s3bar"/>
+        <text x="140" y="87" font-family="Manrope,sans-serif" font-size="9" fill="rgba(220,38,38,0.5)" text-anchor="middle" letter-spacing="1.5">STEP 3 · 21-DAY TRAINING</text>
+      </svg>
+      <p><strong>Step 3 — Begin the 21-Day Training</strong>After the masterclass, you'll have everything you need to start your 21-day Mental Gym programme — with daily sessions, progressive training, and real measurable results.</p>
+    </div>
+
+    <!-- STEP 4 — EXPERIENCE LIVE -->
+    <div class="learn-item reveal">
+      <svg viewBox="0 0 280 90" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>.s4wave{animation:s4ripple 2s ease-in-out infinite;} .s4wave:nth-child(2){animation-delay:.5s;} .s4wave:nth-child(3){animation-delay:1s;} @keyframes s4ripple{0%,100%{opacity:.2;transform:scale(1);}50%{opacity:.7;transform:scale(1.04);}}</style>
+        </defs>
+        <!-- Person silhouette (meditating) -->
+        <circle cx="140" cy="28" r="11" fill="none" stroke="rgba(220,38,38,0.55)" stroke-width="1.3"/>
+        <!-- Body sitting -->
+        <path d="M 125 50 Q 128 40 140 40 Q 152 40 155 50 L 160 62 Q 140 68 120 62 Z" fill="none" stroke="rgba(220,38,38,0.45)" stroke-width="1.3" stroke-linejoin="round"/>
+        <!-- Legs crossed -->
+        <path d="M 120 62 Q 130 70 140 68 Q 150 70 160 62" fill="none" stroke="rgba(220,38,38,0.4)" stroke-width="1.2"/>
+        <!-- Arms out (open/receiving) -->
+        <path d="M 126 46 L 108 52" stroke="rgba(220,38,38,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M 154 46 L 172 52" stroke="rgba(220,38,38,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- Ripple waves (energy/subconscious) -->
+        <ellipse cx="140" cy="52" rx="30" ry="20" fill="none" stroke="rgba(220,38,38,0.25)" stroke-width="1" class="s4wave" style="transform-origin:140px 52px"/>
+        <ellipse cx="140" cy="52" rx="45" ry="30" fill="none" stroke="rgba(220,38,38,0.18)" stroke-width="1" class="s4wave" style="transform-origin:140px 52px"/>
+        <ellipse cx="140" cy="52" rx="60" ry="38" fill="none" stroke="rgba(220,38,38,0.1)" stroke-width="1" class="s4wave" style="transform-origin:140px 52px"/>
+        <!-- Sparkles -->
+        <circle cx="85" cy="25" r="2" fill="rgba(220,38,38,0.6)"/>
+        <circle cx="195" cy="25" r="2" fill="rgba(220,38,38,0.6)"/>
+        <circle cx="75" cy="42" r="1.5" fill="rgba(220,38,38,0.4)"/>
+        <circle cx="205" cy="42" r="1.5" fill="rgba(220,38,38,0.4)"/>
+        <text x="140" y="87" font-family="Manrope,sans-serif" font-size="9" fill="rgba(220,38,38,0.5)" text-anchor="middle" letter-spacing="1.5">LIVE EXPERIENCE · FEEL IT FIRST</text>
+      </svg>
+      <p><strong>Experience It Live — Not Just Information</strong>You won't just hear about the technique. Rachanaa will guide you through an actual subconscious session during the masterclass. You'll feel the difference before it even ends.</p>
+    </div>
+
+  </div>
+  <div style="text-align:center;margin-top:40px;" class="reveal">
+    <button class="cta-btn" onclick="openModal()">👉 Secure My Free Spot Now</button>
+    <p class="cta-note" style="margin-top:10px;">✅ Free · Live Online · Sunday 3rd August · Only 90 Minutes</p>
+  </div>
+</div>
+
+<hr class="divider"/>
+</section>
 
 <!-- TESTIMONIALS -->
 <div class="t-bg">
   <div class="t-inner">
-    <p class="sec-label reveal">Real People. Real Results.</p>
-    <h2 class="reveal">What Happens When You<br><span>Train Your Mind</span></h2>
+    <p class="sec-label reveal">What Professionals Say After Training</p>
+    <h2 class="reveal">Real People.<br><span>Real Results.</span></h2>
     <div class="t-grid">
       <div class="t-card reveal">
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">"She is god sent for me. I finally feel like myself again — for the first time in years."</p>
+        <p class="t-quote">"I've tried everything — therapy, apps, retreats. Nothing stuck. Mental Gym was the first thing that actually changed how I respond to stress. It's like upgrading the operating system, not just the apps."</p>
         <p class="t-name">Priya S.</p>
         <p class="t-role">IT Manager · London</p>
       </div>
       <div class="t-card reveal">
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">"I feel happy, positive, light — good vibes only. I didn't know what I was carrying until it was gone."</p>
-        <p class="t-name">Anjali K.</p>
-        <p class="t-role">Business Owner · Birmingham</p>
-      </div>
-      <div class="t-card reveal">
-        <div class="t-stars">★★★★★</div>
-        <p class="t-quote">"Something shifted that years of talking therapy never could. I didn't believe it was possible — until it happened."</p>
+        <p class="t-quote">"I used to bring every work problem home. My partner noticed the change before I did. I'm more present, calmer, and I actually sleep now."</p>
         <p class="t-name">Rahul M.</p>
         <p class="t-role">Finance Professional · Amsterdam</p>
       </div>
       <div class="t-card reveal">
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">"I've done therapy, coaching, retreats. Nothing came close to this. I feel like myself for the first time in years."</p>
+        <p class="t-quote">"She is god sent for me. I finally feel like myself again — not the performance of myself."</p>
+        <p class="t-name">Anjali K.</p>
+        <p class="t-role">Business Owner · Birmingham</p>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"I didn't know what I was carrying until it was gone. Happy, positive, light — for the first time in years. This is the missing piece I'd been looking for."</p>
         <p class="t-name">Meera T.</p>
         <p class="t-role">Medical Professional · Manchester</p>
       </div>
@@ -437,8 +848,9 @@
 <div class="photo-quote reveal-scale">
   <img src="rachana-quote.jpg" alt="Rachanaa Tulsyan" loading="lazy"/>
   <div class="photo-quote-text">
-    <h2>This Is Not Therapy.<br>This Is <span>Mental Training.</span></h2>
-    <p>10 minutes a day. 21 days. The subconscious rewired.</p>
+    <h2>Mental Gym Is <span>NOT</span> Another Mindset Course.</h2>
+    <p>❌ Not a meditation app (you've already tried those)<br>❌ Not motivational content (feels good, changes nothing)<br>❌ Not therapy (we're not diagnosing — we're training)<br>❌ Not a 3-hour seminar you forget by Monday</p>
+    <p style="margin-top:16px;">✅ Subconscious reprogramming — targeting the root, not the symptom<br>✅ Progressive daily training — each session builds on the last<br>✅ Results you can feel in daily life — not just during the session<br>✅ The missing piece between where you are and where you want to be</p>
   </div>
 </div>
 
@@ -446,34 +858,252 @@
 
 <!-- METHOD -->
 <div class="method-wrap">
-  <p class="sec-label reveal">The Method</p>
-  <h2 class="reveal">3 Steps to Train<br><span>Your Mind</span></h2>
-  <div class="steps-row">
-    <div class="step-card reveal" id="step1">
-      <span class="s-ico">🔓</span>
-      <div class="step-num" id="num1">1</div>
-      <h3>RELEASE</h3>
-      <p>Let go of the patterns keeping you stuck — overthinking, anxiety, people-pleasing.</p>
-    </div>
-    <div class="step-card reveal" id="step2">
-      <span class="s-ico">🔄</span>
-      <div class="step-num" id="num2">2</div>
-      <h3>RESET</h3>
-      <p>Rewire your subconscious with 10 minutes of daily training over 21 days.</p>
-    </div>
-    <div class="step-card reveal" id="step3">
-      <span class="s-ico">👑</span>
-      <div class="step-num" id="num3">3</div>
-      <h3>RECLAIM</h3>
-      <p>Get back your peace, presence, and confidence. The version of you that success never quite unlocked.</p>
+  <p class="sec-label reveal">The Training Programme</p>
+  <h2 class="reveal">Introducing: <span>Mental Gym</span><br>A Gym For Your Mind.</h2>
+  <p style="font-size:16px;color:#aaa;line-height:1.85;max-width:680px;margin:0 auto 44px;text-align:center;" class="reveal">Mental Gym is a 21-day daily training programme that uses subconscious techniques to rebuild the mental patterns that are keeping you stuck.</p>
+
+  <div class="reveal" style="max-width:600px;margin:0 auto 16px;">
+    <p style="font-size:15px;color:#888;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px;text-align:center;">Each session is:</p>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 20px;">
+        <span style="font-size:20px;flex-shrink:0;">✅</span>
+        <p style="font-size:16px;color:#e0e0e0;font-weight:600;">20 minutes a day</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 20px;">
+        <span style="font-size:20px;flex-shrink:0;">✅</span>
+        <p style="font-size:16px;color:#e0e0e0;font-weight:600;">Designed for busy professionals</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 20px;">
+        <span style="font-size:20px;flex-shrink:0;">✅</span>
+        <p style="font-size:16px;color:#e0e0e0;font-weight:600;">Focused on the subconscious — where real change happens</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 20px;">
+        <span style="font-size:20px;flex-shrink:0;">✅</span>
+        <p style="font-size:16px;color:#e0e0e0;font-weight:600;">Structured like a workout — with progressive training sessions</p>
+      </div>
     </div>
   </div>
-  <div style="text-align:center;margin-top:44px;" class="reveal">
+
+  <div class="reveal" style="max-width:600px;margin:28px auto 40px;text-align:center;">
+    <p style="font-size:16px;color:#aaa;line-height:1.9;">No long lectures. No journaling homework. No group therapy.<br>Just daily mental training — the way a gym trains your body.</p>
+  </div>
+
+  <div style="text-align:center;" class="reveal">
     <button class="cta-btn" onclick="openModal()">👉 Join Mental Gym — It's Free</button>
-    <p class="cta-note" style="margin-top:11px;">✅ Free · Live · Online</p>
+    <p class="cta-note" style="margin-top:11px;">✅ Free · Live · Online · Sunday 3rd August</p>
   </div>
 </div>
 
+<hr class="divider"/>
+
+<!-- MIND RESULTS / TRANSFORMATION -->
+<div class="mindresult-wrap">
+  <p class="sec-label reveal" style="text-align:center;">The Transformation</p>
+  <h2 class="reveal">After 21 Days of Mental Gym,<br><span>You Will:</span></h2>
+
+  <!-- AT WORK -->
+  <div class="reveal" style="display:flex;align-items:center;gap:32px;margin-bottom:44px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:28px 32px;">
+    <div style="flex:1;min-width:0;">
+      <p style="font-size:17px;font-weight:800;color:#fff;margin-bottom:16px;">At Work:</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:16px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;line-height:1.55;">Walk into meetings with genuine confidence — not performed confidence</p></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:16px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;line-height:1.55;">Stop second-guessing your decisions for hours</p></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:16px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;line-height:1.55;">Handle difficult conversations without replaying them all night</p></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:16px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;line-height:1.55;">Finish the workday and actually leave it at the office — mentally</p></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:16px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;line-height:1.55;">Stay calm under pressure instead of going into panic mode</p></div>
+      </div>
+    </div>
+    <!-- Work SVG Illustration -->
+    <div style="flex-shrink:0;width:140px;display:flex;align-items:center;justify-content:center;">
+      <svg viewBox="0 0 140 160" xmlns="http://www.w3.org/2000/svg" style="width:130px;height:auto;">
+        <defs>
+          <radialGradient id="wglow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ef4444" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+          <style>.wbars rect { animation: barRise 2.4s ease-in-out infinite; } .wbars rect:nth-child(2){animation-delay:.3s;} .wbars rect:nth-child(3){animation-delay:.6s;} .wbars rect:nth-child(4){animation-delay:.9s;} @keyframes barRise{0%,100%{opacity:.5;}50%{opacity:1;}}</style>
+        </defs>
+        <ellipse cx="70" cy="80" rx="60" ry="70" fill="url(#wglow)"/>
+        <!-- Person silhouette -->
+        <circle cx="70" cy="38" r="14" fill="none" stroke="rgba(239,68,68,0.6)" stroke-width="1.5"/>
+        <path d="M 52 62 Q 55 52 70 52 Q 85 52 88 62 L 90 100 Q 80 104 70 104 Q 60 104 50 100 Z" fill="none" stroke="rgba(239,68,68,0.5)" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- Arms up (confident) -->
+        <path d="M 52 68 L 36 55" stroke="rgba(239,68,68,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M 88 68 L 104 55" stroke="rgba(239,68,68,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- Legs -->
+        <path d="M 60 100 L 55 128" stroke="rgba(239,68,68,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M 80 100 L 85 128" stroke="rgba(239,68,68,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- Bar chart (performance) -->
+        <g class="wbars">
+          <rect x="22" y="105" width="10" height="24" rx="2" fill="rgba(239,68,68,0.25)" stroke="rgba(239,68,68,0.5)" stroke-width="1"/>
+          <rect x="35" y="95" width="10" height="34" rx="2" fill="rgba(239,68,68,0.3)" stroke="rgba(239,68,68,0.55)" stroke-width="1"/>
+          <rect x="98" y="100" width="10" height="29" rx="2" fill="rgba(239,68,68,0.25)" stroke="rgba(239,68,68,0.5)" stroke-width="1"/>
+          <rect x="111" y="88" width="10" height="41" rx="2" fill="rgba(239,68,68,0.35)" stroke="rgba(239,68,68,0.6)" stroke-width="1"/>
+        </g>
+        <!-- Upward arrow -->
+        <path d="M 70 148 L 70 135 M 64 141 L 70 135 L 76 141" stroke="rgba(239,68,68,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Confidence spark -->
+        <circle cx="70" cy="25" r="3" fill="rgba(239,68,68,0.8)"/>
+        <path d="M 70 18 L 70 14 M 76 20 L 79 17 M 64 20 L 61 17" stroke="rgba(239,68,68,0.6)" stroke-width="1.2" stroke-linecap="round"/>
+        <text x="70" y="158" font-family="Manrope,sans-serif" font-size="8" fill="rgba(239,68,68,0.45)" text-anchor="middle" letter-spacing="1">CONFIDENCE</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- AT HOME -->
+  <div class="reveal" style="display:flex;align-items:center;gap:32px;margin-bottom:44px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:28px 32px;">
+    <!-- Home SVG Illustration -->
+    <div style="flex-shrink:0;width:140px;display:flex;align-items:center;justify-content:center;">
+      <svg viewBox="0 0 140 160" xmlns="http://www.w3.org/2000/svg" style="width:130px;height:auto;">
+        <defs>
+          <radialGradient id="hglow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ef4444" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+          <style>.hpulse{animation:heartbeat 1.8s ease-in-out infinite;transform-origin:70px 85px;} @keyframes heartbeat{0%,100%{transform:scale(1);}30%{transform:scale(1.12);}60%{transform:scale(1.05);}}</style>
+        </defs>
+        <ellipse cx="70" cy="80" rx="60" ry="70" fill="url(#hglow)"/>
+        <!-- House shape -->
+        <path d="M 20 90 L 70 42 L 120 90" fill="none" stroke="rgba(239,68,68,0.55)" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="30" y="90" width="80" height="42" rx="3" fill="none" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"/>
+        <!-- Door -->
+        <rect x="60" y="108" width="20" height="24" rx="3" fill="none" stroke="rgba(239,68,68,0.5)" stroke-width="1.2"/>
+        <!-- Window left -->
+        <rect x="36" y="100" width="16" height="14" rx="2" fill="none" stroke="rgba(239,68,68,0.4)" stroke-width="1"/>
+        <line x1="44" y1="100" x2="44" y2="114" stroke="rgba(239,68,68,0.3)" stroke-width="0.8"/>
+        <!-- Window right -->
+        <rect x="88" y="100" width="16" height="14" rx="2" fill="none" stroke="rgba(239,68,68,0.4)" stroke-width="1"/>
+        <line x1="96" y1="100" x2="96" y2="114" stroke="rgba(239,68,68,0.3)" stroke-width="0.8"/>
+        <!-- Warm glow in windows -->
+        <rect x="37" y="101" width="6" height="12" rx="1" fill="rgba(239,68,68,0.15)"/>
+        <rect x="44" y="101" width="6" height="12" rx="1" fill="rgba(239,68,68,0.15)"/>
+        <rect x="89" y="101" width="6" height="12" rx="1" fill="rgba(239,68,68,0.15)"/>
+        <rect x="96" y="101" width="6" height="12" rx="1" fill="rgba(239,68,68,0.15)"/>
+        <!-- Heart above house -->
+        <path d="M 70 35 C 70 35 60 25 52 30 C 44 35 44 46 52 52 L 70 68 L 88 52 C 96 46 96 35 88 30 C 80 25 70 35 70 35 Z" fill="none" stroke="rgba(239,68,68,0.7)" stroke-width="1.5" class="hpulse"/>
+        <text x="70" y="158" font-family="Manrope,sans-serif" font-size="8" fill="rgba(239,68,68,0.45)" text-anchor="middle" letter-spacing="1">PRESENCE</text>
+      </svg>
+    </div>
+    <div style="flex:1;min-width:0;">
+      <p style="font-size:17px;font-weight:800;color:#fff;margin-bottom:16px;">At Home:</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:16px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;line-height:1.55;">Be mentally present with your family — not just physically there</p></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:16px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;line-height:1.55;">Stop snapping at your partner after a stressful day</p></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:16px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;line-height:1.55;">Set boundaries without guilt</p></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:16px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;line-height:1.55;">Actually enjoy your weekends instead of dreading Monday</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSIDE -->
+  <div class="reveal" style="display:flex;align-items:center;gap:32px;margin-bottom:36px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:28px 32px;">
+    <div style="flex:1;min-width:0;">
+      <p style="font-size:17px;font-weight:800;color:#fff;margin-bottom:16px;">Inside:</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:16px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;line-height:1.55;">Fall asleep faster — because your mind actually switches off</p></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:16px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;line-height:1.55;">Wake up feeling mentally refreshed, not already exhausted</p></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:16px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;line-height:1.55;">Stop seeking approval before trusting your own judgment</p></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:16px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;line-height:1.55;">Feel the inner calm you've been chasing through achievements</p></div>
+      </div>
+    </div>
+    <!-- Inside SVG Illustration -->
+    <div style="flex-shrink:0;width:140px;display:flex;align-items:center;justify-content:center;">
+      <svg viewBox="0 0 140 160" xmlns="http://www.w3.org/2000/svg" style="width:130px;height:auto;">
+        <defs>
+          <radialGradient id="iglow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ef4444" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+          <style>
+            .iring{animation:calmRing 3s ease-in-out infinite;transform-origin:70px 72px;}
+            .iring:nth-child(2){animation-delay:.8s;}
+            .iring:nth-child(3){animation-delay:1.6s;}
+            @keyframes calmRing{0%,100%{opacity:.2;transform:scale(1);}50%{opacity:.7;transform:scale(1.06);}}
+            .moonstar{animation:starTwinkle 2.2s ease-in-out infinite;}
+            .moonstar:nth-child(2){animation-delay:.7s;}
+            .moonstar:nth-child(3){animation-delay:1.4s;}
+            @keyframes starTwinkle{0%,100%{opacity:.3;}50%{opacity:.9;}}
+          </style>
+        </defs>
+        <ellipse cx="70" cy="80" rx="60" ry="70" fill="url(#iglow)"/>
+        <!-- Calm rings -->
+        <circle cx="70" cy="72" r="48" fill="none" stroke="rgba(239,68,68,0.15)" stroke-width="1" class="iring"/>
+        <circle cx="70" cy="72" r="36" fill="none" stroke="rgba(239,68,68,0.2)" stroke-width="1" class="iring"/>
+        <circle cx="70" cy="72" r="24" fill="none" stroke="rgba(239,68,68,0.3)" stroke-width="1" class="iring"/>
+        <!-- Peaceful face -->
+        <circle cx="70" cy="72" r="18" fill="none" stroke="rgba(239,68,68,0.6)" stroke-width="1.5"/>
+        <!-- Closed eyes (peaceful) -->
+        <path d="M 62 70 Q 65 68 68 70" fill="none" stroke="rgba(239,68,68,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M 72 70 Q 75 68 78 70" fill="none" stroke="rgba(239,68,68,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- Gentle smile -->
+        <path d="M 64 77 Q 70 82 76 77" fill="none" stroke="rgba(239,68,68,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- Stars -->
+        <circle cx="30" cy="32" r="2" fill="rgba(239,68,68,0.7)" class="moonstar"/>
+        <circle cx="110" cy="28" r="1.5" fill="rgba(239,68,68,0.6)" class="moonstar"/>
+        <circle cx="118" cy="48" r="1.5" fill="rgba(239,68,68,0.5)" class="moonstar"/>
+        <circle cx="22" cy="52" r="1.5" fill="rgba(239,68,68,0.5)" class="moonstar"/>
+        <!-- Moon crescent -->
+        <path d="M 95 22 Q 88 30 95 38 Q 105 34 105 30 Q 105 26 95 22 Z" fill="none" stroke="rgba(239,68,68,0.55)" stroke-width="1.2"/>
+        <!-- Bottom wave (calm water) -->
+        <path d="M 18 128 Q 35 120 52 128 Q 69 136 86 128 Q 103 120 122 128" fill="none" stroke="rgba(239,68,68,0.3)" stroke-width="1.2"/>
+        <path d="M 18 136 Q 35 128 52 136 Q 69 144 86 136 Q 103 128 122 136" fill="none" stroke="rgba(239,68,68,0.2)" stroke-width="1"/>
+        <text x="70" y="158" font-family="Manrope,sans-serif" font-size="8" fill="rgba(239,68,68,0.45)" text-anchor="middle" letter-spacing="1">INNER CALM</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="reveal" style="border-left:3px solid #ef4444;padding:16px 20px;background:rgba(220,38,38,.07);border-radius:0 12px 12px 0;margin-bottom:36px;">
+    <p style="font-size:17px;font-weight:800;color:#fff;">Life doesn't necessarily get easier. You get mentally stronger.</p>
+  </div>
+
+  <div style="text-align:center;" class="reveal">
+    <button class="cta-btn" onclick="openModal()">👉 Start Training My Mind — Free</button>
+    <p class="cta-note" style="margin-top:10px;">✅ Free Masterclass · 90 minutes · No experience needed</p>
+  </div>
+</div>
+
+<!-- SECTION 9 — WHO IT'S FOR -->
+<div style="max-width:860px;margin:0 auto;padding:72px 24px;">
+  <p class="sec-label reveal" style="text-align:center;">Is This For You?</p>
+  <h2 class="reveal" style="font-size:clamp(26px,3.5vw,44px);font-weight:900;color:#fff;line-height:1.15;text-align:center;margin-bottom:40px;">Mental Gym Is For You <span>If…</span></h2>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:48px;" class="reveal">
+    <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(220,38,38,.07);border:1px solid rgba(220,38,38,.2);border-radius:12px;padding:16px 20px;">
+      <span style="font-size:20px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;font-weight:600;line-height:1.5;">You're a professional living in the UK or Europe</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(220,38,38,.07);border:1px solid rgba(220,38,38,.2);border-radius:12px;padding:16px 20px;">
+      <span style="font-size:20px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;font-weight:600;line-height:1.5;">You've achieved a lot externally but feel empty or stuck internally</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(220,38,38,.07);border:1px solid rgba(220,38,38,.2);border-radius:12px;padding:16px 20px;">
+      <span style="font-size:20px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;font-weight:600;line-height:1.5;">You're tired of carrying stress, anxiety, or emotional heaviness</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(220,38,38,.07);border:1px solid rgba(220,38,38,.2);border-radius:12px;padding:16px 20px;">
+      <span style="font-size:20px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;font-weight:600;line-height:1.5;">You've tried other approaches and are ready for something that actually works</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(220,38,38,.07);border:1px solid rgba(220,38,38,.2);border-radius:12px;padding:16px 20px;">
+      <span style="font-size:20px;flex-shrink:0;">✅</span><p style="font-size:15px;color:#ccc;font-weight:600;line-height:1.5;">You're willing to invest 20 minutes a day into your mental fitness</p>
+    </div>
+  </div>
+
+  <h2 class="reveal" style="font-size:clamp(26px,3.5vw,44px);font-weight:900;color:#fff;line-height:1.15;text-align:center;margin-bottom:32px;">Mental Gym Is <span>NOT</span> For You If…</h2>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:44px;" class="reveal">
+    <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 20px;">
+      <span style="font-size:20px;flex-shrink:0;">❌</span><p style="font-size:15px;color:#666;font-weight:600;line-height:1.5;">You're looking for a quick fix or magic pill</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 20px;">
+      <span style="font-size:20px;flex-shrink:0;">❌</span><p style="font-size:15px;color:#666;font-weight:600;line-height:1.5;">You're not willing to show up consistently</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 20px;">
+      <span style="font-size:20px;flex-shrink:0;">❌</span><p style="font-size:15px;color:#666;font-weight:600;line-height:1.5;">You believe your situation is unique and nothing can help</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;" class="reveal">
+    <button class="cta-btn" onclick="openModal()">👉 This Is For Me — Reserve My Free Spot</button>
+    <p class="cta-note" style="margin-top:10px;">✅ Free · Live · Sunday 3rd August · 10 AM UK</p>
+  </div>
+</div>
+
+<section class="s-light">
 <hr class="divider"/>
 
 <!-- ABOUT SPLIT -->
@@ -488,10 +1118,12 @@
   <div class="about-info reveal-right">
     <p class="sec-label">Your Coach</p>
     <h2>Meet <span>Rachanaa</span><br>Tulsyan</h2>
-    <p class="coach-title">Clinical Hypnotherapist · Mental Fitness Coach</p>
-    <p>She moved countries. Changed careers. Built success from the outside. And still felt that invisible heaviness no achievement could fix.</p>
-    <p>That journey led her to subconscious training — and it changed everything. Today she helps ambitious Indian professionals in UK & Europe train their minds the way they train their bodies.</p>
-    <div class="about-quote">"The goal isn't to escape the pressure. It's to build a mind that thrives under it."</div>
+    <p class="coach-title">Clinical Hypnotherapist · Founder of The Mental Gym™ · UK-Based</p>
+    <p>Rachanaa is not just a therapist. She's lived the experience.</p>
+    <p>She moved countries. Changed careers. Changed relationships. Ticked every box. And still felt that invisible heaviness that success never seemed to cure.</p>
+    <p>That journey led her to discover the power of subconscious training — and it changed everything. Today she helps ambitious Indian professionals living in the UK and Europe break through the invisible ceiling that achievement alone can never reach.</p>
+    <p>Her method — RELEASE · RESET · RECLAIM — is not therapy. It's training.</p>
+    <div class="about-quote">"The goal isn't to remove pressure from your life. It's to build a mind that can thrive under pressure."</div>
   </div>
 </div>
 
@@ -501,51 +1133,56 @@
 <div class="photo-side">
   <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&fit=crop&q=80" alt="Mental Training" class="reveal-left" loading="lazy"/>
   <div class="photo-side-text reveal-right">
-    <p class="sec-label">Why This Works</p>
-    <h2>Your Mind Is a <span>Muscle.</span><br>Muscles Need Training.</h2>
-    <p>Meditation manages the surface. Therapy talks about the past. Mental Gym trains the subconscious — where your habits, reactions, and patterns actually live.</p>
-    <p>That's why it produces lasting change when everything else hasn't.</p>
-    <button class="cta-btn" onclick="openModal()" style="animation:none;">👉 Start Training Your Mind</button>
-    <p class="cta-note" style="margin-top:10px;">Free · Live · Limited Spots</p>
+    <p class="sec-label">Why Everything Else Didn't Work</p>
+    <h2>You Weren't Broken.<br>You Were Just <span>Training The Wrong Layer.</span></h2>
+    <p>Meditation calms the surface — but the pattern underneath stays. Therapy helps you understand the past — but understanding doesn't dissolve the feeling. Coaching pushes you forward — but the invisible weight keeps pulling you back.</p>
+    <p>Subconscious training is different. It goes directly to the layer where the pattern actually lives — and changes it. That's why 20 minutes of this works when years of everything else didn't.</p>
+    <button class="cta-btn" onclick="openModal()" style="animation:none;">👉 Experience It For Free — Reserve My Spot</button>
+    <p class="cta-note" style="margin-top:10px;">Free · Live · Sunday 3rd Aug · 10 AM UK</p>
   </div>
 </div>
+</section>
 
+<section class="s-light">
 <!-- FAQ -->
 <div class="faq-wrap">
   <p class="sec-label reveal" style="text-align:center;">Got Questions?</p>
   <h2 class="reveal">We've Got <span>Answers</span></h2>
   <div class="faq-item reveal">
-    <button class="faq-q" onclick="toggleFaq(this)">Is this therapy or counselling? <span class="faq-arrow">▼</span></button>
-    <div class="faq-a"><p>No. This is subconscious training — clinical hypnotherapy. It's not talking about your past or diagnosing problems. It's about training your mind the same way you train your body: with a specific technique, daily repetition, and measurable results.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)">Is this just another meditation or mindfulness thing? <span class="faq-arrow">▼</span></button>
+    <div class="faq-a"><p>No. Meditation works at the conscious level. Mental Gym works at the subconscious level — where your habits, reactions, and beliefs actually live. That's why it produces lasting change when other approaches haven't.</p></div>
   </div>
   <div class="faq-item reveal">
-    <button class="faq-q" onclick="toggleFaq(this)">I've tried meditation, therapy, coaching. Why will this be different? <span class="faq-arrow">▼</span></button>
-    <div class="faq-a"><p>Meditation manages the surface. Therapy talks about the past. Coaching changes your thinking. None of them directly access the subconscious where your patterns, habits, and reactions actually live. That's why this works when other things haven't — it operates at a completely different level.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)">I've tried so many things. Why would this be different? <span class="faq-arrow">▼</span></button>
+    <div class="faq-a"><p>Because most approaches treat the symptom, not the root. Mental Gym targets the subconscious conditioning that drives your behaviour — not just the surface thoughts you're already aware of. That's why this works when everything else hasn't.</p></div>
+  </div>
+  <div class="faq-item reveal">
+    <button class="faq-q" onclick="toggleFaq(this)">I'm too busy for another programme. <span class="faq-arrow">▼</span></button>
+    <div class="faq-a"><p>20 minutes a day. That's the commitment. If you have time to scroll your phone before bed, you have time for Mental Gym. The masterclass itself is 90 minutes — one Sunday morning.</p></div>
+  </div>
+  <div class="faq-item reveal">
+    <button class="faq-q" onclick="toggleFaq(this)">Is the masterclass really free? <span class="faq-arrow">▼</span></button>
+    <div class="faq-a"><p>Yes. The live session on Sunday 3rd August is completely free. No credit card. No catch. Just register with your name and WhatsApp number and we'll send you the Zoom link.</p></div>
   </div>
   <div class="faq-item reveal">
     <button class="faq-q" onclick="toggleFaq(this)">What if I can't attend live? <span class="faq-arrow">▼</span></button>
-    <div class="faq-a"><p>Register anyway. Everyone who registers receives the recording and resources. But attending live gives you an actual experience of the technique — not just information. The live session is where the real shift happens.</p></div>
-  </div>
-  <div class="faq-item reveal">
-    <button class="faq-q" onclick="toggleFaq(this)">How much time does this take? <span class="faq-arrow">▼</span></button>
-    <div class="faq-a"><p>The masterclass is 90 minutes. The 21-day programme after is 10 minutes a day — designed specifically for busy professionals. You don't need a retreat or a weekend away. Just 10 minutes before bed.</p></div>
-  </div>
-  <div class="faq-item reveal">
-    <button class="faq-q" onclick="toggleFaq(this)">Will this actually work for me? <span class="faq-arrow">▼</span></button>
-    <div class="faq-a"><p>If you're an Indian professional living in UK or Europe, feeling the gap between your external success and internal fulfilment — yes. Rachanaa has lived this exact journey herself. She doesn't teach theory. She teaches what worked for her and hundreds of clients just like you.</p></div>
+    <div class="faq-a"><p>Register anyway — you'll receive details about replay options and next steps after the session. But attending live is where the real experience happens. Rachanaa guides you through an actual subconscious session in the room.</p></div>
   </div>
 </div>
 
 <hr class="divider"/>
+</section>
 
 <!-- FINAL CTA -->
 <div class="final-wrap">
   <div class="final-box reveal">
-    <h2>You've Trained Your Body for Years.</h2>
-    <h2 class="red-h">Now Train Your Mind.</h2>
-    <p>10 minutes a day. 21 days. A completely different inner world.</p>
-    <button class="cta-btn" onclick="openModal()">👉 Reserve My Free Spot</button>
-    <p class="cta-note" style="margin-top:13px;">✅ Free · Live · Online · Limited Spots</p>
+    <h2>You've Spent Years Building Your Career.</h2>
+    <h2 class="red-h">Isn't It Time to Build Your Mind?</h2>
+    <p style="font-size:16px;color:#ccc;max-width:560px;margin:20px auto 8px;line-height:1.7;">Your career. Your relationships. Your peace. Your sleep. Your presence.</p>
+    <p style="font-size:16px;color:#888;max-width:560px;margin:0 auto 28px;line-height:1.7;">All of it improves when your mind is trained. The masterclass is free. The session is 90 minutes. The change can last a lifetime.</p>
+    <button class="cta-btn" onclick="openModal()">👉 Start Training My Mind — 3rd August · 10 AM UK</button>
+    <p class="cta-note" style="margin-top:13px;">✅ Limited spots available · Free · No payment required</p>
+    <p style="font-size:13px;color:#444;margin-top:16px;font-weight:700;">Life doesn't get easier. You get mentally stronger.</p>
   </div>
 </div>
 
