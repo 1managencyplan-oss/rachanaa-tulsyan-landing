@@ -465,141 +465,31 @@
   </div>
 </div>
 
-<!-- SECTION 3 — THE REFRAME (removed) -->
-<div style="display:none;">
-  <p class="sec-label reveal" style="text-align:center;">The Big Idea</p>
-  <h2 class="reveal" style="font-size:clamp(28px,4vw,50px);font-weight:900;color:#fff;line-height:1.15;margin-bottom:28px;">Here's What Nobody Told You.</h2>
+<!-- SECTION 3 — WHY I CREATED MENTAL GYM -->
+<div style="max-width:760px;margin:0 auto;padding:72px 24px;">
+  <p class="sec-label reveal" style="text-align:center;">From Rachanaa</p>
+  <h2 class="reveal" style="font-size:clamp(28px,4vw,50px);font-weight:900;color:#fff;line-height:1.15;margin-bottom:36px;">Why I Created<br><span style="color:#ef4444;">Mental Gym</span></h2>
 
-  <!-- AI Graphic: Neural Mind -->
-  <div class="reveal" style="text-align:center;margin-bottom:36px;">
-    <svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;height:auto;display:inline-block;">
-      <defs>
-        <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#ef4444" stop-opacity="0.08"/>
-          <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
-        </radialGradient>
-        <radialGradient id="headGlow" cx="50%" cy="40%" r="55%">
-          <stop offset="0%" stop-color="#1a0a0a"/>
-          <stop offset="100%" stop-color="#0d0d0d"/>
-        </radialGradient>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-          <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <filter id="softglow">
-          <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-          <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <!-- Node pulse animation -->
-        <style>
-          .pulse-node { animation: nodePulse 3s ease-in-out infinite; }
-          .pulse-node:nth-child(2n) { animation-delay: 0.8s; }
-          .pulse-node:nth-child(3n) { animation-delay: 1.6s; }
-          .flow-line { stroke-dasharray: 6 4; animation: flowDash 2s linear infinite; }
-          .flow-line-rev { stroke-dasharray: 6 4; animation: flowDash 2.4s linear infinite reverse; }
-          @keyframes nodePulse {
-            0%,100% { opacity: 0.6; r: 4; }
-            50% { opacity: 1; r: 5.5; }
-          }
-          @keyframes flowDash {
-            to { stroke-dashoffset: -20; }
-          }
-        </style>
-      </defs>
-
-      <!-- Background glow -->
-      <ellipse cx="260" cy="160" rx="220" ry="150" fill="url(#bgGlow)"/>
-
-      <!-- Head silhouette -->
-      <path d="M 210 290 Q 190 260 185 230 Q 170 200 168 175 Q 162 130 175 100 Q 195 55 260 50 Q 325 55 345 100 Q 358 130 352 175 Q 350 200 335 230 Q 330 260 310 290 Z"
-            fill="url(#headGlow)" stroke="rgba(239,68,68,0.25)" stroke-width="1.5"/>
-
-      <!-- Neck -->
-      <rect x="235" y="285" width="50" height="22" rx="8" fill="#0d0d0d" stroke="rgba(239,68,68,0.15)" stroke-width="1"/>
-
-      <!-- Neural network nodes — left cluster (old patterns) -->
-      <circle cx="198" cy="130" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
-      <circle cx="210" cy="155" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
-      <circle cx="195" cy="178" r="4" fill="#ef4444" opacity="0.4" filter="url(#glow)" class="pulse-node"/>
-      <circle cx="218" cy="198" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
-
-      <!-- Neural network nodes — right cluster (new patterns) -->
-      <circle cx="322" cy="130" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
-      <circle cx="310" cy="155" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
-      <circle cx="325" cy="178" r="4" fill="#ef4444" opacity="0.4" filter="url(#glow)" class="pulse-node"/>
-      <circle cx="302" cy="198" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
-
-      <!-- Central nodes -->
-      <circle cx="260" cy="105" r="5" fill="#ef4444" opacity="0.7" filter="url(#glow)" class="pulse-node"/>
-      <circle cx="240" cy="135" r="4" fill="#ef4444" opacity="0.55" filter="url(#glow)" class="pulse-node"/>
-      <circle cx="280" cy="135" r="4" fill="#ef4444" opacity="0.55" filter="url(#glow)" class="pulse-node"/>
-      <circle cx="260" cy="165" r="6" fill="#ef4444" opacity="0.9" filter="url(#softglow)" class="pulse-node"/>
-      <circle cx="245" cy="195" r="4" fill="#ef4444" opacity="0.55" filter="url(#glow)" class="pulse-node"/>
-      <circle cx="275" cy="195" r="4" fill="#ef4444" opacity="0.55" filter="url(#glow)" class="pulse-node"/>
-      <circle cx="260" cy="225" r="4" fill="#ef4444" opacity="0.5" filter="url(#glow)" class="pulse-node"/>
-
-      <!-- Connecting lines — left to center -->
-      <line x1="198" y1="130" x2="240" y2="135" stroke="rgba(239,68,68,0.25)" stroke-width="1" class="flow-line"/>
-      <line x1="210" y1="155" x2="240" y2="135" stroke="rgba(239,68,68,0.2)" stroke-width="1" class="flow-line"/>
-      <line x1="210" y1="155" x2="260" y2="165" stroke="rgba(239,68,68,0.22)" stroke-width="1" class="flow-line-rev"/>
-      <line x1="195" y1="178" x2="245" y2="195" stroke="rgba(239,68,68,0.18)" stroke-width="1" class="flow-line"/>
-      <line x1="218" y1="198" x2="245" y2="195" stroke="rgba(239,68,68,0.2)" stroke-width="1" class="flow-line-rev"/>
-
-      <!-- Connecting lines — right to center -->
-      <line x1="322" y1="130" x2="280" y2="135" stroke="rgba(239,68,68,0.25)" stroke-width="1" class="flow-line-rev"/>
-      <line x1="310" y1="155" x2="280" y2="135" stroke="rgba(239,68,68,0.2)" stroke-width="1" class="flow-line-rev"/>
-      <line x1="310" y1="155" x2="260" y2="165" stroke="rgba(239,68,68,0.22)" stroke-width="1" class="flow-line"/>
-      <line x1="325" y1="178" x2="275" y2="195" stroke="rgba(239,68,68,0.18)" stroke-width="1" class="flow-line-rev"/>
-      <line x1="302" y1="198" x2="275" y2="195" stroke="rgba(239,68,68,0.2)" stroke-width="1" class="flow-line"/>
-
-      <!-- Connecting lines — center vertical -->
-      <line x1="260" y1="105" x2="240" y2="135" stroke="rgba(239,68,68,0.3)" stroke-width="1" class="flow-line"/>
-      <line x1="260" y1="105" x2="280" y2="135" stroke="rgba(239,68,68,0.3)" stroke-width="1" class="flow-line-rev"/>
-      <line x1="240" y1="135" x2="260" y2="165" stroke="rgba(239,68,68,0.3)" stroke-width="1.2" class="flow-line"/>
-      <line x1="280" y1="135" x2="260" y2="165" stroke="rgba(239,68,68,0.3)" stroke-width="1.2" class="flow-line-rev"/>
-      <line x1="260" y1="165" x2="245" y2="195" stroke="rgba(239,68,68,0.3)" stroke-width="1.2" class="flow-line"/>
-      <line x1="260" y1="165" x2="275" y2="195" stroke="rgba(239,68,68,0.3)" stroke-width="1.2" class="flow-line-rev"/>
-      <line x1="245" y1="195" x2="260" y2="225" stroke="rgba(239,68,68,0.25)" stroke-width="1" class="flow-line"/>
-      <line x1="275" y1="195" x2="260" y2="225" stroke="rgba(239,68,68,0.25)" stroke-width="1" class="flow-line-rev"/>
-
-      <!-- Central highlight ring -->
-      <circle cx="260" cy="165" r="14" fill="none" stroke="rgba(239,68,68,0.2)" stroke-width="1" stroke-dasharray="4 3"/>
-
-      <!-- Left label: OLD PATTERNS -->
-      <text x="72" y="148" font-family="Manrope, sans-serif" font-size="9" fill="rgba(239,68,68,0.6)" letter-spacing="1.5" text-anchor="middle">OLD</text>
-      <text x="72" y="160" font-family="Manrope, sans-serif" font-size="9" fill="rgba(239,68,68,0.6)" letter-spacing="1.5" text-anchor="middle">PATTERNS</text>
-      <line x1="103" y1="154" x2="194" y2="154" stroke="rgba(239,68,68,0.2)" stroke-width="0.8" stroke-dasharray="3 3"/>
-
-      <!-- Right label: NEW PATHWAYS -->
-      <text x="452" y="148" font-family="Manrope, sans-serif" font-size="9" fill="rgba(239,68,68,0.6)" letter-spacing="1.5" text-anchor="middle">NEW</text>
-      <text x="452" y="160" font-family="Manrope, sans-serif" font-size="9" fill="rgba(239,68,68,0.6)" letter-spacing="1.5" text-anchor="middle">PATHWAYS</text>
-      <line x1="417" y1="154" x2="325" y2="154" stroke="rgba(239,68,68,0.2)" stroke-width="0.8" stroke-dasharray="3 3"/>
-
-      <!-- Bottom label -->
-      <text x="260" y="308" font-family="Manrope, sans-serif" font-size="9" fill="rgba(255,255,255,0.2)" letter-spacing="2" text-anchor="middle">SUBCONSCIOUS REWIRING</text>
-    </svg>
+  <!-- Photo -->
+  <div class="reveal" style="text-align:center;margin-bottom:40px;">
+    <img src="rachana-about.jpg" alt="Rachanaa Tulsyan" style="width:180px;height:180px;object-fit:cover;object-position:top;border-radius:50%;border:3px solid rgba(239,68,68,0.4);display:inline-block;"/>
   </div>
 
-  <p class="reveal" style="font-size:17px;color:#888;line-height:1.8;margin-bottom:18px;">What you're experiencing is not stress.<br>It's not anxiety. It's not burnout. It's not a personality flaw.</p>
+  <p class="reveal" style="font-size:19px;font-weight:700;color:#fff;line-height:1.4;margin-bottom:10px;">Hi, I'm Rachanaa.</p>
 
-  <div class="reveal" style="border-left:3px solid #ef4444;padding:18px 24px;background:rgba(220,38,38,.07);border-radius:0 12px 12px 0;margin-bottom:28px;">
-    <p style="font-size:19px;font-weight:800;color:#fff;line-height:1.5;">It's mental conditioning. And it can be retrained.</p>
-  </div>
+  <p class="reveal" style="font-size:16px;color:#888;line-height:1.85;margin-bottom:16px;">For years I believed the next achievement would finally make me feel lighter.</p>
 
-  <p class="reveal" style="font-size:16px;color:#888;line-height:1.8;margin-bottom:24px;">Your mind has been running the same programmes since childhood. Old fears. Old beliefs. Old survival patterns.</p>
+  <p class="reveal" style="font-size:16px;color:#888;line-height:1.85;margin-bottom:16px;">I changed countries.<br>I changed careers.<br>I changed relationships.</p>
 
-  <div class="reveal" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px 28px;margin-bottom:28px;">
-    <p style="font-size:15px;color:#ccc;line-height:2;">Every time you can't switch off — <strong style="color:#ef4444;">that's conditioning.</strong><br>
-    Every time you seek approval before trusting yourself — <strong style="color:#ef4444;">that's conditioning.</strong><br>
-    Every time you carry everyone else's emotions — <strong style="color:#ef4444;">that's conditioning.</strong></p>
-  </div>
+  <p class="reveal" style="font-size:16px;color:#888;line-height:1.85;margin-bottom:16px;">From the outside, life looked successful.</p>
 
-  <p class="reveal" style="font-size:16px;color:#888;line-height:1.8;margin-bottom:18px;">No app, holiday, or promotion will change your mental conditioning.<br>Only training will.</p>
+  <p class="reveal" style="font-size:16px;color:#888;line-height:1.85;margin-bottom:28px;">But inside, my mind was still running the same exhausting patterns.</p>
 
-  <p class="reveal" style="font-size:16px;color:#888;line-height:1.8;margin-bottom:28px;">Think about your body. If you never went to the gym, your muscles would weaken. No matter how good your diet is, no matter how much sleep you get.<br><br>Your mind works the same way.</p>
+  <p class="reveal" style="font-size:16px;color:#888;line-height:1.85;margin-bottom:28px;">That experience led me to study clinical hypnotherapy, subconscious learning, and behavioural change. What I discovered changed not only my own life, but the lives of hundreds of professionals I've worked with.</p>
 
   <div class="reveal" style="border-left:3px solid #ef4444;padding:18px 24px;background:rgba(220,38,38,.07);border-radius:0 12px 12px 0;margin-bottom:0;">
-    <p style="font-size:19px;font-weight:800;color:#fff;line-height:1.5;">The Mental Gym is the training your mind has been waiting for.</p>
+    <p style="font-size:16px;color:#ccc;line-height:1.7;margin-bottom:8px;">Mental Gym was born from one simple belief:</p>
+    <p style="font-size:19px;font-weight:800;color:#fff;line-height:1.5;">Your mind deserves training just as much as your body does.</p>
   </div>
 </div>
 
