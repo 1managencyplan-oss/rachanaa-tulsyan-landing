@@ -105,6 +105,47 @@
     .pain-card .p-ico{font-size:34px;margin-bottom:12px;display:block;}
     .pain-card p{font-size:12px;color:#888;font-weight:600;line-height:1.45;}
 
+    /* ── GYM EQUIPMENT ICONS ── */
+    .gym-ico{display:block;margin:0 auto 16px;width:56px;height:56px;}
+    .gym-ico path,.gym-ico circle,.gym-ico rect,.gym-ico line{vector-effect:non-scaling-stroke;}
+    .vs-card.body-side .gym-ico{color:#5a5a5a;}
+    .vs-card.mind-side .gym-ico{color:#ef4444;animation:float 3s ease-in-out infinite;}
+    .pain-card .plate-ico{display:block;margin:0 auto 12px;width:34px;height:34px;color:#6b4444;transition:color .3s;}
+    .pain-card:hover .plate-ico{color:#ef4444;}
+
+    /* ── DESIGNED LIKE A GYM ── */
+    .dlg-wrap{max-width:920px;margin:0 auto;padding:72px 20px;}
+    .dlg-wrap h2{text-align:center;font-size:clamp(26px,3.8vw,44px);font-weight:900;color:#fff;line-height:1.15;margin-bottom:14px;}
+    .dlg-wrap h2 span{color:#ef4444;}
+    .dlg-intro{text-align:center;font-size:15px;color:#888;line-height:1.7;max-width:600px;margin:0 auto 48px;}
+
+    .dlg-head{display:grid;grid-template-columns:1fr 44px 1fr;gap:0;margin-bottom:14px;padding:0 4px;}
+    .dlg-head p{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;text-align:center;}
+    .dlg-head .h-phys{color:#666;}
+    .dlg-head .h-ment{color:#ef4444;}
+
+    .dlg-row{display:grid;grid-template-columns:1fr 44px 1fr;align-items:stretch;gap:0;margin-bottom:12px;}
+    .dlg-cell{border-radius:14px;padding:18px 16px;display:flex;align-items:center;gap:14px;min-width:0;}
+    .dlg-cell.phys{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);}
+    .dlg-cell.ment{background:linear-gradient(135deg,rgba(220,38,38,.14),rgba(185,28,28,.04));border:1px solid rgba(220,38,38,.32);}
+    .dlg-cell .eq-ico{width:38px;height:38px;flex-shrink:0;color:#6f6f6f;}
+    .dlg-cell.ment .eq-ico{color:#ef4444;}
+    .dlg-cell p{font-size:14px;font-weight:700;line-height:1.4;margin:0;}
+    .dlg-cell.phys p{color:#8a8a8a;}
+    .dlg-cell.ment p{color:#fff;}
+    .dlg-arrow{display:flex;align-items:center;justify-content:center;color:#dc2626;font-size:17px;font-weight:900;}
+
+    @media(max-width:640px){
+      .dlg-head{display:none;}
+      .dlg-row{grid-template-columns:1fr;gap:6px;margin-bottom:22px;}
+      .dlg-cell{border-radius:14px;}
+      .dlg-arrow{transform:rotate(90deg);padding:2px 0;font-size:15px;}
+    }
+
+    .dlg-note{margin-top:36px;padding:26px 24px;background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.22);border-radius:16px;text-align:center;}
+    .dlg-note p{font-size:clamp(15px,1.9vw,19px);font-weight:800;color:#fff;line-height:1.6;margin:0;}
+    .dlg-note p span{color:#ef4444;}
+
     .pain-cta{margin-top:36px;background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.3);border-radius:14px;padding:22px;text-align:center;font-size:16px;font-weight:700;color:#fff;}
 
     /* ── PHOTO QUOTE BREAK ── */
@@ -472,13 +513,17 @@
   <h2 class="reveal">Here's What <span>Nobody Told You.</span></h2>
   <div class="vs-grid">
     <div class="vs-card body-side reveal-left">
-      <span class="big-ico">🔁</span>
+      <svg class="gym-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="4" y="32" width="30" height="8" rx="4"/><path d="M9 36h20"/><path d="M32 33L38 14"/><rect x="31" y="7" width="13" height="8" rx="2.5"/>
+      </svg>
       <h3>What You've Been Told</h3>
       <p>Work harder. Think positive. Push through. Change your job, your city, your relationship. Eventually it will feel better.</p>
     </div>
     <div class="vs-center reveal"><div style="font-size:28px;font-weight:900;">VS</div></div>
     <div class="vs-card mind-side reveal-right">
-      <span class="big-ico">🧠</span>
+      <svg class="gym-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 20v8"/><path d="M8 15v18"/><path d="M13 19v10"/><path d="M35 19v10"/><path d="M40 15v18"/><path d="M45 20v8"/><path d="M13 24h22"/>
+      </svg>
       <h3>What's Actually True</h3>
       <p>What you're experiencing is mental conditioning. Old programmes running since childhood. No circumstance change can reach them. Only training will.</p>
       <span class="vs-new">THE TRUTH</span>
@@ -498,14 +543,14 @@
   <h2 class="reveal">You've Achieved Everything.<br><span>So Why Does It Still Feel Like This?</span></h2>
   <p style="color:#666;font-size:15px;margin-bottom:36px;" class="reveal">Read these slowly. See which ones feel familiar.</p>
   <div class="pain-grid">
-    <div class="pain-card reveal"><span class="p-ico">😔</span><p>You wake up already tired — even after 8 hours of sleep</p></div>
-    <div class="pain-card reveal"><span class="p-ico">😔</span><p>Work ends at 6pm. But your mind never clocks out</p></div>
-    <div class="pain-card reveal"><span class="p-ico">😔</span><p>One bad email can ruin your entire day</p></div>
-    <div class="pain-card reveal"><span class="p-ico">😔</span><p>You snap at the people you love — and hate yourself for it</p></div>
-    <div class="pain-card reveal"><span class="p-ico">😔</span><p>You've changed jobs, cities, relationships — but the heaviness followed you</p></div>
-    <div class="pain-card reveal"><span class="p-ico">😔</span><p>Sunday evenings feel like dread, not peace</p></div>
-    <div class="pain-card reveal"><span class="p-ico">😔</span><p>You've tried meditation. Journaling. Self-help books. Still the same patterns</p></div>
-    <div class="pain-card reveal"><span class="p-ico">😔</span><p>You feel like you're performing your life — not actually living it</p></div>
+    <div class="pain-card reveal"><svg class="plate-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="6"/><path d="M24 7v6"/><path d="M24 35v6"/><path d="M7 24h6"/><path d="M35 24h6"/></svg><p>You wake up already tired — even after 8 hours of sleep</p></div>
+    <div class="pain-card reveal"><svg class="plate-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="6"/><path d="M24 7v6"/><path d="M24 35v6"/><path d="M7 24h6"/><path d="M35 24h6"/></svg><p>Work ends at 6pm. But your mind never clocks out</p></div>
+    <div class="pain-card reveal"><svg class="plate-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="6"/><path d="M24 7v6"/><path d="M24 35v6"/><path d="M7 24h6"/><path d="M35 24h6"/></svg><p>One bad email can ruin your entire day</p></div>
+    <div class="pain-card reveal"><svg class="plate-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="6"/><path d="M24 7v6"/><path d="M24 35v6"/><path d="M7 24h6"/><path d="M35 24h6"/></svg><p>You snap at the people you love — and hate yourself for it</p></div>
+    <div class="pain-card reveal"><svg class="plate-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="6"/><path d="M24 7v6"/><path d="M24 35v6"/><path d="M7 24h6"/><path d="M35 24h6"/></svg><p>You've changed jobs, cities, relationships — but the heaviness followed you</p></div>
+    <div class="pain-card reveal"><svg class="plate-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="6"/><path d="M24 7v6"/><path d="M24 35v6"/><path d="M7 24h6"/><path d="M35 24h6"/></svg><p>Sunday evenings feel like dread, not peace</p></div>
+    <div class="pain-card reveal"><svg class="plate-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="6"/><path d="M24 7v6"/><path d="M24 35v6"/><path d="M7 24h6"/><path d="M35 24h6"/></svg><p>You've tried meditation. Journaling. Self-help books. Still the same patterns</p></div>
+    <div class="pain-card reveal"><svg class="plate-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="6"/><path d="M24 7v6"/><path d="M24 35v6"/><path d="M7 24h6"/><path d="M35 24h6"/></svg><p>You feel like you're performing your life — not actually living it</p></div>
   </div>
   <div class="pain-cta reveal">
     If even 3 of these hit close to home — this page was written for you.
@@ -627,7 +672,6 @@
         <p style="font-size:14px;color:#3a2020;line-height:1.6;margin:0;">A unique mental fitness system designed to train the mind with the same consistency and structure that a physical gym trains the body.</p>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -666,6 +710,129 @@
       <p style="font-size:13px;color:#888;line-height:1.7;">Not a single motivational session. That's why Mental Gym is structured as short daily training rather than one-off inspiration.</p>
     </div>
 
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- DESIGNED LIKE A GYM -->
+<div class="dlg-wrap">
+  <p class="sec-label reveal" style="text-align:center;">The Method</p>
+  <h2 class="reveal">Designed Like a <span>Gym</span>.</h2>
+  <p class="dlg-intro reveal">You already know how physical training works. Mental Gym runs on exactly the same principles — same structure, same progression, same reason it sticks.</p>
+
+  <div class="dlg-head reveal">
+    <p class="h-phys">Physical Gym</p>
+    <p></p>
+    <p class="h-ment">Mental Gym</p>
+  </div>
+
+  <!-- Warm-up -->
+  <div class="dlg-row reveal">
+    <div class="dlg-cell phys">
+      <svg class="eq-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="24" cy="28" r="13"/><path d="M19 7h10"/><path d="M24 7v5"/><path d="M24 28v-8"/><path d="M34 18l3-3"/>
+      </svg>
+      <p>Warm-up</p>
+    </div>
+    <div class="dlg-arrow">→</div>
+    <div class="dlg-cell ment">
+      <svg class="eq-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="24" cy="28" r="13"/><path d="M19 7h10"/><path d="M24 7v5"/><path d="M24 28v-8"/><path d="M34 18l3-3"/>
+      </svg>
+      <p>Mental warm-up</p>
+    </div>
+  </div>
+
+  <!-- Weights -->
+  <div class="dlg-row reveal">
+    <div class="dlg-cell phys">
+      <svg class="eq-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 20v8"/><path d="M11 15v18"/><path d="M37 15v18"/><path d="M42 20v8"/><path d="M11 24h26"/>
+      </svg>
+      <p>Weights</p>
+    </div>
+    <div class="dlg-arrow">→</div>
+    <div class="dlg-cell ment">
+      <svg class="eq-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 20v8"/><path d="M11 15v18"/><path d="M37 15v18"/><path d="M42 20v8"/><path d="M11 24h26"/>
+      </svg>
+      <p>Mental reps</p>
+    </div>
+  </div>
+
+  <!-- Progressive overload -->
+  <div class="dlg-row reveal">
+    <div class="dlg-cell phys">
+      <svg class="eq-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true">
+        <rect x="6" y="20" width="7" height="10" rx="2"/><rect x="18" y="14" width="8" height="22" rx="2.5"/><rect x="31" y="8" width="9" height="34" rx="3"/>
+      </svg>
+      <p>Progressive overload</p>
+    </div>
+    <div class="dlg-arrow">→</div>
+    <div class="dlg-cell ment">
+      <svg class="eq-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true">
+        <rect x="6" y="20" width="7" height="10" rx="2"/><rect x="18" y="14" width="8" height="22" rx="2.5"/><rect x="31" y="8" width="9" height="34" rx="3"/>
+      </svg>
+      <p>Mental challenges</p>
+    </div>
+  </div>
+
+  <!-- Muscle growth -->
+  <div class="dlg-row reveal">
+    <div class="dlg-cell phys">
+      <svg class="eq-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18.6 16.4c-.9-1.7-1.4-3.6-1.4-5.6C17.2 6.6 20.2 3.5 24 3.5s6.8 3.1 6.8 7.3c0 2-.5 3.9-1.4 5.6"/>
+        <path d="M18.4 19.6C12.2 22.7 8.2 29 8.2 35.2c0 5.1 3.1 8.8 7.6 8.8h16.4c4.5 0 7.6-3.7 7.6-8.8 0-6.2-4-12.5-10.2-15.6z"/>
+      </svg>
+      <p>Muscle growth</p>
+    </div>
+    <div class="dlg-arrow">→</div>
+    <div class="dlg-cell ment">
+      <svg class="eq-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18.6 16.4c-.9-1.7-1.4-3.6-1.4-5.6C17.2 6.6 20.2 3.5 24 3.5s6.8 3.1 6.8 7.3c0 2-.5 3.9-1.4 5.6"/>
+        <path d="M18.4 19.6C12.2 22.7 8.2 29 8.2 35.2c0 5.1 3.1 8.8 7.6 8.8h16.4c4.5 0 7.6-3.7 7.6-8.8 0-6.2-4-12.5-10.2-15.6z"/>
+      </svg>
+      <p>Stronger emotional resilience</p>
+    </div>
+  </div>
+
+  <!-- Recovery -->
+  <div class="dlg-row reveal">
+    <div class="dlg-cell phys">
+      <svg class="eq-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="19" y="5" width="10" height="6" rx="2"/><path d="M21 11v3"/><path d="M27 11v3"/><rect x="14" y="14" width="20" height="29" rx="6"/><path d="M14 24h20"/>
+      </svg>
+      <p>Recovery</p>
+    </div>
+    <div class="dlg-arrow">→</div>
+    <div class="dlg-cell ment">
+      <svg class="eq-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="19" y="5" width="10" height="6" rx="2"/><path d="M21 11v3"/><path d="M27 11v3"/><rect x="14" y="14" width="20" height="29" rx="6"/><path d="M14 24h20"/>
+      </svg>
+      <p>Consolidation of new patterns</p>
+    </div>
+  </div>
+
+  <!-- Consistency -->
+  <div class="dlg-row reveal">
+    <div class="dlg-cell phys">
+      <svg class="eq-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="7" y="11" width="34" height="30" rx="5"/><path d="M7 20h34"/><path d="M16 6v8"/><path d="M32 6v8"/><path d="M17 30l5 5 9-10"/>
+      </svg>
+      <p>Consistency</p>
+    </div>
+    <div class="dlg-arrow">→</div>
+    <div class="dlg-cell ment">
+      <svg class="eq-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="7" y="11" width="34" height="30" rx="5"/><path d="M7 20h34"/><path d="M16 6v8"/><path d="M32 6v8"/><path d="M17 30l5 5 9-10"/>
+      </svg>
+      <p>Lasting change</p>
+    </div>
+  </div>
+
+  <div class="dlg-note reveal">
+    <p>Nobody expects one workout to change their body.<br><span>So why expect one insight to change your mind?</span></p>
   </div>
 </div>
 
