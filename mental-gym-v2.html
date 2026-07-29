@@ -1258,14 +1258,11 @@
     tick(); setInterval(tick,1000);
   })();
 
-  // Sticky bar — show after scrolling past hero
+  // Sticky bar — always visible
   (function stickyBar(){
     const bar = document.getElementById('stickyBar');
     if(!bar) return;
-    window.addEventListener('scroll',()=>{
-      if(window.scrollY > 500) bar.classList.add('visible');
-      else bar.classList.remove('visible');
-    },{passive:true});
+    bar.classList.add('visible');
   })();
 
   // FAQ accordion
