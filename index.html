@@ -1335,7 +1335,24 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
   <div class="modal-box">
     <button class="modal-close" onclick="closeLeadModal()">×</button>
 
-    <div id="modal-form-view">
+    <div id="modal-check-view">
+      <div style="text-align:center;margin-bottom:24px;">
+        <div class="modal-badge">🙏 Quick Check</div>
+        <h2 class="modal-title" style="font-size:20px;">Are you of Indian origin?</h2>
+        <p class="modal-sub">This masterclass is designed specifically for the <strong style="color:#fff;">Indian community</strong> living abroad.</p>
+      </div>
+      <button onclick="confirmIndian()" style="width:100%;background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;font-size:16px;font-weight:800;padding:15px;border-radius:12px;border:none;cursor:pointer;margin-bottom:12px;font-family:inherit;">✅ Yes, I am Indian</button>
+      <button onclick="notIndian()" style="width:100%;background:rgba(255,255,255,0.06);color:#888;font-size:15px;font-weight:600;padding:15px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);cursor:pointer;font-family:inherit;">No, I'm not</button>
+    </div>
+
+    <div id="modal-not-indian-view" style="display:none;text-align:center;padding:10px 0;">
+      <div style="font-size:48px;margin-bottom:16px;">🙏</div>
+      <h3 style="font-size:18px;font-weight:800;color:#fff;margin-bottom:12px;">Thank you for your interest!</h3>
+      <p style="font-size:14px;color:#aaa;line-height:1.7;">This masterclass is specifically designed for Indian professionals living abroad. The content and approach are tailored to the Indian diaspora experience.<br><br>We hope to create programmes for wider audiences in the future!</p>
+      <button onclick="closeLeadModal()" style="margin-top:24px;background:rgba(255,255,255,0.06);color:#888;font-size:14px;padding:12px 28px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);cursor:pointer;font-family:inherit;">Close</button>
+    </div>
+
+    <div id="modal-form-view" style="display:none;">
       <div style="text-align:center;margin-bottom:22px;">
         <div class="modal-badge">🔥 Limited Seats Available</div>
         <h2 class="modal-title">Reserve Your Seat — FREE</h2>
@@ -1462,7 +1479,9 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
   });
 
   function openLeadModal(){
-    document.getElementById('modal-form-view').style.display = 'block';
+    document.getElementById('modal-check-view').style.display = 'block';
+    document.getElementById('modal-form-view').style.display = 'none';
+    document.getElementById('modal-not-indian-view').style.display = 'none';
     document.getElementById('modal-success-view').style.display = 'none';
     var btn = document.getElementById('lead-submit-btn');
     btn.disabled = false;
@@ -1470,9 +1489,21 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
     document.getElementById('lead-modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
+  function confirmIndian(){
+    document.getElementById('modal-check-view').style.display = 'none';
+    document.getElementById('modal-form-view').style.display = 'block';
+  }
+  function notIndian(){
+    document.getElementById('modal-check-view').style.display = 'none';
+    document.getElementById('modal-not-indian-view').style.display = 'block';
+  }
   function closeLeadModal(){
     document.getElementById('lead-modal').style.display = 'none';
     document.body.style.overflow = '';
+    document.getElementById('modal-check-view').style.display = 'block';
+    document.getElementById('modal-form-view').style.display = 'none';
+    document.getElementById('modal-not-indian-view').style.display = 'none';
+    document.getElementById('modal-success-view').style.display = 'none';
   }
   document.getElementById('lead-modal').addEventListener('click', function(e){
     if (e.target === this) closeLeadModal();
