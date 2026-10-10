@@ -1200,7 +1200,19 @@
 <div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
   <div class="modal-box" style="position:relative;">
     <button class="modal-close" onclick="closeModal()">×</button>
-    <div id="modal-form-view">
+    <div id="modal-check-view">
+      <h3 style="font-size:20px;margin-bottom:10px;">🙏 Quick Check</h3>
+      <p style="font-size:15px;color:#aaa;margin-bottom:28px;">This masterclass is designed specifically for the <strong style="color:#fff;">Indian community</strong> living abroad.<br><br>Are you of Indian origin?</p>
+      <button onclick="confirmIndian()" style="width:100%;background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;font-size:16px;font-weight:800;padding:14px;border-radius:12px;border:none;cursor:pointer;margin-bottom:12px;font-family:inherit;">✅ Yes, I am Indian</button>
+      <button onclick="notIndian()" style="width:100%;background:rgba(255,255,255,0.06);color:#888;font-size:15px;font-weight:600;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);cursor:pointer;font-family:inherit;">No, I'm not</button>
+    </div>
+    <div id="modal-not-indian-view" style="display:none;text-align:center;">
+      <div style="font-size:48px;margin-bottom:16px;">🙏</div>
+      <h3 style="font-size:18px;margin-bottom:12px;">Thank you for your interest!</h3>
+      <p style="font-size:14px;color:#aaa;line-height:1.6;">This masterclass is specifically designed for Indian professionals living abroad. The content, examples, and approach are tailored to the Indian diaspora experience.<br><br>We hope to create programs for wider audiences in the future!</p>
+      <button onclick="closeModal()" style="margin-top:24px;background:rgba(255,255,255,0.06);color:#888;font-size:14px;padding:12px 28px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);cursor:pointer;font-family:inherit;">Close</button>
+    </div>
+    <div id="modal-form-view" style="display:none;">
       <h3>🧠 Reserve Your Free Spot</h3>
       <p class="modal-sub">Mental Gym Masterclass — Free & Live Online</p>
       <form id="lead-form" onsubmit="submitLead(event)">
@@ -1257,11 +1269,25 @@
   function openModal() {
     document.getElementById('modal').classList.add('open');
     document.body.style.overflow = 'hidden';
+    document.getElementById('modal-check-view').style.display = 'block';
+    document.getElementById('modal-form-view').style.display = 'none';
+    document.getElementById('modal-not-indian-view').style.display = 'none';
+    document.getElementById('modal-success-view').style.display = 'none';
+  }
+  function confirmIndian() {
+    document.getElementById('modal-check-view').style.display = 'none';
+    document.getElementById('modal-form-view').style.display = 'block';
+  }
+  function notIndian() {
+    document.getElementById('modal-check-view').style.display = 'none';
+    document.getElementById('modal-not-indian-view').style.display = 'block';
   }
   function closeModal() {
     document.getElementById('modal').classList.remove('open');
     document.body.style.overflow = '';
-    document.getElementById('modal-form-view').style.display = 'block';
+    document.getElementById('modal-check-view').style.display = 'block';
+    document.getElementById('modal-form-view').style.display = 'none';
+    document.getElementById('modal-not-indian-view').style.display = 'none';
     document.getElementById('modal-success-view').style.display = 'none';
   }
   function handleOverlayClick(e) {
